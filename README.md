@@ -83,9 +83,52 @@ The two evaluated tasks are:
 
 The controllers are eight frozen LIF variants built from authenticated leg,
 wing-thoracic, and optic 256-neuron subsets, plus a matched GRU and normal MLP.
-Only observation/action adapters train around each LIF core. Multi-core models
-keep the biological graphs independent and concatenate their readouts; they do
-not invent recurrent edges between graphs.
+Within each LIF actor, only the observation/action adapters train; PPO also
+trains a separate conventional critic. Multi-core models keep the biological
+graphs independent and concatenate their readouts; they do not invent
+recurrent edges between graphs.
+
+## Controller connectivity and observed activity
+
+The three frozen LIF cores are sparse directed subgraphs extracted from the
+same pinned MaleCNS v1.0 release. Every selected neuron lies on a selected
+input-to-output path. The edge signs below are model assumptions derived from
+transmitter labels, not measured conductances.
+
+| Frozen core | Selected neuron roles | Directed edges | Modeled edge signs |
+| --- | --- | ---: | ---: |
+| Leg | 24 sensory + 8 descending inputs, 200 VNC interneurons, 24 motor readouts | 5,103 | 3,549 excitatory + 1,554 inhibitory |
+| Wing-thoracic | 20 sensory + 12 descending inputs, 200 VNC intrinsic neurons, 24 wing-motor readouts | 8,864 | 6,726 excitatory + 2,138 inhibitory |
+| Optic | 32 optic sensory inputs, 200 optic intrinsic neurons, 24 visual-projection readouts | 1,628 | 1,220 excitatory + 408 inhibitory |
+
+The exact source, selection rules, checksums, neuron IDs, and edges are in the
+[leg](data/connectome/manifest.json), [wing](data/connectome_wing/manifest.json),
+and [optic](data/connectome_optic/manifest.json) manifests. The rewired leg
+control retains all 5,103 weights, signs, and per-neuron directed in/out
+degrees, but changes the endpoints with 51,030 deterministic valid edge swaps;
+its frozen artifact is
+[here](configs/experiments/crazyflie_rewire_seed_20260916.json).
+
+| Controller | Action-path connectivity | Actor params | Held-out activity, still / wind |
+| --- | --- | ---: | --- |
+| Original leg LIF | `12 -> 64 -> 32 inputs -> leg[256; 5,103 edges] -> 24 readouts -> 64 -> 4` | 4,776 | leg spikes: 14.022% / 15.542% |
+| Degree-rewired leg LIF | Same widths and degrees as original; rewired frozen leg endpoints | 4,776 | leg spikes: 7.165% / 12.307% |
+| Wing-thoracic LIF | `12 -> 64 -> 32 inputs -> wing[256; 8,864 edges] -> 24 readouts -> 64 -> 4` | 4,776 | wing spikes: 21.861% / 26.580% |
+| Optic LIF | `12 -> 64 -> 32 inputs -> optic[256; 1,628 edges] -> 24 readouts -> 64 -> 4` | 4,776 | optic spikes: 1.789% / 1.451% |
+| Leg + wing LIF | Two independent 256-neuron cores; 48 concatenated readouts; 13,967 frozen edges total | 9,224 | leg: 13.949% / 21.975%; wing: 27.749% / 34.511% |
+| Leg + optic LIF | Two independent cores; 48 concatenated readouts; 6,731 frozen edges total | 9,224 | leg: 24.364% / 21.167%; optic: 1.687% / 1.752% |
+| Wing + optic LIF | Two independent cores; 48 concatenated readouts; 10,492 frozen edges total | 9,224 | wing: 21.755% / 21.011%; optic: 2.115% / 1.620% |
+| Leg + wing + optic LIF | Three independent cores; 72 concatenated readouts; 15,595 frozen edges total | 13,672 | leg: 25.441% / 17.155%; wing: 30.305% / 23.388%; optic: 1.256% / 1.133% |
+| Matched GRU | Dense three-gate `GRUCell`: `12 -> 33`, recurrent `33 -> 33`, then `33 -> 4` | 4,793 | mean absolute hidden activation: 0.10429 / 0.15552 |
+| Normal MLP | Dense feed-forward `12 -> 61 -> 61 -> 4`; no recurrent state | 4,827 | mean absolute layer activations: 0.17249/0.04655 / 0.20328/0.10874 |
+
+LIF activity is the fraction of sampled binary spikes, averaged across the
+three seeds. GRU and MLP values are mean absolute continuous activations and
+must not be numerically compared with spike fractions. These are observations
+from the actual action-producing held-out forwards, not causal importance
+scores. The complete per-seed, per-core, per-role, and per-unit activity is in
+the [revision-4 report](docs/crazyflie_command_all_fair_report_v4.md); all
+controllers also use the same separate `12 -> 128 -> 128 -> 1` PPO critic.
 
 ## What was analyzed
 
