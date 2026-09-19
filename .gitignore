@@ -8,6 +8,7 @@ runs/
 stock_isaaclab_runs/**/attempt_*/
 stock_isaaclab_runs/**/smoke*/
 stock_isaaclab_runs/**/*.lock
+stock_isaaclab_runs/**/gates/**/work/
 data/connectome/*.json
 data/connectome/raw/
 !data/connectome/manifest.example.json
