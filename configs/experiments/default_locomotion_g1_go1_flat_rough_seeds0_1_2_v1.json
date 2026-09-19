@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "kind": "isaaclab_stock_default_locomotion_matrix_v1",
+  "label": "default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1",
+  "output_root": "stock_isaaclab_runs/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1",
+  "isaac_python": "/home/chayanin/Downloads/miniforge3/envs/env_isaaclab/bin/python",
+  "isaaclab_root": "/home/chayanin/Downloads/IsaacLab",
+  "isaaclab_commit": "b4c321024792976150ca55fddb26fa34480d974e",
+  "trainer": "/home/chayanin/Downloads/IsaacLab/scripts/reinforcement_learning/rsl_rl/train.py",
+  "agent_entry_point": "rsl_rl_cfg_entry_point",
+  "controller": "stock_rsl_rl_default_mlp",
+  "seeds": [0, 1, 2],
+  "robots": [
+    {
+      "id": "g1",
+      "output_subdirectory": "g1",
+      "tasks": [
+        {
+          "terrain": "flat",
+          "task_id": "Isaac-Velocity-Flat-G1-v0",
+          "default_experiment_name": "g1_flat",
+          "default_max_iterations": 1500,
+          "default_num_steps_per_env": 24,
+          "default_save_interval": 50,
+          "observation_width": 123,
+          "action_width": 37,
+          "actor_hidden_dims": [256, 128, 128],
+          "critic_hidden_dims": [256, 128, 128],
+          "actor_mlp_parameter_count": 85925,
+          "actor_distribution_parameter_count": 37,
+          "actor_trainable_parameter_count": 85962,
+          "critic_parameter_count": 81281,
+          "command_ranges": {
+            "lin_vel_x_mps": [0.0, 1.0],
+            "lin_vel_y_mps": [-0.5, 0.5],
+            "ang_vel_z_radps": [-1.0, 1.0]
+          }
+        },
+        {
+          "terrain": "rough",
+          "task_id": "Isaac-Velocity-Rough-G1-v0",
+          "default_experiment_name": "g1_rough",
+          "default_max_iterations": 3000,
+          "default_num_steps_per_env": 24,
+          "default_save_interval": 50,
+          "observation_width": 310,
+          "action_width": 37,
+          "actor_hidden_dims": [512, 256, 128],
+          "critic_hidden_dims": [512, 256, 128],
+          "actor_mlp_parameter_count": 328229,
+          "actor_distribution_parameter_count": 37,
+          "actor_trainable_parameter_count": 328266,
+          "critic_parameter_count": 323585,
+          "command_ranges": {
+            "lin_vel_x_mps": [0.0, 1.0],
+            "lin_vel_y_mps": [0.0, 0.0],
+            "ang_vel_z_radps": [-1.0, 1.0]
+          }
+        }
+      ]
+    },
+    {
+      "id": "go1",
+      "output_subdirectory": "go1",
+      "tasks": [
+        {
+          "terrain": "flat",
+          "task_id": "Isaac-Velocity-Flat-Unitree-Go1-v0",
+          "default_experiment_name": "unitree_go1_flat",
+          "default_max_iterations": 300,
+          "default_num_steps_per_env": 24,
+          "default_save_interval": 50,
+          "observation_width": 48,
+          "action_width": 12,
+          "actor_hidden_dims": [128, 128, 128],
+          "critic_hidden_dims": [128, 128, 128],
+          "actor_mlp_parameter_count": 40844,
+          "actor_distribution_parameter_count": 12,
+          "actor_trainable_parameter_count": 40856,
+          "critic_parameter_count": 39425,
+          "command_ranges": {
+            "lin_vel_x_mps": [-1.0, 1.0],
+            "lin_vel_y_mps": [-1.0, 1.0],
+            "ang_vel_z_radps": [-1.0, 1.0]
+          }
+        },
+        {
+          "terrain": "rough",
+          "task_id": "Isaac-Velocity-Rough-Unitree-Go1-v0",
+          "default_experiment_name": "unitree_go1_rough",
+          "default_max_iterations": 1500,
+          "default_num_steps_per_env": 24,
+          "default_save_interval": 50,
+          "observation_width": 235,
+          "action_width": 12,
+          "actor_hidden_dims": [512, 256, 128],
+          "critic_hidden_dims": [512, 256, 128],
+          "actor_mlp_parameter_count": 286604,
+          "actor_distribution_parameter_count": 12,
+          "actor_trainable_parameter_count": 286616,
+          "critic_parameter_count": 285185,
+          "command_ranges": {
+            "lin_vel_x_mps": [-1.0, 1.0],
+            "lin_vel_y_mps": [-1.0, 1.0],
+            "ang_vel_z_radps": [-1.0, 1.0]
+          }
+        }
+      ]
+    }
+  ],
+  "training": {
+    "num_envs": 1024,
+    "device": "cuda:0",
+    "headless": true,
+    "logger": "tensorboard",
+    "task_default_rewards": true,
+    "task_default_observations": true,
+    "task_default_actions": true,
+    "task_default_ppo": true,
+    "only_overrides": [
+      "num_envs_for_memory_safety",
+      "seed",
+      "max_iterations_repeated_from_task_default",
+      "device",
+      "logger",
+      "run_name"
+    ],
+    "default_task_num_envs": 4096,
+    "num_envs_override_reason": "common conservative pre-smoke value; lock one common value only after all four one-update memory smokes pass"
+  },
+  "command_contract": {
+    "kind": "planar_base_velocity_only",
+    "axes": ["lin_vel_x", "lin_vel_y", "ang_vel_z"],
+    "vertical_command_present": false,
+    "base_height_command_present": false,
+    "up_down_command_present": false,
+    "command_resampling_seconds": [10.0, 10.0],
+    "use_train_tasks_not_play_tasks": true
+  },
+  "queue": {
+    "default_max_parallel": 1,
+    "maximum_parallel": 1,
+    "failure_isolation": true,
+    "continue_after_job_failure": true,
+    "resume_policy": "restart_incomplete_job_from_scratch_in_new_immutable_attempt",
+    "gpu_used_mib_exclusive": 6963.2,
+    "system_ram_percent_exclusive": 90.0,
+    "resource_poll_interval_seconds": 5.0,
+    "sustained_paging_sample_count": 3,
+    "network_independent_after_local_assets_verified": true,
+    "immutable_attempt_logs": true,
+    "execution_requires_four_task_memory_smoke_receipt": true,
+    "dry_run_only_until_reviewed": true
+  },
+  "source_identity": {
+    "file_set_sha256": "36fca3501177012b0e1abc498f1e56ee1d6b4e40b6425451c70227ab5dcf4d15",
+    "files": {
+      "/home/chayanin/Downloads/IsaacLab/scripts/reinforcement_learning/rsl_rl/train.py": "9d5242bfc27e25edffe2531a963006c50dbfebe8b77ed1679e38e181e6426e27",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/velocity_env_cfg.py": "8bc788ece76116f238e4469542a9320710090d8dc2801f4380134158aa64cc6a",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/g1/__init__.py": "6f9f656de8f4ad0f75f0a0773ff8be337424811ab8d5e3bc9e674d95b39fac54",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/g1/rough_env_cfg.py": "2c07373fe3dc8c92f6e3eddc4dc647cc55265a86ea9b29861f27f98e413a28da",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/g1/flat_env_cfg.py": "a67e40d28ea0687e321c73b42a641564e95c55d43f14a5123c24104edfa51135",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/g1/agents/rsl_rl_ppo_cfg.py": "aed1885627492c88f88b40aeae971a764de2fd10c5a92a23569094b5265c2b89",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/go1/__init__.py": "772e8d86ba4b243ea5e2f0571b3aa9f24e19f3639caa114f4d6d0b957288e1e0",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/go1/rough_env_cfg.py": "5b668126d7fece98821c4564eceab898a353885f43d0213fdc2917f3ed8e6c25",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/go1/flat_env_cfg.py": "ddf6ddaf128f5d7905d002ca56bec0f8d8bcea99bbd34e3f3275a3fb17b3d1cb",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/go1/agents/rsl_rl_ppo_cfg.py": "851dd7a741b6f47b3a8407c8fe6b6dcdb9fc3ca2de1e37ec42f14900aca9e869"
+    }
+  },
+  "preservation": {
+    "frozen_g1_receipt": "docs/g1_frozen_sha256_after_command_all_fair_v4_20260918.json",
+    "frozen_g1_receipt_sha256": "ad1cbe7bbf7e66a78d8a01257540b15fd2be0e646960fa57112385eff110021f",
+    "frozen_runs_receipt": "docs/crazyflie_command_preservation_before.json",
+    "frozen_runs_receipt_sha256": "fd48161476eb7c3a2de5233ee7f0c53bf1f9debbc51422f65b4130ec88c22be8",
+    "frozen_runs_file_count": 1429,
+    "frozen_runs_total_bytes": 336929906,
+    "frozen_runs_tree_sha256": "c609886c330fdb9462a4bf92b5c2fcffc8a49cbc212d03110ab5914e13df00f3",
+    "new_output_must_not_be_under_runs": true
+  }
+}
