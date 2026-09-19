@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "algorithm": "sha256",
+  "generated_at_utc": "2026-09-19T07:41:16Z",
+  "workspace": "/home/chayanin/Desktop/flyg1",
+  "scope": "Post-implementation identity for the additive, dry-run-only stock Isaac Lab G1/Go1 Flat/Rough velocity-locomotion queues. No training was launched.",
+  "before_manifest": {
+    "path": "docs/default_locomotion_g1_go1_sha256_before_20260919.json",
+    "sha256": "87920ee28d7a16bc6b68027b9691314d90db4de6168f3ebff1bfeab279459a47",
+    "byte_count": 3996
+  },
+  "implementation_files": [
+    {
+      "path": ".gitignore",
+      "sha256": "71f5af2c0fb3a1224c7f11b4be10084ac04e9c22957db2f310cb7d9e65eb7107",
+      "byte_count": 325,
+      "change": "added narrow ignores for future stock attempt, smoke, and lock artifacts"
+    },
+    {
+      "path": "configs/experiments/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1.json",
+      "sha256": "32763df4c426cbd7f6baf56f0f1737354f260b5554ae39032def20048b571861",
+      "byte_count": 8428,
+      "change": "added"
+    },
+    {
+      "path": "scripts/default_locomotion_queue_v1.py",
+      "sha256": "dc0713b34bd64786e54bf31a43028020652999dba1666169cf0fa54d9c17d6a7",
+      "byte_count": 29077,
+      "change": "added"
+    },
+    {
+      "path": "tests/unit/test_default_locomotion_queue_v1.py",
+      "sha256": "d51e4f567ce561645722ccd6adf3250792c2fb643eb3dcfe5767a03e246487f9",
+      "byte_count": 9648,
+      "change": "added"
+    },
+    {
+      "path": "plan.md",
+      "before_sha256": "4061d52ff1d1006656d20ef469829b13c167af35c0803da0b2b8bfe368a96e00",
+      "after_sha256": "3efbf17ca3353e20ba2adbe94b1fbf101e72aa75dff15cad0bf6dbd7da701563",
+      "byte_count": 34850,
+      "change": "additive section appended"
+    }
+  ],
+  "dry_run_artifacts": {
+    "status": "verified_dry_run",
+    "execution_authorized": false,
+    "training_processes_launched": 0,
+    "simulator_processes_launched": 0,
+    "job_count": 12,
+    "predicted_training_interactions": 464486400,
+    "files": [
+      {
+        "path": "stock_isaaclab_runs/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1/matrix_index.json",
+        "sha256": "e986d3e3b7826600a649e8c9b325f8e5883fcf5075f4b9399830e7b7a45ecaad",
+        "byte_count": 3539
+      },
+      {
+        "path": "stock_isaaclab_runs/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1/g1/queue.json",
+        "sha256": "53190c615cb7ff9f7ece4821401882788a79f0627c08dcca255ef7429e295033",
+        "byte_count": 19034,
+        "robot": "g1",
+        "job_count": 6,
+        "predicted_training_interactions": 331776000
+      },
+      {
+        "path": "stock_isaaclab_runs/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1/go1/queue.json",
+        "sha256": "da3e176817aed78de8f6208726fed2af37ae16fa1070934807320c1828681298",
+        "byte_count": 19268,
+        "robot": "go1",
+        "job_count": 6,
+        "predicted_training_interactions": 132710400
+      }
+    ],
+    "folder_requirement_delta": "The user added physical G1/Go1 separation after the before manifest was captured; the aggregate planned path now contains independent g1/queue.json and go1/queue.json shards plus matrix_index.json."
+  },
+  "installed_isaaclab_after": {
+    "root": "/home/chayanin/Downloads/IsaacLab",
+    "commit": "b4c321024792976150ca55fddb26fa34480d974e",
+    "file_count": 10,
+    "file_set_sha256": "36fca3501177012b0e1abc498f1e56ee1d6b4e40b6425451c70227ab5dcf4d15",
+    "all_match_before": true,
+    "checkout_status_note": "The unrelated pre-existing untracked synthetic_smolvla/ directory remains present and was not modified.",
+    "files": {
+      "/home/chayanin/Downloads/IsaacLab/scripts/reinforcement_learning/rsl_rl/train.py": "9d5242bfc27e25edffe2531a963006c50dbfebe8b77ed1679e38e181e6426e27",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/velocity_env_cfg.py": "8bc788ece76116f238e4469542a9320710090d8dc2801f4380134158aa64cc6a",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/g1/__init__.py": "6f9f656de8f4ad0f75f0a0773ff8be337424811ab8d5e3bc9e674d95b39fac54",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/g1/rough_env_cfg.py": "2c07373fe3dc8c92f6e3eddc4dc647cc55265a86ea9b29861f27f98e413a28da",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/g1/flat_env_cfg.py": "a67e40d28ea0687e321c73b42a641564e95c55d43f14a5123c24104edfa51135",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/g1/agents/rsl_rl_ppo_cfg.py": "aed1885627492c88f88b40aeae971a764de2fd10c5a92a23569094b5265c2b89",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/go1/__init__.py": "772e8d86ba4b243ea5e2f0571b3aa9f24e19f3639caa114f4d6d0b957288e1e0",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/go1/rough_env_cfg.py": "5b668126d7fece98821c4564eceab898a353885f43d0213fdc2917f3ed8e6c25",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/go1/flat_env_cfg.py": "ddf6ddaf128f5d7905d002ca56bec0f8d8bcea99bbd34e3f3275a3fb17b3d1cb",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/go1/agents/rsl_rl_ppo_cfg.py": "851dd7a741b6f47b3a8407c8fe6b6dcdb9fc3ca2de1e37ec42f14900aca9e869"
+    }
+  },
+  "frozen_custom_g1_after": {
+    "receipt": "docs/g1_frozen_sha256_after_command_all_fair_v4_20260918.json",
+    "receipt_sha256": "ad1cbe7bbf7e66a78d8a01257540b15fd2be0e646960fa57112385eff110021f",
+    "verified_file_count": 37,
+    "mismatched": 0,
+    "all_match": true,
+    "combined_file_set_sha256": "0d14a092b6c42f93507000ade11d1af1f6a04a29d6a46bec3bf7b3796bbc7a4d"
+  },
+  "frozen_runs_after": {
+    "receipt": "docs/crazyflie_command_preservation_before.json",
+    "receipt_sha256": "fd48161476eb7c3a2de5233ee7f0c53bf1f9debbc51422f65b4130ec88c22be8",
+    "verified_file_count": 1429,
+    "verified_total_bytes": 336929906,
+    "tree_sha256": "c609886c330fdb9462a4bf92b5c2fcffc8a49cbc212d03110ab5914e13df00f3",
+    "all_match": true
+  },
+  "verification_commands": [
+    {
+      "command": "/home/chayanin/Downloads/miniforge3/envs/env_isaaclab/bin/python -m pytest tests/unit/test_default_locomotion_queue_v1.py -q",
+      "result": "pass",
+      "summary": "10 passed in 0.55s"
+    },
+    {
+      "command": "/home/chayanin/Downloads/miniforge3/envs/env_isaaclab/bin/python scripts/default_locomotion_queue_v1.py --config configs/experiments/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1.json --dry_run",
+      "result": "pass",
+      "summary": "12 planned jobs; G1 6 and Go1 6; execution_authorized=false"
+    },
+    {
+      "command": "/home/chayanin/Downloads/miniforge3/envs/env_isaaclab/bin/python scripts/default_locomotion_queue_v1.py --config configs/experiments/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1.json --status",
+      "result": "pass",
+      "summary": "verified_dry_run; 12 planned; 464486400 predicted interactions"
+    },
+    {
+      "command": "/home/chayanin/Downloads/miniforge3/envs/env_isaaclab/bin/python -m pytest tests/unit -q",
+      "result": "pass",
+      "summary": "952 passed, 10 skipped in 105.19s; all skips are expected immutable paused-queue preservation cases"
+    }
+  ],
+  "handoff_resource_snapshot": {
+    "gpu_memory_used_mib": 711,
+    "gpu_memory_total_mib": 8151,
+    "gpu_utilization_percent": 26,
+    "nvidia_compute_process_count": 0,
+    "system_ram_used_mib": 6717,
+    "system_ram_total_mib": 23728,
+    "system_ram_percent_approx": 28.31,
+    "swap_used_mib": 521,
+    "note": "This is an idle handoff snapshot, not a training/smoke peak measurement."
+  },
+  "execution_state": {
+    "main_training_started": false,
+    "memory_smokes_started": false,
+    "native_environment_smokes_started": false,
+    "checkpoint_or_resume_test_started": false,
+    "current_blocker": "User review and four one-update task memory smokes are required before any executor is added or enabled.",
+    "active_isaac_trainer_queue_process_count": 0
+  }
+}
