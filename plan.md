@@ -536,3 +536,114 @@ revision 3 remain preserved historical work; the active completion target is
 the fresh 60-cell revision-4 command-control comparison, not autonomous
 waypoint performance.  The historical 500k, revision-2, and revision-3 runs
 remain inspectable but are never silently merged into the revision-4 table.
+
+## Additive stock G1/Go1 walking-control queue — 2026-09-19
+
+The user's latest scoped request adds a separate, dry-run-only native Isaac Lab
+walking queue.  It does not resume, replace, edit, or score the paused custom
+Unitree G1 matrix above, and it does not alter any Crazyflie source, queue,
+checkpoint, or run.  New outputs live only below
+`stock_isaaclab_runs/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1/`;
+the frozen `runs/` tree remains byte-identical.
+
+Use the installed training tasks and their registered default environments,
+rewards, observations, joint-position actions, PPO settings, and native RSL-RL
+MLP agent:
+
+1. `Isaac-Velocity-Flat-G1-v0`,
+2. `Isaac-Velocity-Rough-G1-v0`,
+3. `Isaac-Velocity-Flat-Unitree-Go1-v0`, and
+4. `Isaac-Velocity-Rough-Unitree-Go1-v0`.
+
+"Flat" is the installed Isaac Lab name for the requested plain terrain.  The
+`-Play-v0` variants are forbidden for training because they change scene,
+randomization, command, and terrain behavior.  Every task is planar velocity
+following only: `lin_vel_x`, `lin_vel_y`, and yaw (`ang_vel_z`).  There is no
+vertical velocity, base-height, or up/down command.  Rough terrain can move a
+body vertically through contact physics, but the policy is never commanded to
+move up or down.  Preserve the exact registered command ranges:
+
+| Robot/task | `vx` m/s | `vy` m/s | yaw rad/s |
+|---|---:|---:|---:|
+| G1 Flat | `[0, 1]` | `[-0.5, 0.5]` | `[-1, 1]` |
+| G1 Rough | `[0, 1]` | `[0, 0]` | `[-1, 1]` |
+| Go1 Flat | `[-1, 1]` | `[-1, 1]` | `[-1, 1]` |
+| Go1 Rough | `[-1, 1]` | `[-1, 1]` | `[-1, 1]` |
+
+Therefore the default G1 Rough task deliberately cannot strafe.  Do not widen
+that range while calling the environment default.  Commands resample every 10
+seconds and are stochastic training commands, not live keyboard input.
+
+Use seeds 0, 1, and 2.  The matrix has one native stock MLP controller, four
+tasks, and three seeds: exactly 12 jobs.  G1 and Go1 must be physically
+separated:
+
+- `.../g1/queue.json` contains six G1 jobs and only G1 logs/checkpoints.
+- `.../go1/queue.json` contains six Go1 jobs and only Go1 logs/checkpoints.
+- `matrix_index.json` is the read-only aggregate index.
+- Each job uses `{robot}/{flat|rough}/seed_N/attempt_001/` as its working
+  directory, so the stock trainer's relative `logs/rsl_rl/...` output cannot
+  cross robot folders.
+
+The installed task default is 4,096 environments, but that value is not yet
+authorized under the user's strict 6.8 GiB device-memory limit.  Use a common
+provisional safety override of 1,024 environments, while retaining 24 steps
+per environment and every task's native iteration count and PPO parameters.
+Before execution, run one measured update for all four tasks and require every
+one to remain strictly below 6,963.2 MiB VRAM and 90% system RAM.  Missing or
+nonfinite telemetry fails closed.  Main execution remains sequential
+(`max_parallel=1`); the prior real paging event forbids parallel training.
+
+| Job type | Native iterations | Interactions/job at 1,024 envs | Actor trainable parameters | Critic parameters |
+|---|---:|---:|---:|---:|
+| G1 Flat | 1,500 | 36,864,000 | 85,962 | 81,281 |
+| G1 Rough | 3,000 | 73,728,000 | 328,266 | 323,585 |
+| Go1 Flat | 300 | 7,372,800 | 40,856 | 39,425 |
+| Go1 Rough | 1,500 | 36,864,000 | 286,616 | 285,185 |
+
+The actor totals include the native trainable state-independent Gaussian
+action-standard-deviation vector (37 values for G1 and 12 for Go1).  The MLP
+weights alone are respectively 85,925, 328,229, 40,844, and 286,604; both
+figures are recorded in every queue job so they cannot be conflated.
+
+Across three seeds this is 331,776,000 G1 interactions, 132,710,400 Go1
+interactions, and 464,486,400 total predicted interactions.  These are native
+task budgets, not a capacity-matched cross-robot experiment: rewards,
+observations, action widths, MLP widths, and iteration budgets differ.  Never
+aggregate raw task rewards into a purported fair G1-versus-Go1 winner.
+
+The stock default agent is an MLP.  Frozen LIF, rewired LIF, and GRU are not
+registered stock default agents for these tasks; any such comparison requires
+a later, separate adapter study with explicit capacity and recurrent-state
+contracts.  Do not silently include those controllers in this native baseline
+queue.
+
+The dry run must verify the pinned Isaac Lab commit and ten installed source
+hashes, all 37 frozen custom G1 files, and the frozen 1,429-file `runs/` tree.
+It launches no trainer or simulator.  Native RSL-RL resume runs additional
+iterations rather than an exact target-total continuation, so an incomplete
+job must be retained as an immutable attempt and restarted from scratch in a
+new attempt directory; exact resume must not be claimed.
+
+```bash
+cd /home/chayanin/Desktop/flyg1
+ISAAC_PYTHON=/home/chayanin/Downloads/miniforge3/envs/env_isaaclab/bin/python
+
+# Pure unit gates for this queue.
+"$ISAAC_PYTHON" -m pytest tests/unit/test_default_locomotion_queue_v1.py -q
+
+# Create the two physically separate six-job queues plus the aggregate index.
+# This is a dry run only and launches no training process.
+"$ISAAC_PYTHON" scripts/default_locomotion_queue_v1.py \
+  --config configs/experiments/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1.json \
+  --dry_run
+
+# Read-only status after the verified dry run.
+"$ISAAC_PYTHON" scripts/default_locomotion_queue_v1.py \
+  --config configs/experiments/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1.json \
+  --status
+```
+
+`--execute` is intentionally fail-closed in revision 1.  Do not add or invoke
+an executor until the user reviews the dry run and all four one-update memory
+smokes pass.  At this handoff no stock locomotion main job has started.
