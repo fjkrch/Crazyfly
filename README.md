@@ -1,12 +1,182 @@
-# G1 free-posture locomotion
+# Crazyflie learned keyboard-command control
 
-An external Isaac Lab project for simulation-only Unitree G1 goal-directed locomotion without an upright, gait, or torso-contact requirement.  The main policy route is:
+Simulation-only Isaac Lab research comparing frozen MaleCNS-derived spiking
+controllers with GRU and MLP baselines for direct, body-relative Crazyflie
+velocity control. The current main study is complete: **60/60 training and
+evaluation jobs passed independent artifact validation**.
+
+## Main result
+
+Revision 4 trained 10 controllers in still air and deterministic physical wind
+for seeds 0, 1, and 2. Every job used 1,000,000 environment interactions, and
+every checkpoint was tested on 16 deterministic 600-step held-out episodes.
+That is **60,000,000 training interactions and 960 evaluation episodes**.
+
+The values below are mean ± sample standard deviation across three seeds. The
+score is a custom bounded 0–100 control-quality index, **not an accuracy or
+success percentage**. It combines velocity/yaw tracking, direction, response,
+braking, hover, survival, action effort, and smoothness.
+
+| Controller | Capacity tier | Actor parameters | Still score | Wind score | Wind − still | Wind survival (%) |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| Original leg LIF | one core | 4,776 | 48.039 ± 0.361 | 32.747 ± 0.709 | −15.292 ± 1.062 | 67.962 ± 1.281 |
+| Degree-rewired leg LIF | one core | 4,776 | 47.271 ± 1.154 | 32.710 ± 0.370 | −14.560 ± 1.169 | 66.396 ± 1.234 |
+| Wing-thoracic LIF | one core | 4,776 | 46.502 ± 1.771 | 32.663 ± 0.259 | −13.838 ± 2.012 | 67.712 ± 2.544 |
+| Optic LIF | one core | 4,776 | 47.442 ± 0.999 | 32.849 ± 0.318 | −14.594 ± 0.982 | 70.038 ± 1.173 |
+| Leg + wing LIF | two cores | 9,224 | 48.130 ± 0.264 | 32.676 ± 0.452 | −15.454 ± 0.682 | 69.340 ± 1.826 |
+| Leg + optic LIF | two cores | 9,224 | 46.575 ± 2.004 | 32.745 ± 0.221 | −13.830 ± 2.165 | 66.573 ± 1.199 |
+| Wing + optic LIF | two cores | 9,224 | 48.070 ± 0.380 | 32.816 ± 0.346 | −15.254 ± 0.110 | 68.146 ± 0.922 |
+| Leg + wing + optic LIF | three cores | 13,672 | 47.436 ± 0.859 | 32.336 ± 0.737 | −15.100 ± 0.540 | 65.465 ± 3.388 |
+| Matched GRU | one-core engineering baseline | 4,793 | 47.203 ± 2.446 | 32.304 ± 0.977 | −14.900 ± 3.340 | 65.944 ± 2.450 |
+| Normal MLP | one-core engineering baseline | 4,827 | **48.680 ± 0.326** | **33.140 ± 0.910** | −15.540 ± 0.595 | **70.743 ± 4.675** |
+
+All controllers had 100% held-out survival in still air. The MLP had the
+highest observed mean total score in both conditions, but three seeds are not
+enough to establish statistical superiority. Among capacity-matched one-core
+LIF controllers, the original leg circuit led in still air and the optic
+circuit led in wind. The original and degree-rewired leg circuits were nearly
+tied in wind, so this experiment does not establish a robust topology
+advantage.
+
+Wind was the dominant effect: every controller lost 13.8–15.5 score points,
+and mean survival fell to 65.5–70.7%. The held-out linear-tracking component
+was only about 8.5–9.4/100 in still air and fell to approximately zero in wind.
+The policies survived the complete still-air protocol, but tracking remains
+limited and wind robustness is poor.
+
+![Three-seed held-out score by controller and condition](runs/crazyflie_command_all_fair_seeds0_1_2_1m/command_v4_score_by_condition.png)
+
+The complete per-seed values, raw metrics, reward/loss curves, activity,
+latency, memory, checksums, and immutable job evidence are in the
+[revision-4 report](docs/crazyflie_command_all_fair_report_v4.md).
+
+## What this project does
+
+The project extends the installed `Isaac-Quadcopter-Direct-v0` environment
+without editing Isaac Lab. A learned policy tracks commands produced by held
+keyboard keys:
+
+| Keys | Body-relative command |
+| --- | --- |
+| `W` / `S` | forward / backward |
+| `A` / `D` | left / right |
+| `I` or `E` / `Q` | up / down |
+| `J` / `L` | yaw left / right |
+| `H` or `Space` | release motion and hover |
+| `R` | reset and establish a new hover point |
+| `Esc` | clean exit |
+
+Axes can be combined, for example `W+A+I+J`. The trained envelope is 1.0 m/s
+horizontal speed, 0.5 m/s vertical speed, and 1.5 rad/s yaw rate. Each policy
+maps a 12-value state/error observation to the native four aggregate-wrench
+actions. The observation contains velocity/yaw tracking error, projected
+gravity, and integrated target-position error. It contains no camera pixels
+and no explicit wind measurement; the optic controller is a frozen recurrent
+topology, not a visual-input model.
+
+The two evaluated tasks are:
+
+- `FlyCrazyflie-CommandFollowWide-v0` for still air.
+- `FlyCrazyflie-CommandFollowWideWind-v0` for the same commands plus a
+  deterministic world-frame force/torque wrench applied at the body center of
+  mass.
+
+The controllers are eight frozen LIF variants built from authenticated leg,
+wing-thoracic, and optic 256-neuron subsets, plus a matched GRU and normal MLP.
+Only observation/action adapters train around each LIF core. Multi-core models
+keep the biological graphs independent and concatenate their readouts; they do
+not invent recurrent edges between graphs.
+
+## What was analyzed
+
+The held-out score weights linear tracking at 30%; safety/survival at 15%;
+yaw tracking, direction, response, braking, and hover at 10% each; and effort
+and smoothness at 2.5% each. The report additionally analyzes:
+
+- paired still-versus-wind degradation under identical command schedules;
+- acceleration quality, attitude/angular stability, and invalid states;
+- PPO reward/loss histories and exact one-million-interaction budgets;
+- action-producing LIF spikes by authenticated core and neuron role, plus GRU
+  and MLP hidden-unit activity;
+- trainable parameter count, recurrent state per environment, inference
+  latency, and score per 1,000 actor parameters;
+- training/evaluation RAM and VRAM, checkpoint/history hashes, schedule
+  identity, and frozen-core before/after checksums.
+
+The activity measurements are correlations, not causal evidence. LIF spikes
+also cannot be compared as if they had the same physical units as GRU or MLP
+activations. Inference on 16 environments was approximately 0.46 ms for GRU,
+0.48 ms for MLP, 1.1 ms for one-core LIF, 1.7–1.8 ms for two-core LIF, and
+2.4 ms for the three-core LIF on this machine. Every job remained below the
+6,963.2 MiB VRAM gate; the largest reported training peak was 3,386 MiB, the
+largest evaluation peak was 3,257 MiB, and no sustained paging gate failed.
+
+![Observed activity by authenticated core or engineering layer](runs/crazyflie_command_all_fair_seeds0_1_2_1m/command_v4_activity_groups.png)
+
+## Interpretation limits
+
+- Results are from Isaac simulation, not hardware flight.
+- Wind is a versioned external wrench, not a complete aerodynamic model.
+- There are only three training seeds; the table is descriptive and contains
+  no significance test.
+- One-core LIF, GRU, and MLP actors are near capacity-matched. Two- and
+  three-core LIF results are cross-capacity comparisons and must not be used
+  to claim a topology advantage from raw score alone.
+- The MaleCNS-derived circuits are selected 256-neuron engineering models,
+  not a complete fly brain. Signed/scaled LIF weights are modeling
+  transformations, not measured biological conductances.
+- Frozen-core integrity passed for all LIF jobs, but activity differences do
+  not prove that a named population caused a score difference.
+
+## Reproduce or inspect
+
+The recorded Isaac Lab installation is
+`/home/chayanin/Downloads/IsaacLab` at commit
+`b4c321024792976150ca55fddb26fa34480d974e`. Use the dedicated interpreter:
+
+```bash
+cd /home/chayanin/Desktop/flyg1
+ISAAC_PYTHON=/home/chayanin/Downloads/miniforge3/envs/env_isaaclab/bin/python
+"$ISAAC_PYTHON" -m pip install -e '.[data,monitor]'
+"$ISAAC_PYTHON" -m pytest tests/unit -q
+"$ISAAC_PYTHON" scripts/crazyflie_command_all_fair_queue_v4.py \
+  --config configs/experiments/crazyflie_command_all_fair_seeds0_1_2_1m.json \
+  --status
+```
+
+The completed matrix must not be relaunched merely to inspect it. Its
+[configuration](configs/experiments/crazyflie_command_all_fair_seeds0_1_2_1m.json),
+[queue](runs/crazyflie_command_all_fair_seeds0_1_2_1m/queue.json), and
+[queue summary](runs/crazyflie_command_all_fair_seeds0_1_2_1m/queue_summary.json)
+are the machine-readable execution record. See [plan.md](plan.md) for the
+experiment contract and canonical commands.
+
+## Reports and provenance
+
+- [Complete 60-cell Crazyflie report](docs/crazyflie_command_all_fair_report_v4.md)
+- [Historical seed-0 LIF activity analysis](docs/crazyflie_lif_activity_analysis.md)
+- [Task and environment contract](docs/crazyflie_task_spec.md)
+- [Leg connectome provenance and modeling caveats](data/connectome/README.md)
+- [Wing connectome manifest](data/connectome_wing/manifest.json)
+- [Optic connectome manifest](data/connectome_optic/manifest.json)
+
+## Preserved Unitree work
+
+The earlier Unitree G1 free-posture project remains preserved. Its main policy
+route is:
 
 `G1 observations -> trainable encoder -> frozen LIF circuit -> trainable decoder -> bounded joint-position targets -> Isaac Sim PD actuators`
 
-This repository deliberately contains no Go2, drone, ROS, or hardware-control code. The user's public MaleCNS v1.0 Feather files are copied under `data/connectome/raw/`, and a derived leg VNC circuit is available through `data/connectome/manifest.json`; see the [data provenance and download links](data/connectome/README.md). Synthetic circuits exist only under `tests/fixtures` and are rejected by the research training command.
+The user's public MaleCNS v1.0 Feather files are copied under
+`data/connectome/raw/`, and a derived leg VNC circuit is available through
+`data/connectome/manifest.json`; see the
+[data provenance and download links](data/connectome/README.md). Synthetic
+circuits exist only under `tests/fixtures` and are rejected by the research
+training command. The separate stock G1/Go1 flat/rough queue is under
+`stock_isaaclab_runs/`; neither Unitree result is included in the Crazyflie
+table above.
 
-## Installation
+### Unitree installation and historical commands
 
 The inspected installation is `/home/chayanin/Downloads/IsaacLab` at commit `b4c321024792976150ca55fddb26fa34480d974e` (Isaac Lab 0.54.4).  Use its dedicated interpreter, not the system Python:
 

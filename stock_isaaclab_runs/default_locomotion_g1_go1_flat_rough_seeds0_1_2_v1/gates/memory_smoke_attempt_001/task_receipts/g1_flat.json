@@ -1,0 +1,74 @@
+{
+  "checkpoint": null,
+  "command": [
+    "/home/chayanin/Downloads/miniforge3/envs/env_isaaclab/bin/python",
+    "/home/chayanin/Downloads/IsaacLab/scripts/reinforcement_learning/rsl_rl/train.py",
+    "--task",
+    "Isaac-Velocity-Flat-G1-v0",
+    "--agent",
+    "rsl_rl_cfg_entry_point",
+    "--seed",
+    "0",
+    "--num_envs",
+    "1024",
+    "--max_iterations",
+    "1",
+    "--device",
+    "cuda:0",
+    "--logger",
+    "tensorboard",
+    "--run_name",
+    "seed_0",
+    "--headless"
+  ],
+  "duration_seconds": 5.496,
+  "exit_code": 1,
+  "expected_interactions": 24576,
+  "failure": "trainer_exit_code:1",
+  "generated_at_utc": "2026-09-19T07:54:35.364+00:00",
+  "hard_resource_failure": false,
+  "kind": "isaaclab_stock_locomotion_memory_smoke_task_v1",
+  "lingering_compute_processes": [],
+  "log": {
+    "path": "/home/chayanin/Desktop/flyg1/stock_isaaclab_runs/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1/gates/memory_smoke_attempt_001/logs/g1_flat.log",
+    "sha256": "02a38b455782faa239e4a0a55be7e7ba4cbfdfc0b0f1023a923300659d239415",
+    "size_bytes": 9502
+  },
+  "max_iterations": 1,
+  "memory": {
+    "gpu_limit_mib_exclusive": 6963.2,
+    "max_device_gpu_used_mib": 1393.0,
+    "max_swap_used_mib": 746.73,
+    "max_system_ram_percent": 36.1,
+    "maximum_compute_process_count": 1,
+    "maximum_consecutive_swap_out_samples": 0,
+    "observed_owned_compute_pids": [
+      1046787
+    ],
+    "owned_compute_sample_count": 8,
+    "poll_interval_seconds": 0.5,
+    "ram_limit_percent_exclusive": 90.0,
+    "sample_count": 11,
+    "sustained_paging_detected": false
+  },
+  "native_artifacts": null,
+  "num_envs": 1024,
+  "passed": false,
+  "robot": "g1",
+  "schema_version": 1,
+  "seed": 0,
+  "started_at_utc": "2026-09-19T07:54:29.868+00:00",
+  "status": "failed",
+  "task": "Isaac-Velocity-Flat-G1-v0",
+  "telemetry": {
+    "path": "/home/chayanin/Desktop/flyg1/stock_isaaclab_runs/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1/gates/memory_smoke_attempt_001/telemetry/g1_flat.csv",
+    "sha256": "722e7065db2e868a31bafb1efa67f98d11da07cd0e2495b1a403e48a105024e6",
+    "size_bytes": 1542
+  },
+  "termination": {
+    "actions": [],
+    "exit_code": null
+  },
+  "terrain": "flat",
+  "working_directory": "/home/chayanin/Desktop/flyg1/stock_isaaclab_runs/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1/gates/memory_smoke_attempt_001/work/g1/flat"
+}

@@ -1,0 +1,74 @@
+{
+  "checkpoint": null,
+  "command": [
+    "/home/chayanin/Downloads/miniforge3/envs/env_isaaclab/bin/python",
+    "/home/chayanin/Downloads/IsaacLab/scripts/reinforcement_learning/rsl_rl/train.py",
+    "--task",
+    "Isaac-Velocity-Rough-G1-v0",
+    "--agent",
+    "rsl_rl_cfg_entry_point",
+    "--seed",
+    "0",
+    "--num_envs",
+    "1024",
+    "--max_iterations",
+    "1",
+    "--device",
+    "cuda:0",
+    "--logger",
+    "tensorboard",
+    "--run_name",
+    "seed_0",
+    "--headless"
+  ],
+  "duration_seconds": 6.56,
+  "exit_code": 1,
+  "expected_interactions": 24576,
+  "failure": "trainer_exit_code:1",
+  "generated_at_utc": "2026-09-19T07:54:24.392+00:00",
+  "hard_resource_failure": false,
+  "kind": "isaaclab_stock_locomotion_memory_smoke_task_v1",
+  "lingering_compute_processes": [],
+  "log": {
+    "path": "/home/chayanin/Desktop/flyg1/stock_isaaclab_runs/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1/gates/memory_smoke_attempt_001/logs/g1_rough.log",
+    "sha256": "6ff692479c21bcb5641a811a168e7581ea1a823a322ffd4cfff7fae12097c990",
+    "size_bytes": 9509
+  },
+  "max_iterations": 1,
+  "memory": {
+    "gpu_limit_mib_exclusive": 6963.2,
+    "max_device_gpu_used_mib": 1220.0,
+    "max_swap_used_mib": 746.73,
+    "max_system_ram_percent": 36.3,
+    "maximum_compute_process_count": 1,
+    "maximum_consecutive_swap_out_samples": 1,
+    "observed_owned_compute_pids": [
+      1046307
+    ],
+    "owned_compute_sample_count": 9,
+    "poll_interval_seconds": 0.5,
+    "ram_limit_percent_exclusive": 90.0,
+    "sample_count": 13,
+    "sustained_paging_detected": false
+  },
+  "native_artifacts": null,
+  "num_envs": 1024,
+  "passed": false,
+  "robot": "g1",
+  "schema_version": 1,
+  "seed": 0,
+  "started_at_utc": "2026-09-19T07:54:17.832+00:00",
+  "status": "failed",
+  "task": "Isaac-Velocity-Rough-G1-v0",
+  "telemetry": {
+    "path": "/home/chayanin/Desktop/flyg1/stock_isaaclab_runs/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1/gates/memory_smoke_attempt_001/telemetry/g1_rough.csv",
+    "sha256": "d8d9d1edc55f732e473141a7590d0dddb78eea2081564b1637abfed8db5e699d",
+    "size_bytes": 1776
+  },
+  "termination": {
+    "actions": [],
+    "exit_code": null
+  },
+  "terrain": "rough",
+  "working_directory": "/home/chayanin/Desktop/flyg1/stock_isaaclab_runs/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1/gates/memory_smoke_attempt_001/work/g1/rough"
+}
