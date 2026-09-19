@@ -1,0 +1,102 @@
+{
+  "candidate_thresholds": [
+    0.02,
+    0.03,
+    0.04,
+    0.05,
+    0.06,
+    0.08,
+    0.1
+  ],
+  "generated_at_utc": "2026-09-16T11:24:38+00:00",
+  "interpretation": "Engineering activity calibration only; not fly physiology or flight evidence.",
+  "manifest": "/home/chayanin/Desktop/flyg1/data/connectome_wing_precalibration/manifest.json",
+  "manifest_sha256": "22092ccbf958a08402bf3e201b9385e93ed5ce29007ddadf4639d1f6858e0124",
+  "probe": {
+    "batch_size": 8,
+    "control_steps": 100,
+    "input_current_bounds": [
+      0.04,
+      0.1
+    ],
+    "input_current_formula": "0.04 + 0.03*(sin(batch*0.37 + input*0.19 + step*0.11)+1)"
+  },
+  "results": [
+    {
+      "dead_neuron_fraction": 0.08203125,
+      "global_mean_rate": 0.41196775436401367,
+      "input_mean_rate": 0.40187498927116394,
+      "motor_mean_rate": 0.48343753814697266,
+      "passed_activity_gates": false,
+      "saturated_neuron_fraction": 0.00390625,
+      "threshold": 0.02
+    },
+    {
+      "dead_neuron_fraction": 0.0859375,
+      "global_mean_rate": 0.3798193037509918,
+      "input_mean_rate": 0.3950781524181366,
+      "motor_mean_rate": 0.4375000298023224,
+      "passed_activity_gates": false,
+      "saturated_neuron_fraction": 0.0078125,
+      "threshold": 0.03
+    },
+    {
+      "dead_neuron_fraction": 0.6640625,
+      "global_mean_rate": 0.09053222835063934,
+      "input_mean_rate": 0.3350781202316284,
+      "motor_mean_rate": 0.017031250521540642,
+      "passed_activity_gates": true,
+      "saturated_neuron_fraction": 0.0,
+      "threshold": 0.04
+    },
+    {
+      "dead_neuron_fraction": 0.69921875,
+      "global_mean_rate": 0.08295898139476776,
+      "input_mean_rate": 0.33101558685302734,
+      "motor_mean_rate": 0.011250000447034836,
+      "passed_activity_gates": true,
+      "saturated_neuron_fraction": 0.0,
+      "threshold": 0.05
+    },
+    {
+      "dead_neuron_fraction": 0.703125,
+      "global_mean_rate": 0.07722656428813934,
+      "input_mean_rate": 0.32527345418930054,
+      "motor_mean_rate": 0.004583333153277636,
+      "passed_activity_gates": false,
+      "saturated_neuron_fraction": 0.00390625,
+      "threshold": 0.06
+    },
+    {
+      "dead_neuron_fraction": 0.7421875,
+      "global_mean_rate": 0.06503906846046448,
+      "input_mean_rate": 0.31031250953674316,
+      "motor_mean_rate": 0.0,
+      "passed_activity_gates": false,
+      "saturated_neuron_fraction": 0.0,
+      "threshold": 0.08
+    },
+    {
+      "dead_neuron_fraction": 1.0,
+      "global_mean_rate": 0.0,
+      "input_mean_rate": 0.0,
+      "motor_mean_rate": 0.0,
+      "passed_activity_gates": false,
+      "saturated_neuron_fraction": 0.0,
+      "threshold": 0.1
+    }
+  ],
+  "schema_version": 1,
+  "selected_metrics": {
+    "dead_neuron_fraction": 0.6640625,
+    "global_mean_rate": 0.09053222835063934,
+    "input_mean_rate": 0.3350781202316284,
+    "motor_mean_rate": 0.017031250521540642,
+    "passed_activity_gates": true,
+    "saturated_neuron_fraction": 0.0,
+    "threshold": 0.04
+  },
+  "selected_threshold": 0.04,
+  "selection_rule": "Among candidates passing input_mean_rate in [0.05,0.50], motor_mean_rate in [0.005,0.10], global_mean_rate in [0.005,0.20], dead_neuron_fraction <=0.75, and saturated_neuron_fraction <=0.05, minimize abs(motor_mean_rate-0.02); tie-break by higher threshold.",
+  "status": "PASS"
+}

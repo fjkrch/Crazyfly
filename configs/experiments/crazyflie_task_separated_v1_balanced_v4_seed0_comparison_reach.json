@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "label": "comparison",
+  "matrix_layout": "task_separated_v1_comparison_cell",
+  "execution_readiness": "authorized_balanced_v4_seed0_1m_comparison_v1",
+  "base_config": "configs/experiments/crazyflie_task_separated_v1_balanced_v4_seed0_comparison_base.json",
+  "parent_config": "configs/experiments/crazyflie_task_separated_v1_balanced_v4_seed0_comparison.json",
+  "task": "FlyCrazyflie-WaypointReach-v0"
+}

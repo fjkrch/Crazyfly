@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "algorithm": "sha256",
+  "generated_at_utc": "2026-09-19T06:59:43+00:00",
+  "workspace": "/home/chayanin/Desktop/flyg1",
+  "scope": "Additive revision-3/revision-4 configs, supervisors, evaluator, reporter, plan, and tests that are intentionally outside execution_source_paths().",
+  "execution_before_manifest": {
+    "path": "docs/crazyflie_command_combinations_source_sha256_before.json",
+    "sha256": "35c83ddc9a0c17fbff1bc566f0e91cc708d4f2bf9618c5678e94c12a8b3e478a"
+  },
+  "file_count": 17,
+  "created_after_before_count": 13,
+  "pre_existing_uncaptured_count": 4,
+  "additive_file_set_sha256": "d4325161b63aad1acdf27d98ded31693309c4c974109311f72878163a0bcafae",
+  "files": [
+    {
+      "path": "plan.md",
+      "role": "active_plan_and_canonical_commands",
+      "capture_status": "pre_existing_not_covered_by_execution_before_manifest",
+      "sha256": "4061d52ff1d1006656d20ef469829b13c167af35c0803da0b2b8bfe368a96e00",
+      "active_revision_4_input": true
+    },
+    {
+      "path": "configs/experiments/crazyflie_command_combinations_seed0_1m.json",
+      "role": "preserved_revision_3_config",
+      "capture_status": "created_after_execution_before_manifest",
+      "sha256": "34df6d0480634f48bc9c86acb43e169406ee54e8b1017459ac9668d3f19d1223",
+      "active_revision_4_input": false
+    },
+    {
+      "path": "configs/experiments/crazyflie_command_all_fair_seed0_1m.json",
+      "role": "preserved_inactive_early_name_draft",
+      "capture_status": "created_after_execution_before_manifest",
+      "sha256": "3279c1726d5a0236291ce464a00671953cca4b3f08fb8af115be85b866643f79",
+      "active_revision_4_input": false,
+      "disposition": "preserved_inactive_never_executed"
+    },
+    {
+      "path": "configs/experiments/crazyflie_command_all_fair_seeds0_1_2_1m.json",
+      "role": "active_revision_4_config",
+      "capture_status": "created_after_execution_before_manifest",
+      "sha256": "96be75b06a4233c49c3cf964ca63d7cb581b0059a4bbbd858f3c2067199d91d7",
+      "active_revision_4_input": true
+    },
+    {
+      "path": "scripts/crazyflie_command_evaluate.py",
+      "role": "heldout_evaluator_with_action_forward_latency",
+      "capture_status": "pre_existing_not_covered_by_execution_before_manifest",
+      "sha256": "98144c1d7c413189f9a21a8d0861f4fd9321a94b8b302500594a8d5b31879a37",
+      "active_revision_4_input": true,
+      "independently_captured_prior_sha256": "c8fdd6957f42e465a365e62d3e8af83a65acea85a540d7cfdf748bad7deb3a7b"
+    },
+    {
+      "path": "scripts/crazyflie_command_combinations_queue_v3.py",
+      "role": "preserved_revision_3_queue_helper",
+      "capture_status": "created_after_execution_before_manifest",
+      "sha256": "3a4b5c320a244c2961e29e1ad57b8529ff309e8b3aab38eccb1c250c634b9d93",
+      "active_revision_4_input": false
+    },
+    {
+      "path": "scripts/crazyflie_command_combinations_report.py",
+      "role": "preserved_revision_3_report_helper",
+      "capture_status": "created_after_execution_before_manifest",
+      "sha256": "8f2b6f0ad4cc77376f8e4c7024fcc4e5d824d9c57c85d4c427cbee54aa57a9d3",
+      "active_revision_4_input": false
+    },
+    {
+      "path": "scripts/crazyflie_command_all_fair_queue_v4.py",
+      "role": "active_failure_isolated_revision_4_queue",
+      "capture_status": "created_after_execution_before_manifest",
+      "sha256": "29d9e85ef14046882f8c624cdf2cea81ba1c6aee771a7d6beae41e2ff6da8c41",
+      "active_revision_4_input": true
+    },
+    {
+      "path": "scripts/crazyflie_command_all_fair_report_v4.py",
+      "role": "active_fail_closed_revision_4_reporter",
+      "capture_status": "created_after_execution_before_manifest",
+      "sha256": "568ea7d45a8765642b304ed360472637878007d05b48a208c9f104aa827368ab",
+      "active_revision_4_input": true
+    },
+    {
+      "path": "tests/unit/test_crazyflie_combination_controllers.py",
+      "role": "multi_connectome_controller_tests",
+      "capture_status": "created_after_execution_before_manifest",
+      "sha256": "26f1f1f5f664f58b4506bd7dd6519cfa62ed13df2593469bd9fbdc5c82e750ed",
+      "active_revision_4_input": false
+    },
+    {
+      "path": "tests/unit/test_crazyflie_combination_interfaces.py",
+      "role": "multi_connectome_interface_tests",
+      "capture_status": "created_after_execution_before_manifest",
+      "sha256": "23f3480dfb90cc3ffb2c4dd490cea64fb99529d771c3d3a19da4c43400f6f1fe",
+      "active_revision_4_input": false
+    },
+    {
+      "path": "tests/unit/test_crazyflie_command_evaluator.py",
+      "role": "evaluator_and_latency_tests",
+      "capture_status": "pre_existing_not_covered_by_execution_before_manifest",
+      "sha256": "63db730dc3b9e538e2f51d4f79fc27cdd21953c1b65906b760fde63dc8c35f5a",
+      "active_revision_4_input": false
+    },
+    {
+      "path": "tests/unit/test_crazyflie_command_combinations_queue_v3.py",
+      "role": "revision_3_queue_tests",
+      "capture_status": "created_after_execution_before_manifest",
+      "sha256": "5568d617ac773471af1cd1e1c4a3f7394764c3470a404cb2140564b57b33b80c",
+      "active_revision_4_input": false
+    },
+    {
+      "path": "tests/unit/test_crazyflie_command_combinations_report.py",
+      "role": "revision_3_report_tests",
+      "capture_status": "created_after_execution_before_manifest",
+      "sha256": "7b78889aa290fd8fa1b582c11ee465ee74e56142331ed7837a9c14e270358099",
+      "active_revision_4_input": false
+    },
+    {
+      "path": "tests/unit/test_crazyflie_command_wide_wind.py",
+      "role": "reset_invariant_command_and_wind_schedule_tests",
+      "capture_status": "pre_existing_not_covered_by_execution_before_manifest",
+      "sha256": "cbdcc1227d5c2ce0fc684eb4d52f997bddebf23c66a22d74c228145572ff6323",
+      "active_revision_4_input": false
+    },
+    {
+      "path": "tests/unit/test_crazyflie_command_all_fair_queue_v4.py",
+      "role": "revision_4_queue_and_failure_isolation_tests",
+      "capture_status": "created_after_execution_before_manifest",
+      "sha256": "e313450ab5e82c2f5f25194f553872d46a1b0c6b920a49eb71f191197638407f",
+      "active_revision_4_input": false
+    },
+    {
+      "path": "tests/unit/test_crazyflie_command_all_fair_report_v4.py",
+      "role": "revision_4_reporter_tests",
+      "capture_status": "created_after_execution_before_manifest",
+      "sha256": "6fd5d2344f403a7aca71b3276790c768bf325670195f6508eaf43ce9739edf38",
+      "active_revision_4_input": false
+    }
+  ],
+  "changed_execution_source_file_count": 7,
+  "changed_or_additive_union_file_count": 24,
+  "changed_or_additive_union_sha256": "7daebdb486ea5d49b46d9eb8713da86a4df02c6af5d7d4bcc6ad470d84dbc476",
+  "changed_execution_source_files": {
+    "scripts/drone_smoke_env.py": "d11f16cbdec3f862e4ba8b7efd5a75b7672cd3947d5573e960d2734c2630555b",
+    "scripts/drone_train.py": "06c64dd15badfaca790de179feecb0ca2d5a00851f253b57bb469988f701dda4",
+    "source/g1_fly_control/g1_fly_control/crazyflie/controllers.py": "3f98ad75c159b0091dcc6a1a54eb2ab1f6221540d01417111d21617fc05650d6",
+    "source/g1_fly_control/g1_fly_control/crazyflie/trained_keyboard.py": "920c24ef55079f3b82cea4fc1183ea8588a3995f2605de435ea5d40ddc066e5c",
+    "source/g1_fly_control/g1_fly_control/tasks/crazyflie/command_env.py": "7693274685d5e10316f5df979b4cc533893e094a662776e7a73db4081093bc53",
+    "source/g1_fly_control/g1_fly_control/tasks/crazyflie/command_wide_env.py": "cbd0028f15ecfb4e94d3dbec840d4524c9ac9041f922c68f5cb543d7c40a11c0",
+    "source/g1_fly_control/g1_fly_control/tasks/crazyflie/command_wide_logic.py": "26444baca95bd316044cd13147403f5d6ace0c3311abb155924f11586894fa0f"
+  },
+  "preservation_receipts": {
+    "historical_v2_config_sha256": "bf7369d74d119784eb6a932cbeb57734fa93b7fdda5457e3e46decfb6f140c44",
+    "historical_v2_runner_sha256": "16d7035665045ebd2128a3b369e98f49828d9f3b5c3da0685a377c9cb8447dd4",
+    "historical_v2_queue_sha256": "68f4fee83d659edb439691aa79c5f4b6decc610c1e35e869b1caddd04cf5bddc",
+    "historical_v2_report_sha256": "7988eabbb82c710dda724f36bfb19852439cafd984562b997ef238d41b7a6fed",
+    "preserved_v3_config_sha256": "34df6d0480634f48bc9c86acb43e169406ee54e8b1017459ac9668d3f19d1223",
+    "preserved_v3_runner_sha256": "3a4b5c320a244c2961e29e1ad57b8529ff309e8b3aab38eccb1c250c634b9d93",
+    "preserved_v3_report_sha256": "8f2b6f0ad4cc77376f8e4c7024fcc4e5d824d9c57c85d4c427cbee54aa57a9d3"
+  },
+  "generated_artifacts_excluded": [
+    "runs/",
+    "queue.json",
+    "queue_summary.json",
+    "training checkpoints",
+    "held-out evaluations",
+    "plots and completed result reports"
+  ]
+}

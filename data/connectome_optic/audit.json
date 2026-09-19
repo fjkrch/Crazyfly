@@ -1,0 +1,91 @@
+{
+  "candidate_cross_edges_raw": {
+    "intrinsic_projection": 1461723,
+    "sensory_intrinsic": 24760
+  },
+  "candidate_neurons": {
+    "intrinsic": 68472,
+    "projection": 9201,
+    "sensory": 3498
+  },
+  "checks": {
+    "all_inputs_reach_output": true,
+    "all_neurons_on_input_output_path": true,
+    "all_outputs_reached": true,
+    "bilateral_population_balance": true,
+    "finite_nonzero_model_weights": true,
+    "fixed_size_256": true,
+    "genuine_superclass_roles": true,
+    "known_source_signs": true,
+    "no_projection_origin_edges": true,
+    "no_self_loops": true,
+    "pinned_source_sha256": true
+  },
+  "derived_counts": {
+    "edges": 1628,
+    "excitatory_edges": 1220,
+    "inhibitory_edges": 408,
+    "input_path_coverage": 32,
+    "intrinsic": 200,
+    "neurons": 256,
+    "neurons_on_input_output_paths": 256,
+    "output_path_coverage": 24,
+    "projection_outputs": 24,
+    "sensory_inputs": 32
+  },
+  "derived_sha256": {
+    "edges": "fd90fb669609453ab997b92ba80c46f576aa2d9cac3c7244b1fd7eab64772789",
+    "neurons": "4c3ef5e2f84b5783e9350be687e6db6af4a345ff5770492c262c861e2cbaba19"
+  },
+  "manifest_sha256": "cfd74b31641a4d880280e0db061feb50c61f713c70cbd9d9ef1ed02e73ba79b8",
+  "role_counts": {
+    "optic_intrinsic_interneuron": 200,
+    "optic_sensory_input": 32,
+    "visual_projection_output": 24
+  },
+  "selected_induced_edges_raw": 1728,
+  "selection_fingerprint": "5a3ddf1bca1028656b9fd1571426e91e7ff308002c125c220282d4041c7d73b9",
+  "side_counts": {
+    "intrinsic_soma_side": {
+      "L": 100,
+      "R": 100
+    },
+    "projection_soma_side": {
+      "L": 12,
+      "R": 12
+    },
+    "sensory_root_side": {
+      "L": 16,
+      "R": 16
+    }
+  },
+  "source_rows": {
+    "annotations": 211577,
+    "connectivity": 151856684,
+    "neurotransmitters": 1835518
+  },
+  "source_sha256": {
+    "annotations": "2177e246113e4cfbf1e7772ec37c6da1955ff22e8063d0b1f833101f99a9a3b2",
+    "connectivity": "e35da783d1c686b2b58b3b87cd6a403ae43bfcfba8bff28e08ef752c1a56afc1",
+    "neurotransmitters": "95c9289220663abeb3409f3ad9e5a7f8a53f8093f5139d15502cd08da8879621"
+  },
+  "status": "PASS",
+  "weight_and_sign_assumptions": {
+    "caveat": "The transform preserves directed topology, raw-count ordering within each postsynaptic normalization, and declared model sign; it does not estimate biophysical conductance.",
+    "mapping": "Model assumption, not measured conductance: histamine=-1, GABA=-1, ACh=+1; weight=sign*0.5*log1p(raw_synapse_count)/sum_incoming(log1p(count)) per selected post. visual_projection cells are terminal readouts.",
+    "signs": {
+      "acetylcholine": {
+        "interpretation": "excitatory model current",
+        "sign": 1
+      },
+      "gaba": {
+        "interpretation": "inhibitory model current",
+        "sign": -1
+      },
+      "histamine": {
+        "interpretation": "inhibitory photoreceptor model current; receptor details are not represented",
+        "sign": -1
+      }
+    }
+  }
+}

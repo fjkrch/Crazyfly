@@ -1,0 +1,436 @@
+{
+  "action_contract": {
+    "control_dt_s": 0.02,
+    "control_frequency_hz": 50.0,
+    "mapping": {
+      "body_moments": "a[1:4] * 0.01 N m",
+      "collective_thrust": "(a0 + 1) / 2 * 1.9 * vehicle_weight along body +Z"
+    },
+    "names": [
+      "collective_thrust",
+      "body_moment_x",
+      "body_moment_y",
+      "body_moment_z"
+    ],
+    "policy_range": [
+      -1.0,
+      1.0
+    ],
+    "width": 4
+  },
+  "asset": {
+    "configuration": "isaaclab_assets.CRAZYFLIE_CFG",
+    "resolved_source_kind": "Isaac Nucleus identifier",
+    "usd_identifier": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/Bitcraze/Crazyflie/cf2x.usd"
+  },
+  "checks": {
+    "action_width_4": true,
+    "control_dt_0.02_s": true,
+    "crazyflie_cf2x_asset": true,
+    "decimation_2": true,
+    "gust_duration_5_control_10_physics_steps_0.10_s": true,
+    "gust_physical_response_tolerance_predeclared": true,
+    "gust_world_frame_center_of_mass_contract": true,
+    "instantaneous_gust_wrench_api_available": true,
+    "live_step_finite": true,
+    "moment_scale_0.01_n_m": true,
+    "native_goal_bounds_pinned": true,
+    "native_height_termination_pinned": true,
+    "native_horizon_10_s": true,
+    "native_task_registered": true,
+    "observation_width_12": true,
+    "physics_dt_0.01_s": true,
+    "positive_finite_mass": true,
+    "project_task_ids_registered_without_shadowing_native": true,
+    "thrust_to_weight_1.9": true
+  },
+  "fingerprint": "ae0cafd55421d960c56e0a03a0fc979bb7a5c0f810d4db3068c0d8f0ac116231",
+  "fingerprint_payload": {
+    "action_contract": {
+      "control_dt_s": 0.02,
+      "control_frequency_hz": 50.0,
+      "mapping": {
+        "body_moments": "a[1:4] * 0.01 N m",
+        "collective_thrust": "(a0 + 1) / 2 * 1.9 * vehicle_weight along body +Z"
+      },
+      "names": [
+        "collective_thrust",
+        "body_moment_x",
+        "body_moment_y",
+        "body_moment_z"
+      ],
+      "policy_range": [
+        -1.0,
+        1.0
+      ],
+      "width": 4
+    },
+    "connectome": null,
+    "evaluation_manifest_sha256": null,
+    "observation_contract": {
+      "clipping": [
+        -5.0,
+        5.0
+      ],
+      "names": [
+        "body_linear_velocity_x_m_s",
+        "body_linear_velocity_y_m_s",
+        "body_linear_velocity_z_m_s",
+        "body_angular_velocity_x_rad_s",
+        "body_angular_velocity_y_rad_s",
+        "body_angular_velocity_z_rad_s",
+        "projected_gravity_x",
+        "projected_gravity_y",
+        "projected_gravity_z",
+        "body_goal_displacement_x_m",
+        "body_goal_displacement_y_m",
+        "body_goal_displacement_z_m"
+      ],
+      "normalization": "immutable per-dimension physics scaling; no training updates",
+      "normalization_kind": "fixed_physics_scale_v1",
+      "normalization_scale": [
+        2.0,
+        2.0,
+        2.0,
+        5.0,
+        5.0,
+        5.0,
+        1.0,
+        1.0,
+        1.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "normalization_update_rule": "immutable_no_updates",
+      "ordering": "upstream Isaac-Quadcopter-Direct-v0",
+      "width": 12
+    },
+    "resolved_config": {
+      "kind": "installed_asset_audit",
+      "live_steps": 1,
+      "num_envs": 1,
+      "seed": 0,
+      "task": "Isaac-Quadcopter-Direct-v0"
+    },
+    "rewired_manifest_sha256": null,
+    "runtime": {
+      "isaaclab_commit": "b4c321024792976150ca55fddb26fa34480d974e",
+      "nvidia_smi": "NVIDIA GeForce RTX 5060 Laptop GPU, 580.173.02, 8151",
+      "packages": {
+        "gymnasium": "1.2.1",
+        "isaaclab": "0.54.4",
+        "isaaclab-assets": "0.2.4",
+        "isaaclab-tasks": "0.11.16",
+        "isaacsim": "5.1.0.0",
+        "numpy": "1.26.0",
+        "python": "3.11.15",
+        "torch": "2.7.0+cu128"
+      },
+      "platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.39",
+      "torch": {
+        "cuda_available": true,
+        "cuda_runtime": "12.8",
+        "gpu_name": "NVIDIA GeForce RTX 5060 Laptop GPU"
+      }
+    },
+    "schema_version": 1,
+    "source_sha256": {
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab/isaaclab/envs/direct_rl_env.py": "3a7573303d83ec8c816d11ca6e8c8997c92f6765ae5d2e0d2a369e65d2cec3c0",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab/isaaclab/utils/math.py": "881ab27758816475e26d6721bab22c934fd70d0c064392266a90b06f5bbe4149",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_assets/isaaclab_assets/robots/quadcopter.py": "b36ebdc4a75c670cf503496734c022ade078c77f9d4c68dcd2e1fe6d8a620c72",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/direct/quadcopter/__init__.py": "1cd4d4087adfd9ba2cf8b7968fa492f9c35235463d469b5e703f393c7809f8c2",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/direct/quadcopter/quadcopter_env.py": "b78a48cdb04f4a215dded24c195f14818fd5fb43f6e682eeaa1a057fc6c77f23",
+      "scripts/drone_bootstrap.py": "be6b401a7e907d9df3b48b2895f9bb56f9e63ccbb633b8148ec65f8488024df1",
+      "scripts/drone_evaluate.py": "e4338c45aa0b42d1b61c6f2b38446c7d0cd9cecda1e94bd6e506ee6155f8a0ae",
+      "scripts/drone_evaluation_protocol.py": "1d46c66f2d139db2604db79b56d15245ca4acc596a3f8c0ee543fd3c6bd7b18f",
+      "scripts/drone_inspect_asset.py": "3e6f240f698b3902cd64855269169d588a2b72e80d5229b018d94d6101b96cf8",
+      "scripts/drone_monitor_matrix.py": "b2defdf58c2ec78370ba3e643eb8840916175ccf02a86a4f7e122b7dc93021a7",
+      "scripts/drone_play.py": "b230b9510fe4df172a26ff477839b2bb437b6994b153dad85260d0de5d999fee",
+      "scripts/drone_record.py": "ae4ad19ea556c094f3571212a8cef5d74ad489d4342817207facbb9eb3af758b",
+      "scripts/drone_run_matrix.py": "37a52f1bddd5f7249175ec0e3c4fa7711bb95de8c1201320174d180c0ec4b763",
+      "scripts/drone_smoke_env.py": "1e5e143d15d8ccc372eac85126bc26271072252b3d006cdd3b4b1838ec550c48",
+      "scripts/drone_summarize_matrix.py": "cee0a9049b9344b4dc637cb4c61dc9c8d2cc7b7f013237539a246c318b7108ce",
+      "scripts/drone_train.py": "d9b58f4a770e35616d946cd136d6b78e00bb3b1c896fbad5cb680889cf8aba67",
+      "scripts/drone_verify_lif_proof.py": "5a5d2e54c6994f9bd9228e1cc39072e242339ec623bece18fc6f1c72a95936b6",
+      "scripts/drone_visualize_lif.py": "00464b2cbfb72e4ac83b389e7b3a31563434ce50598046bac8700ddd6e92fd64",
+      "scripts/drone_wing_run_matrix.py": "2308ed66ed2144250f9ec72d06e81a96d0eba8d9c665594067508a52840fa561",
+      "scripts/execute_drone_integration.sh": "c9512e7a911677f61bdfc70c8190e5135d14432ec3775f5c13e03c6572ba3cca",
+      "scripts/execute_drone_matrix.sh": "8da68d88c5b40d7b1a5c9731b8db9a3dce147ceaa37f7b0c874470cec31f2d10",
+      "source/g1_fly_control/g1_fly_control/__init__.py": "7a7314373a91a39ce1b4011e3f2cbbc2fb75e331b728d74247b1f5aef9422c9e",
+      "source/g1_fly_control/g1_fly_control/connectome/__init__.py": "7d362b7e5617ba74838c26780aace93cc646c060d73fdc27365f09ed5ec637d3",
+      "source/g1_fly_control/g1_fly_control/connectome/loader.py": "58fb0ae8fd3bd47b09d888d769d53c806eca8b82cece2c2539895edb5c0c169b",
+      "source/g1_fly_control/g1_fly_control/connectome/rewire.py": "8cdf1a1c8cb15a309e298d5797048f0372c21e987895132465a34ce3a61e5f51",
+      "source/g1_fly_control/g1_fly_control/connectome/schema.py": "26d132bcd68fa5ff0fd26521c6d0df634201d88f23241c9e77228bee965a71f0",
+      "source/g1_fly_control/g1_fly_control/crazyflie/__init__.py": "a72bb81519007782040b9b6e8452bd44763d4782b78bcf3323ffaf4d25250bbf",
+      "source/g1_fly_control/g1_fly_control/crazyflie/checkpoint.py": "b5c22ad83ee3b1b222d12a94ff75ff0be7f6bfe3e7b8f75e6bc8212c0a281903",
+      "source/g1_fly_control/g1_fly_control/crazyflie/controllers.py": "47fb7ceb14ae64a7bbb29edf1b917f9afec632104f5983e5ac300d1397db0eef",
+      "source/g1_fly_control/g1_fly_control/crazyflie/lif_activity.py": "abd10b2492abca7dbf8b6005bccc910790599b9e5b4edfafedcb8f2be5f54efe",
+      "source/g1_fly_control/g1_fly_control/crazyflie/memory.py": "95d42dc190be1de16b5a66fb80992b086b90494d945cb22b54872ccdca7bb4de",
+      "source/g1_fly_control/g1_fly_control/crazyflie/normalization.py": "aa10483c6ddbdea17f6f7079f565f2fbb99680a605e9c0198dce721c34b2a3c5",
+      "source/g1_fly_control/g1_fly_control/crazyflie/stabilization.py": "ae4ca4cb108abdbd9161e800aec7d96bda84ccd2ad56557cd2c2f354e710d923",
+      "source/g1_fly_control/g1_fly_control/policies/__init__.py": "9566d9191d16909267154dc0211b0819653d27e0cc77b72160c1512eafc95a1f",
+      "source/g1_fly_control/g1_fly_control/policies/actor_critic.py": "f058fb414d575813a95181d74d662e5a2f6abf4a319906b1991f6dd74f04cbf4",
+      "source/g1_fly_control/g1_fly_control/policies/gru.py": "422fd51a213b5f30a4048d6e66ae33d1ca774a325b7ef5c942ed26d8103d058e",
+      "source/g1_fly_control/g1_fly_control/policies/lif_core.py": "3e7b9c397142620c2b3378ece627ecaf9e9d56e3ec4e536ed6af3905451972e4",
+      "source/g1_fly_control/g1_fly_control/tasks/__init__.py": "cf596a7b04498644c2b72b3c96ee7864e093dbc1d49124ec5c5a89fcb4194a07",
+      "source/g1_fly_control/g1_fly_control/tasks/crazyflie/__init__.py": "b98c16e38b13b04a7357fad5e6e87c77ba037a93212708087f46b4e2395559cf",
+      "source/g1_fly_control/g1_fly_control/tasks/crazyflie/adapter.py": "ec89cee47c93a8c41d4d7c8780e46cfa31e49b97700191f3bff915c8aff1b09b",
+      "source/g1_fly_control/g1_fly_control/tasks/crazyflie/env.py": "1a15366ca45301b49f910a7b4acf7ea5d6eefb9531484b84e00e487d4c627a80",
+      "source/g1_fly_control/g1_fly_control/tasks/crazyflie/env_cfg.py": "13e9c2e91bfa608bddb76dc33290496728a616a641074499096dfbb87674097d",
+      "source/g1_fly_control/g1_fly_control/tasks/crazyflie/logic.py": "966e590f98e164225eeb72e229c62fa7d42faae58b2c8e04a4c187300d417f41",
+      "source/g1_fly_control/g1_fly_control/tasks/crazyflie/metrics.py": "a943c245382bd74cb2e26729c80642e4ddab2e656913094e8ad2e381d3555a92",
+      "source/g1_fly_control/g1_fly_control/tasks/crazyflie/registration.py": "0c0ec4aae2c3b4757682658a1e3387eaf168a7e2a4290c30a10bbe630ff1af9f",
+      "source/g1_fly_control/g1_fly_control/training/__init__.py": "3e8c0a48fd54f1d7ddf833a2237b01578054014f498ea026c2cc530a6586344f",
+      "source/g1_fly_control/g1_fly_control/training/checkpoint.py": "12c4a720c2cc3db7bd59c0a9160c45d1c90650f2074b13fd94721e5c742e3711",
+      "source/g1_fly_control/g1_fly_control/training/recurrent_storage.py": "3705f6aef988f5a5159fabd4b8547b18414c829ae77e6279a9c7f6f94ff377a5",
+      "source/g1_fly_control/g1_fly_control/training/runner.py": "a61cc1695cd4887452eb72be9fcbdbc2e5f425e9af0c98db687afe1835e5ea54"
+    },
+    "upstream": {
+      "asset_config_source": "/home/chayanin/Downloads/IsaacLab/source/isaaclab_assets/isaaclab_assets/robots/quadcopter.py",
+      "asset_config_source_sha256": "b36ebdc4a75c670cf503496734c022ade078c77f9d4c68dcd2e1fe6d8a620c72",
+      "asset_package": "isaaclab-assets",
+      "asset_package_version": "0.2.4",
+      "direct_rl_env_source": "/home/chayanin/Downloads/IsaacLab/source/isaaclab/isaaclab/envs/direct_rl_env.py",
+      "direct_rl_env_source_sha256": "3a7573303d83ec8c816d11ca6e8c8997c92f6765ae5d2e0d2a369e65d2cec3c0",
+      "environment_source": "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/direct/quadcopter/quadcopter_env.py",
+      "math_source": "/home/chayanin/Downloads/IsaacLab/source/isaaclab/isaaclab/utils/math.py",
+      "math_source_sha256": "881ab27758816475e26d6721bab22c934fd70d0c064392266a90b06f5bbe4149",
+      "resolved_usd_url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/Bitcraze/Crazyflie/cf2x.usd",
+      "task_id": "Isaac-Quadcopter-Direct-v0"
+    }
+  },
+  "generated_at_utc": "2026-09-17T07:13:44+00:00",
+  "limitations": [
+    "Simulator state observations are not asserted to be available on physical hardware.",
+    "The aggregate-wrench interface does not expose individual motor commands.",
+    "This leg/VNC-derived circuit is not a known biological flight circuit."
+  ],
+  "live": {
+    "action_shape": [
+      4
+    ],
+    "body_id": 0,
+    "body_name": "body",
+    "control_dt_s": 0.02,
+    "control_frequency_hz": 50.0,
+    "decimation": 2,
+    "finite_after_live_step": true,
+    "gravity_m_s2": 9.8100004196167,
+    "mass_kg": 0.028200002387166023,
+    "maximum_collective_thrust_n": 0.5256198465824127,
+    "moment_scale_n_m": 0.01,
+    "native_action_wrench_api": "Articulation.permanent_wrench_composer.set_forces_and_torques",
+    "native_episode_horizon_s": 10.0,
+    "native_full_reset_episode_length_buf": [
+      42
+    ],
+    "observation_shape": [
+      1,
+      12
+    ],
+    "physics_dt_s": 0.01,
+    "single_observation_width": 12,
+    "terminated_after_live_step": false,
+    "thrust_to_weight": 1.9,
+    "truncated_after_live_step": false,
+    "weight_n": 0.2766420245170593,
+    "wrench_application_body": "body"
+  },
+  "native_task_id": "Isaac-Quadcopter-Direct-v0",
+  "observation_contract": {
+    "clipping": [
+      -5.0,
+      5.0
+    ],
+    "names": [
+      "body_linear_velocity_x_m_s",
+      "body_linear_velocity_y_m_s",
+      "body_linear_velocity_z_m_s",
+      "body_angular_velocity_x_rad_s",
+      "body_angular_velocity_y_rad_s",
+      "body_angular_velocity_z_rad_s",
+      "projected_gravity_x",
+      "projected_gravity_y",
+      "projected_gravity_z",
+      "body_goal_displacement_x_m",
+      "body_goal_displacement_y_m",
+      "body_goal_displacement_z_m"
+    ],
+    "normalization": "immutable per-dimension physics scaling; no training updates",
+    "normalization_kind": "fixed_physics_scale_v1",
+    "normalization_scale": [
+      2.0,
+      2.0,
+      2.0,
+      5.0,
+      5.0,
+      5.0,
+      1.0,
+      1.0,
+      1.0,
+      2.0,
+      2.0,
+      2.0
+    ],
+    "normalization_update_rule": "immutable_no_updates",
+    "ordering": "upstream Isaac-Quadcopter-Direct-v0",
+    "width": 12
+  },
+  "project_gust_contract": {
+    "api": "Articulation.instantaneous_wrench_composer.set_forces_and_torques",
+    "application_point": "body_center_of_mass_no_offset_argument",
+    "body_id": 0,
+    "body_name": "body",
+    "control_decisions": 5,
+    "control_dt_s": 0.02,
+    "duration_s": 0.1,
+    "expected_impulse": "robot_mass_kg * 0.75_m_s",
+    "force_frame": "world",
+    "is_global": true,
+    "physical_response_measurement": {
+      "absolute_tolerance_n_s": 0.0005,
+      "acceptance_rule": "vector_error <= max(absolute_tolerance, relative_tolerance * expected_norm)",
+      "method": "paired_identical_action_rollouts_same_live_environment_v1",
+      "quantity": "horizontal mass*delta_velocity(gust) minus horizontal mass*delta_velocity(no_gust_baseline)",
+      "relative_tolerance": 0.1
+    },
+    "physics_dt_s": 0.01,
+    "physics_steps": 10,
+    "raw_vehicle_response": "robot_mass_kg * (gust_end_velocity_w - gust_start_velocity_w)",
+    "submitted_impulse": "sum(world_force_n * physics_dt_s) over each physics step"
+  },
+  "project_task_ids": [
+    "FlyCrazyflie-WaypointReach-v0",
+    "FlyCrazyflie-WaypointSwitch-v0",
+    "FlyCrazyflie-GustRecovery-v0"
+  ],
+  "resolved_config": {
+    "kind": "installed_asset_audit",
+    "live_steps": 1,
+    "num_envs": 1,
+    "seed": 0,
+    "task": "Isaac-Quadcopter-Direct-v0"
+  },
+  "runtime": {
+    "isaaclab_commit": "b4c321024792976150ca55fddb26fa34480d974e",
+    "nvidia_smi": "NVIDIA GeForce RTX 5060 Laptop GPU, 580.173.02, 8151",
+    "packages": {
+      "gymnasium": "1.2.1",
+      "isaaclab": "0.54.4",
+      "isaaclab-assets": "0.2.4",
+      "isaaclab-tasks": "0.11.16",
+      "isaacsim": "5.1.0.0",
+      "numpy": "1.26.0",
+      "python": "3.11.15",
+      "torch": "2.7.0+cu128"
+    },
+    "platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.39",
+    "torch": {
+      "cuda_available": true,
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5060 Laptop GPU"
+    }
+  },
+  "schema_version": 1,
+  "sources": {
+    "crazyflie_asset_cfg": "/home/chayanin/Downloads/IsaacLab/source/isaaclab_assets/isaaclab_assets/robots/quadcopter.py",
+    "crazyflie_asset_cfg_sha256": "b36ebdc4a75c670cf503496734c022ade078c77f9d4c68dcd2e1fe6d8a620c72",
+    "direct_rl_env": "/home/chayanin/Downloads/IsaacLab/source/isaaclab/isaaclab/envs/direct_rl_env.py",
+    "direct_rl_env_sha256": "3a7573303d83ec8c816d11ca6e8c8997c92f6765ae5d2e0d2a369e65d2cec3c0",
+    "isaaclab_math": "/home/chayanin/Downloads/IsaacLab/source/isaaclab/isaaclab/utils/math.py",
+    "isaaclab_math_sha256": "881ab27758816475e26d6721bab22c934fd70d0c064392266a90b06f5bbe4149",
+    "quadcopter_env": "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/direct/quadcopter/quadcopter_env.py",
+    "quadcopter_env_sha256": "b78a48cdb04f4a215dded24c195f14818fd5fb43f6e682eeaa1a057fc6c77f23",
+    "quadcopter_registration": "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/direct/quadcopter/__init__.py",
+    "quadcopter_registration_sha256": "1cd4d4087adfd9ba2cf8b7968fa492f9c35235463d469b5e703f393c7809f8c2"
+  },
+  "status": "PASS",
+  "upstream_contract": {
+    "action_names": [
+      "normalized_collective_thrust",
+      "normalized_body_moment_x",
+      "normalized_body_moment_y",
+      "normalized_body_moment_z"
+    ],
+    "action_width": 4,
+    "asset_usd": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/Bitcraze/Crazyflie/cf2x.usd",
+    "body_moment_mapping": "0.01 N m * action[1:4] in the body frame",
+    "collective_thrust_mapping": "1.9 * vehicle_weight * (action[0] + 1) / 2 along body +Z",
+    "control_dt_s": 0.02,
+    "decimation": 2,
+    "entry_point": "isaaclab_tasks.direct.quadcopter.quadcopter_env:QuadcopterEnv",
+    "env_cfg_entry_point": "isaaclab_tasks.direct.quadcopter.quadcopter_env:QuadcopterEnvCfg",
+    "moment_scale_nm": 0.01,
+    "native_episode_length_s": 10.0,
+    "native_goal_bounds_relative_to_env_origin_m": {
+      "x": [
+        -2.0,
+        2.0
+      ],
+      "y": [
+        -2.0,
+        2.0
+      ],
+      "z": [
+        0.5,
+        1.5
+      ]
+    },
+    "native_height_termination_m": [
+      0.1,
+      2.0
+    ],
+    "native_task_id": "Isaac-Quadcopter-Direct-v0",
+    "normalized_action_bounds": [
+      -1.0,
+      1.0
+    ],
+    "observation_names": [
+      "body_linear_velocity_x",
+      "body_linear_velocity_y",
+      "body_linear_velocity_z",
+      "body_angular_velocity_x",
+      "body_angular_velocity_y",
+      "body_angular_velocity_z",
+      "projected_gravity_x",
+      "projected_gravity_y",
+      "projected_gravity_z",
+      "body_goal_displacement_x",
+      "body_goal_displacement_y",
+      "body_goal_displacement_z"
+    ],
+    "observation_width": 12,
+    "physics_dt_s": 0.01,
+    "source_paths": {
+      "crazyflie_asset": "/home/chayanin/Downloads/IsaacLab/source/isaaclab_assets/isaaclab_assets/robots/quadcopter.py",
+      "quadcopter_env": "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/direct/quadcopter/quadcopter_env.py",
+      "quadcopter_registration": "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/direct/quadcopter/__init__.py"
+    },
+    "source_sha256": {
+      "crazyflie_asset": "b36ebdc4a75c670cf503496734c022ade078c77f9d4c68dcd2e1fe6d8a620c72",
+      "quadcopter_env": "b78a48cdb04f4a215dded24c195f14818fd5fb43f6e682eeaa1a057fc6c77f23",
+      "quadcopter_registration": "1cd4d4087adfd9ba2cf8b7968fa492f9c35235463d469b5e703f393c7809f8c2"
+    },
+    "thrust_to_weight": 1.9,
+    "versions": {
+      "gymnasium": "1.2.1",
+      "isaaclab": "0.54.4",
+      "isaaclab_assets": "0.2.4",
+      "isaaclab_tasks": "0.11.16",
+      "isaacsim": "5.1.0.0",
+      "python": "3.11.15",
+      "torch": "2.7.0+cu128"
+    }
+  },
+  "versions": {
+    "gymnasium": "1.2.1",
+    "isaaclab": "0.54.4",
+    "isaaclab-assets": "0.2.4",
+    "isaaclab-tasks": "0.11.16",
+    "isaacsim": "5.1.0.0",
+    "numpy": "1.26.0",
+    "python": "3.11.15",
+    "torch": "2.7.0+cu128"
+  }
+}

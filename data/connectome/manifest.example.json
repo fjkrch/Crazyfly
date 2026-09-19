@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "status": "real",
+  "source_release": "REPLACE_WITH_AUTHORIZED_RELEASE",
+  "extraction_rule": "REPLACE_WITH_QUERY_OR_RULE",
+  "neuron_subset": "REPLACE_WITH_STABLE_SUBSET_DESCRIPTION",
+  "input_neuron_ids": ["REPLACE_WITH_INPUT_NEURON_ID"],
+  "output_neuron_ids": ["REPLACE_WITH_OUTPUT_NEURON_ID"],
+  "duplicate_edge_policy": "sum",
+  "weight_mapping": "REPLACE_WITH_DECLARED_MODEL_MAPPING",
+  "neuron_model": {
+    "dt": 0.002,
+    "tau_membrane": 0.02,
+    "tau_synapse": 0.01,
+    "threshold": 1.0,
+    "reset_value": 0.0,
+    "refractory_steps": 1,
+    "surrogate_beta": 10.0,
+    "neural_substeps": 5
+  },
+  "neurons_path": "neurons.json",
+  "edges_path": "edges.json",
+  "checksums": {
+    "neurons": "REPLACE_WITH_SHA256",
+    "edges": "REPLACE_WITH_SHA256"
+  }
+}

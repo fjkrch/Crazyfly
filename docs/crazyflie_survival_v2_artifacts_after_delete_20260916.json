@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "operation": "delete_crazyflie_survival_run_artifacts",
+  "completed_at_utc": "2026-09-16T13:31:24Z",
+  "method": "gio trash (recoverable until desktop trash is emptied)",
+  "before_inventory": {
+    "path": "docs/crazyflie_survival_v2_artifacts_before_delete_20260916.json",
+    "sha256": "92a61215d560fca8bf2d4a4abe156cef0f4393d278c0fb0130573602cc88837b",
+    "regular_file_count": 250,
+    "total_bytes": 33472904
+  },
+  "post_delete_verification": {
+    "directory_targets_remaining": 0,
+    "file_targets_remaining": 0,
+    "json_files_with_nonnull_survival_first_contract_under_runs": 0,
+    "g1_frozen_manifest_files_checked": 37,
+    "g1_frozen_manifest_mismatches": 0
+  },
+  "status": "PASS"
+}

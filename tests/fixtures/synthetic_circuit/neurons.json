@@ -1,0 +1,7 @@
+[
+  {"id": "n0", "annotations": {"group": "synthetic_input"}},
+  {"id": "n1", "annotations": {"group": "synthetic_interneuron"}},
+  {"id": "n2", "annotations": {"group": "synthetic_output"}},
+  {"id": "n3", "annotations": {"group": "synthetic_output"}}
+]
+

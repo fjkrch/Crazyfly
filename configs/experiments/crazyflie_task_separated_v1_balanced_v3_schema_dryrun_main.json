@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "label": "main",
+  "matrix_layout": "task_separated_v1",
+  "execution_readiness": "schema_dry_run_only_balanced_v3_not_launch_authorized",
+  "base_config": "configs/experiments/crazyflie_balanced_v3_main.json",
+  "tasks": [
+    "FlyCrazyflie-WaypointReach-v0",
+    "FlyCrazyflie-WaypointSwitch-v0",
+    "FlyCrazyflie-GustRecovery-v0"
+  ],
+  "task_configs": {
+    "FlyCrazyflie-WaypointReach-v0": "configs/experiments/crazyflie_task_separated_v1_balanced_v3_schema_dryrun_main_reach.json",
+    "FlyCrazyflie-WaypointSwitch-v0": "configs/experiments/crazyflie_task_separated_v1_balanced_v3_schema_dryrun_main_switch.json",
+    "FlyCrazyflie-GustRecovery-v0": "configs/experiments/crazyflie_task_separated_v1_balanced_v3_schema_dryrun_main_gust.json"
+  },
+  "controllers": [
+    "frozen_lif_original",
+    "frozen_lif_degree_rewired",
+    "gru_matched",
+    "mlp_normal"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "total_interactions": 5000000
+}

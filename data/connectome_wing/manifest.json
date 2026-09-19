@@ -1,0 +1,172 @@
+{
+  "checksums": {
+    "edges": "4324a1d1786ecedacdd86bc403907beb99855c068ccb35d272eb9c1b51441ec7",
+    "neurons": "ff8526bd14f8274f222e5b397a9cf1d0b428234e6bd917ac7803827de5003189"
+  },
+  "derived_counts": {
+    "descending_inputs": 12,
+    "edges": 8864,
+    "excitatory_edges": 6726,
+    "inhibitory_edges": 2138,
+    "input_path_coverage": 32,
+    "intrinsic": 200,
+    "motor_outputs": 24,
+    "neurons": 256,
+    "neurons_on_input_output_paths": 256,
+    "output_path_coverage": 24,
+    "sensory_inputs": 20
+  },
+  "duplicate_edge_policy": "reject",
+  "edges_path": "edges.json",
+  "extraction_rule": "Twenty pinned cholinergic ADMN wing mechanosensors, twelve ranked signed descending inputs, two hundred ranked signed thoracic intrinsic cells, and twenty-four ranked wing motor readouts; bounded deterministic prefix search requires full path coverage.",
+  "input_neuron_ids": [
+    "10030",
+    "10045",
+    "10056",
+    "10131",
+    "10223",
+    "10247",
+    "10274",
+    "10281",
+    "10394",
+    "10959",
+    "11575",
+    "11737",
+    "804373",
+    "806337",
+    "807093",
+    "807458",
+    "807510",
+    "807554",
+    "807561",
+    "807714",
+    "807751",
+    "807817",
+    "807890",
+    "808022",
+    "808075",
+    "808461",
+    "808625",
+    "809803",
+    "814621",
+    "903423",
+    "909349",
+    "910548"
+  ],
+  "model_calibration": {
+    "report": "/home/chayanin/Desktop/flyg1/data/connectome_wing_calibration.json",
+    "report_sha256": "29c4f2c29b4a0f5ffe81266855dacf206f6cb53734bee5f2972f856741a3af7b",
+    "selected_threshold": 0.04,
+    "selection_rule": "Among candidates passing input_mean_rate in [0.05,0.50], motor_mean_rate in [0.005,0.10], global_mean_rate in [0.005,0.20], dead_neuron_fraction <=0.75, and saturated_neuron_fraction <=0.05, minimize abs(motor_mean_rate-0.02); tie-break by higher threshold.",
+    "status": "frozen_after_bounded_activity_pilot"
+  },
+  "motor_nerve_counts": {
+    "ADMN": 12,
+    "MesoAN": 8,
+    "PDMNa": 4
+  },
+  "motor_side_counts": {
+    "L": 12,
+    "R": 12
+  },
+  "neuron_model": {
+    "dt": 0.004,
+    "neural_substeps": 5,
+    "refractory_steps": 1,
+    "reset_value": 0.0,
+    "surrogate_beta": 1.0,
+    "tau_membrane": 0.02,
+    "tau_synapse": 0.01,
+    "threshold": 0.04,
+    "time_mapping": "Five 4 ms neural substeps per 20 ms policy/control step; engineering choice."
+  },
+  "neuron_subset": "256-neuron T1/T2/T3 wing VNC sensor-descending-interneuron-motor circuit",
+  "neurons_path": "neurons.json",
+  "output_neuron_ids": [
+    "800184",
+    "800190",
+    "800241",
+    "800381",
+    "800573",
+    "800606",
+    "800637",
+    "800696",
+    "800743",
+    "800847",
+    "800890",
+    "800906",
+    "800917",
+    "800928",
+    "801021",
+    "801137",
+    "801220",
+    "801295",
+    "801310",
+    "801350",
+    "801970",
+    "801998",
+    "804301",
+    "903852"
+  ],
+  "raw_duplicate_edge_policy": "Aggregate duplicate raw records by directed (body_pre, body_post) pair before model-weight mapping; derived duplicate edges are forbidden.",
+  "role_counts": {
+    "descending_input": 12,
+    "vnc_interneuron": 200,
+    "wing_motor_output": 24,
+    "wing_sensory_input": 20
+  },
+  "schema_version": 1,
+  "selection_fingerprint": "8f1d781591ad404483cd45218f3ecc2b645dfd87ed7a2784dafe007ca7417fb3",
+  "selection_settings": {
+    "allowed_source_transmitters": [
+      "acetylcholine",
+      "gaba"
+    ],
+    "descending_count": 12,
+    "descending_rank": "descending raw D->I count, tie ascending bodyId",
+    "excluded_edges": "all motor-origin and self-loop edges",
+    "interneuron_count": 200,
+    "interneuron_rank": "descending sqrt((1+selected-input count)*(1+selected-output count)), tie ascending bodyId",
+    "motor_count": 24,
+    "motor_rank": "descending raw I->M count, tie ascending bodyId",
+    "path_completion": "bounded lexicographic prefix-offset search over descending, motor, and intrinsic rankings; first 256-cell solution with every selected node on an input-to-output path",
+    "path_completion_attempts": 1,
+    "sensory_count": 20,
+    "sensory_rank": "descending raw S->I count, tie ascending bodyId; all 20 retained",
+    "sides": [
+      "L",
+      "R"
+    ],
+    "wing_motor_exit_nerves": [
+      "ADMN",
+      "MesoAN",
+      "PDMNa",
+      "PDMNp"
+    ],
+    "wing_sensory_classes": [
+      "mechanosensory_proprioceptive",
+      "mechanosensory_tactile"
+    ],
+    "wing_sensory_entry_nerve": "ADMN"
+  },
+  "source_files": {
+    "annotations": {
+      "filename": "body-annotations-male-cns-v1.0-minconf-0.5.feather",
+      "sha256": "2177e246113e4cfbf1e7772ec37c6da1955ff22e8063d0b1f833101f99a9a3b2",
+      "url": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/body-annotations-male-cns-v1.0-minconf-0.5.feather"
+    },
+    "connectivity": {
+      "filename": "connectome-weights-male-cns-v1.0-minconf-0.5.feather",
+      "sha256": "e35da783d1c686b2b58b3b87cd6a403ae43bfcfba8bff28e08ef752c1a56afc1",
+      "url": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/connectome-weights-male-cns-v1.0-minconf-0.5.feather"
+    },
+    "neurotransmitters": {
+      "filename": "body-neurotransmitters-male-cns-v1.0.feather",
+      "sha256": "95c9289220663abeb3409f3ad9e5a7f8a53f8093f5139d15502cd08da8879621",
+      "url": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/body-neurotransmitters-male-cns-v1.0.feather"
+    }
+  },
+  "source_release": "MaleCNS v1.0 flat connectome, minconf 0.5",
+  "status": "real",
+  "weight_mapping": "Model assumption: ACh=+1, GABA=-1; weight=sign*0.5*log1p(raw_synapse_count)/sum_incoming(log1p(count)) per selected post. Raw counts are not conductances; wing motor cells are terminal readouts."
+}

@@ -1,0 +1,53 @@
+{
+  "candidate_induced_edges_before_terminal_filter": 1262889,
+  "candidate_neurons": {
+    "descending": 1172,
+    "intrinsic": 9231,
+    "motor": 67,
+    "sensory": 20
+  },
+  "derived_counts": {
+    "descending_inputs": 12,
+    "edges": 8864,
+    "excitatory_edges": 6726,
+    "inhibitory_edges": 2138,
+    "input_path_coverage": 32,
+    "intrinsic": 200,
+    "motor_outputs": 24,
+    "neurons": 256,
+    "neurons_on_input_output_paths": 256,
+    "output_path_coverage": 24,
+    "sensory_inputs": 20
+  },
+  "derived_sha256": {
+    "edges": "4324a1d1786ecedacdd86bc403907beb99855c068ccb35d272eb9c1b51441ec7",
+    "neurons": "ff8526bd14f8274f222e5b397a9cf1d0b428234e6bd917ac7803827de5003189"
+  },
+  "motor_nerve_counts": {
+    "ADMN": 12,
+    "MesoAN": 8,
+    "PDMNa": 4
+  },
+  "motor_side_counts": {
+    "L": 12,
+    "R": 12
+  },
+  "role_counts": {
+    "descending_input": 12,
+    "vnc_interneuron": 200,
+    "wing_motor_output": 24,
+    "wing_sensory_input": 20
+  },
+  "selection_fingerprint": "8f1d781591ad404483cd45218f3ecc2b645dfd87ed7a2784dafe007ca7417fb3",
+  "source_rows": {
+    "annotations": 211577,
+    "connectivity": 151856684,
+    "neurotransmitters": 1835518
+  },
+  "source_sha256": {
+    "annotations": "2177e246113e4cfbf1e7772ec37c6da1955ff22e8063d0b1f833101f99a9a3b2",
+    "connectivity": "e35da783d1c686b2b58b3b87cd6a403ae43bfcfba8bff28e08ef752c1a56afc1",
+    "neurotransmitters": "95c9289220663abeb3409f3ad9e5a7f8a53f8093f5139d15502cd08da8879621"
+  },
+  "status": "PASS"
+}

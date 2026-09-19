@@ -1,0 +1,35 @@
+{
+  "task": "FlyG1-GoalReach-FreePosture-v0",
+  "interaction_budget": 512,
+  "conditions": [
+    "frozen_lif_original",
+    "frozen_lif_degree_rewired",
+    "gru_trainable",
+    "mlp_engineering_baseline"
+  ],
+  "seeds": [0],
+  "training": {
+    "num_envs": 16,
+    "horizon": 32,
+    "target_kl": 0.05,
+    "learning_rate_by_condition": {
+      "frozen_lif_original": 0.000001,
+      "frozen_lif_degree_rewired": 0.000001,
+      "gru_trainable": 0.0003,
+      "mlp_engineering_baseline": 0.0003
+    }
+  },
+  "evaluation": {
+    "protocol": "heldout_v1",
+    "held_out_targets": true,
+    "reset_regimes": ["standing"],
+    "paired_disturbance_schedule": true,
+    "scenario_tasks": [
+      "FlyG1-GoalReach-FreePosture-v0",
+      "FlyG1-GoalSwitch-FreePosture-v0",
+      "FlyG1-PushRecovery-FreePosture-v0"
+    ],
+    "seed": 101,
+    "episodes": 1
+  }
+}

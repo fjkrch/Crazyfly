@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+*.egg-info/
+runs/
+data/connectome/*.json
+data/connectome/raw/
+!data/connectome/manifest.example.json
+!tests/fixtures/synthetic_circuit/*.json
+*.usd
+*.usda
+*.mp4
+*.pt
+*.pth

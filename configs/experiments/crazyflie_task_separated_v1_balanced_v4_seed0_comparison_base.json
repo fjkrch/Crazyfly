@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "label": "comparison",
+  "matrix_layout": "task_separated_v1_comparison_base",
+  "execution_readiness": "authorized_balanced_v4_seed0_1m_comparison_v1",
+  "reference_config": "configs/experiments/crazyflie_balanced_v3_main.json",
+  "controllers": [
+    "frozen_lif_original",
+    "frozen_lif_degree_rewired",
+    "gru_matched",
+    "mlp_normal"
+  ],
+  "seeds": [
+    0
+  ],
+  "total_interactions": 1000000,
+  "contract_profile": "balanced_v4",
+  "learning_rate_selection": {
+    "receipt": "runs/crazyflie-balanced-v4-lif-reach-lr-screen-selection.json",
+    "receipt_sha256": "bf0d5ef556be508822cc0ebc1919a41ac3e706bddeb173a9bbe0d6737c207489",
+    "selection_id": "aff5081631f78881e39bebc5bb09137550c9a33e0bb094d1c14c37a1c5af4d8b",
+    "selected_candidate_id": "lr-3e-4",
+    "selected_learning_rate": 0.0003,
+    "application": "common_learning_rate_all_four_controllers_all_three_tasks_seed0_comparison_only"
+  },
+  "concurrency_preflight": {
+    "receipt": "runs/crazyflie-balanced-v4-seed0-comparison-paired-smoke-v1.json",
+    "requested_max_concurrent_isaac_processes": 2,
+    "fallback_max_concurrent_isaac_processes": 1,
+    "missing_or_invalid_disposition": "record_fallback_to_sequential",
+    "paired_smoke_task": "FlyCrazyflie-WaypointReach-v0",
+    "paired_smoke_controller": "frozen_lif_original",
+    "paired_smoke_seeds": [
+      0,
+      1
+    ],
+    "paired_smoke_num_envs_per_process": 4,
+    "paired_smoke_steps": 1000,
+    "paired_smoke_requires_ppo_update": true
+  },
+  "training": {
+    "num_envs": 4,
+    "horizon": 100,
+    "ppo_epochs": 2,
+    "microbatch_size": 4,
+    "num_workers": 0,
+    "precision": "float32",
+    "learning_rate": 0.0003,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip_ratio": 0.2,
+    "value_coefficient": 0.5,
+    "entropy_coefficient": 0.002,
+    "max_grad_norm": 1.0,
+    "target_kl": 0.05,
+    "checkpoint_every_updates": 100
+  },
+  "evaluation": {
+    "protocol": "main",
+    "manifest": "configs/experiments/crazyflie_eval_manifest_v1.json",
+    "seed": 101,
+    "episodes_per_scenario": 16,
+    "scenarios": [
+      "FlyCrazyflie-WaypointReach-v0",
+      "FlyCrazyflie-WaypointSwitch-v0",
+      "FlyCrazyflie-GustRecovery-v0"
+    ],
+    "deterministic_actions": true,
+    "policy_inference_device": "cuda:0",
+    "policy_inference_backend": "cuda_graph_action_only_v1",
+    "policy_inference_precision": "float32",
+    "policy_inference_graph": {
+      "graph_api": "torch.cuda.CUDAGraph",
+      "capture_after_checkpoint_load": true,
+      "fixed_batch": true,
+      "fixed_batch_size": 4,
+      "actor_path": "deterministic_mean_tanh",
+      "parity_gate": "bitwise_action_and_recurrent_state",
+      "parity_probe_steps": 3,
+      "failure_mode": "fail_closed"
+    },
+    "policy_bridge": {
+      "gpu_to_cpu_policy_tensor_transfers_per_decision": 0,
+      "cpu_to_gpu_policy_tensor_transfers_per_decision": 0,
+      "observation_device": "cuda:0",
+      "recurrent_state_device": "cuda:0",
+      "reset_mask_device": "cuda:0",
+      "action_device": "cuda:0",
+      "reset_timing": "before_next_policy_action"
+    }
+  }
+}

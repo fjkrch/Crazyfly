@@ -1,0 +1,2800 @@
+{
+  "schema_version": 1,
+  "label": "main",
+  "evaluation_seed": 101,
+  "episodes_per_scenario": 16,
+  "scenario_count": 3,
+  "episode_horizon_steps": 600,
+  "episode_horizon_s": 12.0,
+  "control_dt_s": 0.02,
+  "deterministic_action": true,
+  "success": {
+    "distance_m": 0.2,
+    "speed_m_s": 0.25,
+    "dwell_steps": 25,
+    "dwell_s": 0.5
+  },
+  "recovery": {
+    "dwell_steps": 25,
+    "window_steps_after_gust": 100,
+    "window_s_after_gust": 2.0
+  },
+  "minimum_target_separation_m": 0.75,
+  "scenarios": {
+    "FlyCrazyflie-WaypointReach-v0": [
+      {
+        "episode_id": 0,
+        "scenario_seed": 101000303,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            0.02129925,
+            -0.07362987,
+            0.4976876
+          ],
+          "yaw_rad": 0.16349766,
+          "linear_velocity_world_m_s": [
+            0.01152454,
+            0.04061037,
+            -0.04487761
+          ],
+          "angular_velocity_body_rad_s": [
+            0.13953354,
+            -0.02797595,
+            0.05701495
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -1.40855059,
+            -1.32748503,
+            1.46021146
+          ]
+        ],
+        "switches": [],
+        "gusts": [],
+        "plan_sha256": "10e93166f9e8031329a86ffb70f686602eab0bbbdee9a44f354148c38d292b16"
+      },
+      {
+        "episode_id": 1,
+        "scenario_seed": 101000304,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.05167276,
+            0.12934679,
+            0.61818188
+          ],
+          "yaw_rad": 0.13123247,
+          "linear_velocity_world_m_s": [
+            -0.02111655,
+            -0.02427443,
+            0.00159721
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.03870742,
+            0.00717376,
+            -0.04239443
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -0.30706032,
+            -1.73590132,
+            0.51246415
+          ]
+        ],
+        "switches": [],
+        "gusts": [],
+        "plan_sha256": "832f809b5fb3aa76a16e066d9095b6e81842068f783180dbae7bb066ef0b36d5"
+      },
+      {
+        "episode_id": 2,
+        "scenario_seed": 101000305,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.01374135,
+            -0.11931313,
+            0.62252501
+          ],
+          "yaw_rad": 0.17239819,
+          "linear_velocity_world_m_s": [
+            0.05648056,
+            0.07464419,
+            -0.02455289
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.13001739,
+            -0.06970605,
+            0.0293675
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -1.0405673,
+            -0.56495622,
+            0.56062465
+          ]
+        ],
+        "switches": [],
+        "gusts": [],
+        "plan_sha256": "a7530e2e35457c4ecf9a88aa5d73f2c2cc81cf61a2e5e2573b467b11adb46110"
+      },
+      {
+        "episode_id": 3,
+        "scenario_seed": 101000306,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.14360181,
+            -0.00861999,
+            0.57960119
+          ],
+          "yaw_rad": -0.18315431,
+          "linear_velocity_world_m_s": [
+            -0.0443883,
+            -0.01332816,
+            0.04729431
+          ],
+          "angular_velocity_body_rad_s": [
+            0.06700251,
+            0.10781547,
+            0.08635585
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            0.95761442,
+            1.48312927,
+            0.5245913
+          ]
+        ],
+        "switches": [],
+        "gusts": [],
+        "plan_sha256": "ab60cfec483a8ec11a857a9bf79802cfbe222050bb4f9768ff7f9d503b2df662"
+      },
+      {
+        "episode_id": 4,
+        "scenario_seed": 101000307,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            0.01284305,
+            -0.06942286,
+            0.52529598
+          ],
+          "yaw_rad": 0.10580108,
+          "linear_velocity_world_m_s": [
+            0.01975246,
+            -0.05978738,
+            0.02459896
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.14964271,
+            0.12579646,
+            0.14953095
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -0.13694736,
+            0.80393377,
+            1.12536254
+          ]
+        ],
+        "switches": [],
+        "gusts": [],
+        "plan_sha256": "e87fa7a1dd7b70827b7977fb9aa3df84269543ece98ef9805d3ddfb705fe02d1"
+      },
+      {
+        "episode_id": 5,
+        "scenario_seed": 101000308,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.00327954,
+            0.13281434,
+            0.51403927
+          ],
+          "yaw_rad": -0.00296947,
+          "linear_velocity_world_m_s": [
+            -0.00491169,
+            0.07395192,
+            0.05107016
+          ],
+          "angular_velocity_body_rad_s": [
+            0.03024115,
+            0.0936032,
+            0.05727523
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -1.82304249,
+            -0.25767116,
+            1.48739866
+          ]
+        ],
+        "switches": [],
+        "gusts": [],
+        "plan_sha256": "a29532c01cdfefb0d876d37815d313d6ab2f89dfc287856c4efc45a888d3d71c"
+      },
+      {
+        "episode_id": 6,
+        "scenario_seed": 101000309,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            0.03465369,
+            0.12966803,
+            0.54786159
+          ],
+          "yaw_rad": -0.04416467,
+          "linear_velocity_world_m_s": [
+            -0.03000288,
+            0.04472288,
+            -0.05501887
+          ],
+          "angular_velocity_body_rad_s": [
+            0.11992182,
+            0.07605905,
+            0.03419811
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -1.07681361,
+            1.63977045,
+            1.49361788
+          ]
+        ],
+        "switches": [],
+        "gusts": [],
+        "plan_sha256": "1b63c4d3831a1fa025435ea35a211f54b0c8340cd67f48f581ff3755ca011688"
+      },
+      {
+        "episode_id": 7,
+        "scenario_seed": 101000310,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.08586157,
+            0.00066093,
+            0.6414842
+          ],
+          "yaw_rad": -0.00311116,
+          "linear_velocity_world_m_s": [
+            -0.03506513,
+            0.07990455,
+            0.0313428
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.13853174,
+            0.05933982,
+            -0.1167403
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            0.38198671,
+            -0.12782237,
+            1.34636061
+          ]
+        ],
+        "switches": [],
+        "gusts": [],
+        "plan_sha256": "e20487adf162a50ef15fdf8ee6d663e635a3f675060a941fd4dc837930ad5184"
+      },
+      {
+        "episode_id": 8,
+        "scenario_seed": 101000311,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            0.08271593,
+            -0.12536448,
+            0.6144626
+          ],
+          "yaw_rad": 0.07253433,
+          "linear_velocity_world_m_s": [
+            -0.06285474,
+            0.02435476,
+            0.04465206
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.11188149,
+            0.02850934,
+            0.06979286
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            1.62101126,
+            0.25558193,
+            1.08844534
+          ]
+        ],
+        "switches": [],
+        "gusts": [],
+        "plan_sha256": "33735813193b00884311833c6e2fdbe47e02c7a355b4f0fec541f1d0d6bcb9c2"
+      },
+      {
+        "episode_id": 9,
+        "scenario_seed": 101000312,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            0.04012463,
+            -0.00865681,
+            0.48974159
+          ],
+          "yaw_rad": -0.09559267,
+          "linear_velocity_world_m_s": [
+            0.05871417,
+            -0.0664363,
+            0.05168727
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.08185201,
+            -0.07521011,
+            -0.08116249
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -1.25217294,
+            1.05496358,
+            1.47010231
+          ]
+        ],
+        "switches": [],
+        "gusts": [],
+        "plan_sha256": "b399a10cf69938e271fd179a83b07644e69820701ad3b8d63134efbf35cbf1b8"
+      },
+      {
+        "episode_id": 10,
+        "scenario_seed": 101000313,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.08003998,
+            -0.12504343,
+            0.51765749
+          ],
+          "yaw_rad": 0.00629195,
+          "linear_velocity_world_m_s": [
+            -0.07888932,
+            0.046962,
+            -0.01962098
+          ],
+          "angular_velocity_body_rad_s": [
+            0.01588193,
+            -0.07432604,
+            -0.12541831
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            0.94084006,
+            0.19076483,
+            1.24295595
+          ]
+        ],
+        "switches": [],
+        "gusts": [],
+        "plan_sha256": "d5592a49a5cfaf0b233096d322008642d1eb0bf3692ba9304db04d0feb28beba"
+      },
+      {
+        "episode_id": 11,
+        "scenario_seed": 101000314,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.10493851,
+            0.10186605,
+            0.55985859
+          ],
+          "yaw_rad": 0.08871074,
+          "linear_velocity_world_m_s": [
+            -0.04294784,
+            0.0166535,
+            0.03163068
+          ],
+          "angular_velocity_body_rad_s": [
+            0.01672344,
+            -0.11126498,
+            0.01023405
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -1.30819655,
+            -0.91056774,
+            1.19386571
+          ]
+        ],
+        "switches": [],
+        "gusts": [],
+        "plan_sha256": "bfebb6e6551973387937846c182d7472a3028bbb3daf2846577223c03a8cfb0e"
+      },
+      {
+        "episode_id": 12,
+        "scenario_seed": 101000315,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            0.00453232,
+            0.11020324,
+            0.57705005
+          ],
+          "yaw_rad": -0.04186843,
+          "linear_velocity_world_m_s": [
+            0.00481807,
+            0.02150092,
+            0.0054551
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.02314077,
+            0.04791068,
+            0.02346066
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -0.41201426,
+            -0.47218348,
+            0.95314067
+          ]
+        ],
+        "switches": [],
+        "gusts": [],
+        "plan_sha256": "bf32108594a33b486d92402b52d20a1c625f6d59a5b6c4c209f8b6a51115824f"
+      },
+      {
+        "episode_id": 13,
+        "scenario_seed": 101000316,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            0.08046589,
+            -0.09236869,
+            0.52655312
+          ],
+          "yaw_rad": 0.18738295,
+          "linear_velocity_world_m_s": [
+            -0.01221543,
+            0.04134789,
+            0.0595142
+          ],
+          "angular_velocity_body_rad_s": [
+            0.12444236,
+            -0.11299495,
+            0.09381318
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            1.83720411,
+            -1.20258776,
+            1.2129766
+          ]
+        ],
+        "switches": [],
+        "gusts": [],
+        "plan_sha256": "1a6681ff089f2039df7d7338b83293e2766ca6e3b2f30eafbfeae5fafb391efb"
+      },
+      {
+        "episode_id": 14,
+        "scenario_seed": 101000317,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.02000295,
+            0.09573693,
+            0.56793973
+          ],
+          "yaw_rad": 0.01469954,
+          "linear_velocity_world_m_s": [
+            -0.04506786,
+            -0.05893594,
+            -0.07505995
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.09487566,
+            -0.14742458,
+            0.13800737
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -0.21717154,
+            1.38997371,
+            1.20573411
+          ]
+        ],
+        "switches": [],
+        "gusts": [],
+        "plan_sha256": "812c701e126b279f20bd87e87165f1a4f6eb27083d76ff21e0b746526032a4c4"
+      },
+      {
+        "episode_id": 15,
+        "scenario_seed": 101000318,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.11664018,
+            -0.11911076,
+            0.56671908
+          ],
+          "yaw_rad": -0.05916896,
+          "linear_velocity_world_m_s": [
+            -0.07002134,
+            -0.05353737,
+            0.04005044
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.03446085,
+            -0.05353942,
+            0.03547692
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -0.80698838,
+            1.6415521,
+            1.0219848
+          ]
+        ],
+        "switches": [],
+        "gusts": [],
+        "plan_sha256": "916b76e54315c7e2a0792a1a69247f1a4c3f2068b617797c1b62a30d5c2652be"
+      }
+    ],
+    "FlyCrazyflie-WaypointSwitch-v0": [
+      {
+        "episode_id": 0,
+        "scenario_seed": 101100306,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            0.02639283,
+            0.06072421,
+            0.53794534
+          ],
+          "yaw_rad": -0.19093786,
+          "linear_velocity_world_m_s": [
+            -0.06449578,
+            0.03621974,
+            0.05928912
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.14747771,
+            -0.03574272,
+            0.05524183
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            1.15383395,
+            0.37923457,
+            0.89749709
+          ],
+          [
+            1.1030157,
+            -1.51568614,
+            0.55340958
+          ],
+          [
+            0.43620589,
+            1.03555199,
+            0.85879551
+          ],
+          [
+            -1.35172381,
+            -1.51395106,
+            0.52375616
+          ]
+        ],
+        "switches": [
+          {
+            "event_index": 1,
+            "step": 150,
+            "time_s": 3.0,
+            "target_index": 1
+          },
+          {
+            "event_index": 2,
+            "step": 300,
+            "time_s": 6.0,
+            "target_index": 2
+          },
+          {
+            "event_index": 3,
+            "step": 450,
+            "time_s": 9.0,
+            "target_index": 3
+          }
+        ],
+        "gusts": [],
+        "plan_sha256": "92a688e4c3e8be0470c9d4d925a1f9d51d910ffd635d0d8ad7a63acf8ede7df2"
+      },
+      {
+        "episode_id": 1,
+        "scenario_seed": 101100307,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            0.02659483,
+            -0.12099302,
+            0.53464584
+          ],
+          "yaw_rad": -0.03988524,
+          "linear_velocity_world_m_s": [
+            0.01273381,
+            -0.06278479,
+            -0.00825317
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.12854019,
+            0.00056049,
+            -0.02939989
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -0.40557765,
+            0.62927893,
+            1.15762703
+          ],
+          [
+            -1.54687588,
+            -1.51071517,
+            0.76850584
+          ],
+          [
+            -0.07488212,
+            1.00688294,
+            0.56608353
+          ],
+          [
+            -0.06698919,
+            0.08289824,
+            0.67299028
+          ]
+        ],
+        "switches": [
+          {
+            "event_index": 1,
+            "step": 150,
+            "time_s": 3.0,
+            "target_index": 1
+          },
+          {
+            "event_index": 2,
+            "step": 300,
+            "time_s": 6.0,
+            "target_index": 2
+          },
+          {
+            "event_index": 3,
+            "step": 450,
+            "time_s": 9.0,
+            "target_index": 3
+          }
+        ],
+        "gusts": [],
+        "plan_sha256": "6b431e04222ac1d5039b8cf62b6b058eef879b49f7ce0041a439b91e81065f5a"
+      },
+      {
+        "episode_id": 2,
+        "scenario_seed": 101100308,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.02631712,
+            0.13159595,
+            0.45618054
+          ],
+          "yaw_rad": 0.10224374,
+          "linear_velocity_world_m_s": [
+            0.00507768,
+            0.00928505,
+            -0.0640427
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.09838249,
+            0.03632162,
+            0.11652212
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -1.59424331,
+            -0.2809922,
+            0.51424356
+          ],
+          [
+            0.65338582,
+            0.28794357,
+            0.79890768
+          ],
+          [
+            1.88838019,
+            -1.56336088,
+            1.16737192
+          ],
+          [
+            0.59871708,
+            -1.03117211,
+            1.17100146
+          ]
+        ],
+        "switches": [
+          {
+            "event_index": 1,
+            "step": 150,
+            "time_s": 3.0,
+            "target_index": 1
+          },
+          {
+            "event_index": 2,
+            "step": 300,
+            "time_s": 6.0,
+            "target_index": 2
+          },
+          {
+            "event_index": 3,
+            "step": 450,
+            "time_s": 9.0,
+            "target_index": 3
+          }
+        ],
+        "gusts": [],
+        "plan_sha256": "fa904de47b3a276ab22762c034633d2d689175f329a31b262a5bdde011720bab"
+      },
+      {
+        "episode_id": 3,
+        "scenario_seed": 101100309,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.04282418,
+            -0.00742122,
+            0.51409025
+          ],
+          "yaw_rad": 0.09866482,
+          "linear_velocity_world_m_s": [
+            -0.01654852,
+            -0.0115149,
+            0.04061566
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.00862083,
+            0.04289219,
+            -0.01422866
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            0.4932717,
+            -0.9912872,
+            1.37513717
+          ],
+          [
+            -1.55303911,
+            -0.49222611,
+            0.56597262
+          ],
+          [
+            -0.47330813,
+            0.08847701,
+            1.27207049
+          ],
+          [
+            0.61201171,
+            -0.93179419,
+            1.38915605
+          ]
+        ],
+        "switches": [
+          {
+            "event_index": 1,
+            "step": 150,
+            "time_s": 3.0,
+            "target_index": 1
+          },
+          {
+            "event_index": 2,
+            "step": 300,
+            "time_s": 6.0,
+            "target_index": 2
+          },
+          {
+            "event_index": 3,
+            "step": 450,
+            "time_s": 9.0,
+            "target_index": 3
+          }
+        ],
+        "gusts": [],
+        "plan_sha256": "d623bd677e7c29dcfe7b46c24dcbac8105fcbcac8d1f445dff954086e7dbbede"
+      },
+      {
+        "episode_id": 4,
+        "scenario_seed": 101100310,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            0.14456525,
+            0.06491483,
+            0.47113411
+          ],
+          "yaw_rad": 0.2473935,
+          "linear_velocity_world_m_s": [
+            -0.07324465,
+            -0.00910006,
+            -0.04809436
+          ],
+          "angular_velocity_body_rad_s": [
+            0.02712688,
+            0.09521648,
+            0.1063132
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -1.31582077,
+            1.59273658,
+            0.67421762
+          ],
+          [
+            1.81532241,
+            -0.47246836,
+            1.29775873
+          ],
+          [
+            0.78904481,
+            -0.70923453,
+            0.87673359
+          ],
+          [
+            -1.47874413,
+            1.02051322,
+            1.33759385
+          ]
+        ],
+        "switches": [
+          {
+            "event_index": 1,
+            "step": 150,
+            "time_s": 3.0,
+            "target_index": 1
+          },
+          {
+            "event_index": 2,
+            "step": 300,
+            "time_s": 6.0,
+            "target_index": 2
+          },
+          {
+            "event_index": 3,
+            "step": 450,
+            "time_s": 9.0,
+            "target_index": 3
+          }
+        ],
+        "gusts": [],
+        "plan_sha256": "e93b7c15e186b4ab20aee74edaa65267302c698bdf7229d3d37e84009f53bb79"
+      },
+      {
+        "episode_id": 5,
+        "scenario_seed": 101100311,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            0.10001824,
+            -0.11411602,
+            0.55757464
+          ],
+          "yaw_rad": 0.19446246,
+          "linear_velocity_world_m_s": [
+            -0.00721264,
+            -0.00725497,
+            -0.05985206
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.03445064,
+            -0.05849724,
+            -0.04373317
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            1.66075987,
+            1.78233382,
+            0.7391395
+          ],
+          [
+            1.00840238,
+            -1.30856373,
+            1.02360789
+          ],
+          [
+            -1.83942209,
+            0.00568773,
+            1.32899125
+          ],
+          [
+            -0.12264343,
+            1.60463148,
+            0.73520382
+          ]
+        ],
+        "switches": [
+          {
+            "event_index": 1,
+            "step": 150,
+            "time_s": 3.0,
+            "target_index": 1
+          },
+          {
+            "event_index": 2,
+            "step": 300,
+            "time_s": 6.0,
+            "target_index": 2
+          },
+          {
+            "event_index": 3,
+            "step": 450,
+            "time_s": 9.0,
+            "target_index": 3
+          }
+        ],
+        "gusts": [],
+        "plan_sha256": "ea00743e29da9328699d5d4a7e2ab285b7566540eaa50a1decbe4614714ab067"
+      },
+      {
+        "episode_id": 6,
+        "scenario_seed": 101100312,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.1271696,
+            0.07408407,
+            0.59536776
+          ],
+          "yaw_rad": -0.25705914,
+          "linear_velocity_world_m_s": [
+            -0.01748046,
+            -0.0172729,
+            0.02579558
+          ],
+          "angular_velocity_body_rad_s": [
+            0.07514276,
+            -0.14826293,
+            -0.10581544
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            0.63442137,
+            0.53970021,
+            1.25825465
+          ],
+          [
+            1.12333754,
+            0.14810674,
+            0.79813384
+          ],
+          [
+            1.019055,
+            1.02679331,
+            1.46883693
+          ],
+          [
+            -1.96801484,
+            -0.28256945,
+            1.33497245
+          ]
+        ],
+        "switches": [
+          {
+            "event_index": 1,
+            "step": 150,
+            "time_s": 3.0,
+            "target_index": 1
+          },
+          {
+            "event_index": 2,
+            "step": 300,
+            "time_s": 6.0,
+            "target_index": 2
+          },
+          {
+            "event_index": 3,
+            "step": 450,
+            "time_s": 9.0,
+            "target_index": 3
+          }
+        ],
+        "gusts": [],
+        "plan_sha256": "f50da5332c10f3a99458a3957ace1643e88f46361b3352d1065250e3e74e292c"
+      },
+      {
+        "episode_id": 7,
+        "scenario_seed": 101100313,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            0.09866379,
+            -0.03970589,
+            0.46659461
+          ],
+          "yaw_rad": 0.19821072,
+          "linear_velocity_world_m_s": [
+            0.01372909,
+            0.02550841,
+            0.02661218
+          ],
+          "angular_velocity_body_rad_s": [
+            0.08128162,
+            -0.06104967,
+            0.00727453
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -0.34799958,
+            1.53252261,
+            0.89974293
+          ],
+          [
+            -0.04139812,
+            -1.53215636,
+            1.23298061
+          ],
+          [
+            -0.01912744,
+            0.59045805,
+            1.05338801
+          ],
+          [
+            1.95525327,
+            -0.67615103,
+            0.97889337
+          ]
+        ],
+        "switches": [
+          {
+            "event_index": 1,
+            "step": 150,
+            "time_s": 3.0,
+            "target_index": 1
+          },
+          {
+            "event_index": 2,
+            "step": 300,
+            "time_s": 6.0,
+            "target_index": 2
+          },
+          {
+            "event_index": 3,
+            "step": 450,
+            "time_s": 9.0,
+            "target_index": 3
+          }
+        ],
+        "gusts": [],
+        "plan_sha256": "9ca674259fd1637ee745d4d694633e5b684bcd4bae779f4119d7fc3844994445"
+      },
+      {
+        "episode_id": 8,
+        "scenario_seed": 101100314,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.01380369,
+            -0.03113978,
+            0.61138129
+          ],
+          "yaw_rad": 0.25975673,
+          "linear_velocity_world_m_s": [
+            0.00152063,
+            -0.02795818,
+            -0.07280734
+          ],
+          "angular_velocity_body_rad_s": [
+            0.06889717,
+            -0.10217985,
+            -0.10448921
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -1.94081585,
+            -1.66082431,
+            0.77189709
+          ],
+          [
+            0.98065421,
+            1.86289028,
+            1.17348457
+          ],
+          [
+            -0.70397066,
+            -0.89246326,
+            0.67063345
+          ],
+          [
+            -0.80998859,
+            1.27744144,
+            1.09670963
+          ]
+        ],
+        "switches": [
+          {
+            "event_index": 1,
+            "step": 150,
+            "time_s": 3.0,
+            "target_index": 1
+          },
+          {
+            "event_index": 2,
+            "step": 300,
+            "time_s": 6.0,
+            "target_index": 2
+          },
+          {
+            "event_index": 3,
+            "step": 450,
+            "time_s": 9.0,
+            "target_index": 3
+          }
+        ],
+        "gusts": [],
+        "plan_sha256": "3c084ab53dbfe1adc4fe213fde8f51d28488e758dc5fb65611689cd120909b43"
+      },
+      {
+        "episode_id": 9,
+        "scenario_seed": 101100315,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            0.09874336,
+            0.04023868,
+            0.58212929
+          ],
+          "yaw_rad": 0.09269201,
+          "linear_velocity_world_m_s": [
+            -0.02177099,
+            -0.06753691,
+            0.05973755
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.06116746,
+            -0.11826163,
+            0.03155968
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -1.08851477,
+            -1.47066639,
+            1.02200711
+          ],
+          [
+            -0.16915226,
+            1.66566976,
+            1.08219657
+          ],
+          [
+            0.93222301,
+            0.63928892,
+            1.2296555
+          ],
+          [
+            -1.62491756,
+            -0.30337151,
+            0.79644963
+          ]
+        ],
+        "switches": [
+          {
+            "event_index": 1,
+            "step": 150,
+            "time_s": 3.0,
+            "target_index": 1
+          },
+          {
+            "event_index": 2,
+            "step": 300,
+            "time_s": 6.0,
+            "target_index": 2
+          },
+          {
+            "event_index": 3,
+            "step": 450,
+            "time_s": 9.0,
+            "target_index": 3
+          }
+        ],
+        "gusts": [],
+        "plan_sha256": "4abd4cf784531f410c10b6a87495f114be7c0619cbdb3c9e31ec4d292089f828"
+      },
+      {
+        "episode_id": 10,
+        "scenario_seed": 101100316,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            0.12300008,
+            0.09657499,
+            0.62816508
+          ],
+          "yaw_rad": 0.04736724,
+          "linear_velocity_world_m_s": [
+            -0.01613676,
+            0.01448537,
+            0.02073415
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.02531353,
+            -0.12745303,
+            0.00135742
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            0.97593664,
+            0.01329912,
+            0.98103986
+          ],
+          [
+            -0.67060916,
+            0.85759084,
+            1.2227705
+          ],
+          [
+            -1.8442294,
+            0.90006429,
+            1.38228759
+          ],
+          [
+            1.0549424,
+            -0.01400845,
+            1.12651283
+          ]
+        ],
+        "switches": [
+          {
+            "event_index": 1,
+            "step": 150,
+            "time_s": 3.0,
+            "target_index": 1
+          },
+          {
+            "event_index": 2,
+            "step": 300,
+            "time_s": 6.0,
+            "target_index": 2
+          },
+          {
+            "event_index": 3,
+            "step": 450,
+            "time_s": 9.0,
+            "target_index": 3
+          }
+        ],
+        "gusts": [],
+        "plan_sha256": "ed359da7123ce61c24eb23527233f986721511d55a1181ecdc5b86314262575f"
+      },
+      {
+        "episode_id": 11,
+        "scenario_seed": 101100317,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.01965963,
+            0.10523488,
+            0.48096223
+          ],
+          "yaw_rad": -0.21274569,
+          "linear_velocity_world_m_s": [
+            -0.02925137,
+            -0.0652995,
+            0.07046544
+          ],
+          "angular_velocity_body_rad_s": [
+            0.08641752,
+            0.09655399,
+            0.07750728
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            0.17999819,
+            0.71665678,
+            1.09791664
+          ],
+          [
+            -0.81186472,
+            0.5778149,
+            0.99952582
+          ],
+          [
+            -1.47637093,
+            -1.98764752,
+            0.9112172
+          ],
+          [
+            1.02467643,
+            1.55398062,
+            0.52240391
+          ]
+        ],
+        "switches": [
+          {
+            "event_index": 1,
+            "step": 150,
+            "time_s": 3.0,
+            "target_index": 1
+          },
+          {
+            "event_index": 2,
+            "step": 300,
+            "time_s": 6.0,
+            "target_index": 2
+          },
+          {
+            "event_index": 3,
+            "step": 450,
+            "time_s": 9.0,
+            "target_index": 3
+          }
+        ],
+        "gusts": [],
+        "plan_sha256": "2f305975831a5f782ca247293f08b7232aa26a69432e30b4a126ae31cbac6faa"
+      },
+      {
+        "episode_id": 12,
+        "scenario_seed": 101100318,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.01482518,
+            0.10560864,
+            0.49533168
+          ],
+          "yaw_rad": -0.04179547,
+          "linear_velocity_world_m_s": [
+            0.05124611,
+            0.06770388,
+            -0.0687047
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.03078005,
+            -0.00417145,
+            0.11634078
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -0.3050895,
+            -0.89124094,
+            1.29720916
+          ],
+          [
+            -1.41904372,
+            1.59708645,
+            0.61037197
+          ],
+          [
+            -1.46409791,
+            0.36388359,
+            0.89316798
+          ],
+          [
+            -1.34887449,
+            -0.8107827,
+            1.14170312
+          ]
+        ],
+        "switches": [
+          {
+            "event_index": 1,
+            "step": 150,
+            "time_s": 3.0,
+            "target_index": 1
+          },
+          {
+            "event_index": 2,
+            "step": 300,
+            "time_s": 6.0,
+            "target_index": 2
+          },
+          {
+            "event_index": 3,
+            "step": 450,
+            "time_s": 9.0,
+            "target_index": 3
+          }
+        ],
+        "gusts": [],
+        "plan_sha256": "3e8c9422ca2378e266ecc1793b7863feb55c45ecee251792d00968063c97d1b5"
+      },
+      {
+        "episode_id": 13,
+        "scenario_seed": 101100319,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            0.01176206,
+            -0.11595742,
+            0.51987299
+          ],
+          "yaw_rad": 0.2419907,
+          "linear_velocity_world_m_s": [
+            -0.05641301,
+            0.06593818,
+            0.0786685
+          ],
+          "angular_velocity_body_rad_s": [
+            0.03668798,
+            0.03304125,
+            -0.13996921
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -0.5595683,
+            -1.33316875,
+            0.74611702
+          ],
+          [
+            -0.47771671,
+            0.21069645,
+            0.87604213
+          ],
+          [
+            1.84300916,
+            -1.9691544,
+            0.99970495
+          ],
+          [
+            -1.76333384,
+            1.54261863,
+            0.71157816
+          ]
+        ],
+        "switches": [
+          {
+            "event_index": 1,
+            "step": 150,
+            "time_s": 3.0,
+            "target_index": 1
+          },
+          {
+            "event_index": 2,
+            "step": 300,
+            "time_s": 6.0,
+            "target_index": 2
+          },
+          {
+            "event_index": 3,
+            "step": 450,
+            "time_s": 9.0,
+            "target_index": 3
+          }
+        ],
+        "gusts": [],
+        "plan_sha256": "9e06b206020798fe3e8ef8f6b9898695fa3731745784f4664471aa45d8d167dc"
+      },
+      {
+        "episode_id": 14,
+        "scenario_seed": 101100320,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.00811624,
+            0.13033267,
+            0.50728432
+          ],
+          "yaw_rad": 0.1255883,
+          "linear_velocity_world_m_s": [
+            0.00884991,
+            0.01355959,
+            0.01230921
+          ],
+          "angular_velocity_body_rad_s": [
+            0.06587722,
+            -0.01894643,
+            0.01856246
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            0.55974884,
+            -1.37334082,
+            1.24582571
+          ],
+          [
+            1.69118889,
+            -1.58125935,
+            1.19992689
+          ],
+          [
+            -1.7779017,
+            0.96700614,
+            1.3381686
+          ],
+          [
+            1.997018,
+            0.00452414,
+            1.29825573
+          ]
+        ],
+        "switches": [
+          {
+            "event_index": 1,
+            "step": 150,
+            "time_s": 3.0,
+            "target_index": 1
+          },
+          {
+            "event_index": 2,
+            "step": 300,
+            "time_s": 6.0,
+            "target_index": 2
+          },
+          {
+            "event_index": 3,
+            "step": 450,
+            "time_s": 9.0,
+            "target_index": 3
+          }
+        ],
+        "gusts": [],
+        "plan_sha256": "55ea1bc136534a48b8deb7d91a92f750fba252442198b94435f3ca67432d8811"
+      },
+      {
+        "episode_id": 15,
+        "scenario_seed": 101100321,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.06945521,
+            0.02963735,
+            0.62115744
+          ],
+          "yaw_rad": -0.21434085,
+          "linear_velocity_world_m_s": [
+            -0.04085876,
+            -0.07803799,
+            0.02593617
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.02196451,
+            -0.10779235,
+            -0.10763888
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -1.73313833,
+            -0.94003256,
+            0.76423664
+          ],
+          [
+            -0.88012647,
+            -1.09938271,
+            1.14954693
+          ],
+          [
+            1.47623456,
+            0.12277862,
+            1.4016352
+          ],
+          [
+            -1.68911613,
+            -0.79329073,
+            1.24275487
+          ]
+        ],
+        "switches": [
+          {
+            "event_index": 1,
+            "step": 150,
+            "time_s": 3.0,
+            "target_index": 1
+          },
+          {
+            "event_index": 2,
+            "step": 300,
+            "time_s": 6.0,
+            "target_index": 2
+          },
+          {
+            "event_index": 3,
+            "step": 450,
+            "time_s": 9.0,
+            "target_index": 3
+          }
+        ],
+        "gusts": [],
+        "plan_sha256": "f2320fd53947f063baa0403f032d30bdb769958bd5b51b7115d1f49e9c58f432"
+      }
+    ],
+    "FlyCrazyflie-GustRecovery-v0": [
+      {
+        "episode_id": 0,
+        "scenario_seed": 101200309,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            0.12594027,
+            0.11065389,
+            0.5088591
+          ],
+          "yaw_rad": -0.1723315,
+          "linear_velocity_world_m_s": [
+            0.02542009,
+            -0.00159693,
+            -0.00737311
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.06438691,
+            0.14917691,
+            -0.06499227
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -1.57412342,
+            -1.48944824,
+            1.26778192
+          ]
+        ],
+        "switches": [],
+        "gusts": [
+          {
+            "event_index": 1,
+            "start_step": 150,
+            "start_time_s": 3.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.21717389,
+              0.97613293
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 2,
+            "start_step": 300,
+            "start_time_s": 6.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              -0.52169162,
+              0.85313414
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 3,
+            "start_step": 450,
+            "start_time_s": 9.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.96628382,
+              -0.25747926
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          }
+        ],
+        "plan_sha256": "667ebdd7651b0eb6481b7b0164099d853d2cae1feafde68b1d56ae419b772e99"
+      },
+      {
+        "episode_id": 1,
+        "scenario_seed": 101200310,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.11041309,
+            0.02379263,
+            0.54037497
+          ],
+          "yaw_rad": -0.08125739,
+          "linear_velocity_world_m_s": [
+            -0.06379187,
+            -0.03435949,
+            0.04269968
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.11676694,
+            -0.05290763,
+            -0.09473272
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -1.31517405,
+            1.37672312,
+            1.1265724
+          ]
+        ],
+        "switches": [],
+        "gusts": [
+          {
+            "event_index": 1,
+            "start_step": 150,
+            "start_time_s": 3.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.97824336,
+              -0.20746066
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 2,
+            "start_step": 300,
+            "start_time_s": 6.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.47476758,
+              0.88011121
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 3,
+            "start_step": 450,
+            "start_time_s": 9.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.5435766,
+              -0.83935956
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          }
+        ],
+        "plan_sha256": "2608f4f4700c9ad4255f96cac6f7e4742b69781fc95188ce3eb9507f2fda706b"
+      },
+      {
+        "episode_id": 2,
+        "scenario_seed": 101200311,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.02215929,
+            0.05034694,
+            0.63416742
+          ],
+          "yaw_rad": -0.2078898,
+          "linear_velocity_world_m_s": [
+            -0.0747856,
+            0.01429155,
+            -0.00539655
+          ],
+          "angular_velocity_body_rad_s": [
+            0.11828571,
+            0.05112035,
+            -0.01693479
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            0.18583849,
+            -1.69998676,
+            1.33158384
+          ]
+        ],
+        "switches": [],
+        "gusts": [
+          {
+            "event_index": 1,
+            "start_step": 150,
+            "start_time_s": 3.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              -0.38592731,
+              -0.92252919
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 2,
+            "start_step": 300,
+            "start_time_s": 6.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.9910601,
+              -0.13341616
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 3,
+            "start_step": 450,
+            "start_time_s": 9.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.99326544,
+              -0.11586094
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          }
+        ],
+        "plan_sha256": "89f5329b116be4c2c4c42703fac35ec71d68a1fdd8cc25f30d0f0d197ded56ca"
+      },
+      {
+        "episode_id": 3,
+        "scenario_seed": 101200312,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.04395617,
+            -0.12150974,
+            0.56048823
+          ],
+          "yaw_rad": -0.06723654,
+          "linear_velocity_world_m_s": [
+            0.03814108,
+            -0.0760769,
+            -0.05711338
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.09349913,
+            -0.06757224,
+            0.00551903
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            1.76669638,
+            -1.92783298,
+            0.92753552
+          ]
+        ],
+        "switches": [],
+        "gusts": [
+          {
+            "event_index": 1,
+            "start_step": 150,
+            "start_time_s": 3.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.23169499,
+              -0.97278848
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 2,
+            "start_step": 300,
+            "start_time_s": 6.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.50494041,
+              0.86315421
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 3,
+            "start_step": 450,
+            "start_time_s": 9.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              -0.63671002,
+              0.77110333
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          }
+        ],
+        "plan_sha256": "ce88c6234d7c2eb2618d730a957bbf43ce26ce9c7ec7fcebe0d290cc2d04acbc"
+      },
+      {
+        "episode_id": 4,
+        "scenario_seed": 101200313,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            0.13161839,
+            -0.0466243,
+            0.50559293
+          ],
+          "yaw_rad": -0.12421229,
+          "linear_velocity_world_m_s": [
+            0.03900661,
+            0.03948496,
+            -0.01415424
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.00803556,
+            0.02813424,
+            -0.13393489
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            1.41775107,
+            1.81148413,
+            1.15785248
+          ]
+        ],
+        "switches": [],
+        "gusts": [
+          {
+            "event_index": 1,
+            "start_step": 150,
+            "start_time_s": 3.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              -0.97589917,
+              -0.21822193
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 2,
+            "start_step": 300,
+            "start_time_s": 6.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.73507612,
+              0.67798459
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 3,
+            "start_step": 450,
+            "start_time_s": 9.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              -0.44947077,
+              -0.89329504
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          }
+        ],
+        "plan_sha256": "7c73df88124ede58569f7e823a09ab98313c62b1e3ce3ecfed33cafc37bd2f2c"
+      },
+      {
+        "episode_id": 5,
+        "scenario_seed": 101200314,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            0.05523759,
+            -0.0083438,
+            0.61599808
+          ],
+          "yaw_rad": -0.04447053,
+          "linear_velocity_world_m_s": [
+            0.06919663,
+            0.01717995,
+            0.01179601
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.06439152,
+            0.05331846,
+            -0.06379197
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            1.3152836,
+            1.94758447,
+            1.44049014
+          ]
+        ],
+        "switches": [],
+        "gusts": [
+          {
+            "event_index": 1,
+            "start_step": 150,
+            "start_time_s": 3.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.9953319,
+              -0.09651122
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 2,
+            "start_step": 300,
+            "start_time_s": 6.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              -0.9387471,
+              0.34460685
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 3,
+            "start_step": 450,
+            "start_time_s": 9.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              -0.70457788,
+              0.70962667
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          }
+        ],
+        "plan_sha256": "b5af094a9054e3fb3178d157c8e0926e52187c714be044e38fae193e47b3b18f"
+      },
+      {
+        "episode_id": 6,
+        "scenario_seed": 101200315,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.09757865,
+            -0.10512715,
+            0.49350411
+          ],
+          "yaw_rad": -0.05156467,
+          "linear_velocity_world_m_s": [
+            0.05003058,
+            0.05887666,
+            0.04887784
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.12788707,
+            -0.03096532,
+            0.00207496
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -1.71076243,
+            -0.09380011,
+            0.82709503
+          ]
+        ],
+        "switches": [],
+        "gusts": [
+          {
+            "event_index": 1,
+            "start_step": 150,
+            "start_time_s": 3.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              -0.97441153,
+              0.22477136
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 2,
+            "start_step": 300,
+            "start_time_s": 6.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.64368327,
+              0.765292
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 3,
+            "start_step": 450,
+            "start_time_s": 9.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              -0.307214,
+              -0.95164046
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          }
+        ],
+        "plan_sha256": "2c05dd76357cbc0c9c7ee71b6ccfdd682a2d30291c523cfd49fa23c552f87ffb"
+      },
+      {
+        "episode_id": 7,
+        "scenario_seed": 101200316,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            0.03670486,
+            0.06598996,
+            0.55807715
+          ],
+          "yaw_rad": 0.24246133,
+          "linear_velocity_world_m_s": [
+            -0.05966081,
+            0.00052065,
+            0.01800643
+          ],
+          "angular_velocity_body_rad_s": [
+            0.03438514,
+            0.08311864,
+            0.05210472
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -1.62727884,
+            -1.52773335,
+            0.88254598
+          ]
+        ],
+        "switches": [],
+        "gusts": [
+          {
+            "event_index": 1,
+            "start_step": 150,
+            "start_time_s": 3.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              -0.66219299,
+              0.74933333
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 2,
+            "start_step": 300,
+            "start_time_s": 6.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              -0.95332803,
+              0.30193653
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 3,
+            "start_step": 450,
+            "start_time_s": 9.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.5812434,
+              0.81372975
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          }
+        ],
+        "plan_sha256": "dbd5f905bf6702bc654fabeb62b04dd87533c77da471d907c2fa5387da641fe2"
+      },
+      {
+        "episode_id": 8,
+        "scenario_seed": 101200317,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            0.13895231,
+            0.12461858,
+            0.6422273
+          ],
+          "yaw_rad": 0.18585047,
+          "linear_velocity_world_m_s": [
+            -0.05643091,
+            -0.00399645,
+            -0.05413765
+          ],
+          "angular_velocity_body_rad_s": [
+            0.1453878,
+            -0.02416165,
+            0.0751886
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            0.8933628,
+            0.98451457,
+            1.43168677
+          ]
+        ],
+        "switches": [],
+        "gusts": [
+          {
+            "event_index": 1,
+            "start_step": 150,
+            "start_time_s": 3.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.83590782,
+              -0.54886985
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 2,
+            "start_step": 300,
+            "start_time_s": 6.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.99944646,
+              0.03326826
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 3,
+            "start_step": 450,
+            "start_time_s": 9.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.03452665,
+              -0.99940378
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          }
+        ],
+        "plan_sha256": "8b4442f4f2b5651069c23a81f8c9915347afdcd40129efcadc3dd2bbe3979037"
+      },
+      {
+        "episode_id": 9,
+        "scenario_seed": 101200318,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.03023335,
+            0.1118457,
+            0.64421538
+          ],
+          "yaw_rad": -0.19405651,
+          "linear_velocity_world_m_s": [
+            -0.03426206,
+            -0.07921755,
+            -0.03060703
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.05790121,
+            0.03303935,
+            0.09785238
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -1.29897266,
+            -0.03990986,
+            1.35445057
+          ]
+        ],
+        "switches": [],
+        "gusts": [
+          {
+            "event_index": 1,
+            "start_step": 150,
+            "start_time_s": 3.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.99803221,
+              -0.06270334
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 2,
+            "start_step": 300,
+            "start_time_s": 6.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.74756018,
+              -0.66419408
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 3,
+            "start_step": 450,
+            "start_time_s": 9.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              -0.23348455,
+              0.97236051
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          }
+        ],
+        "plan_sha256": "b316200bae63a831c9a333ffdf84251ac8f2f662ea76f2098f5a7039f58bd910"
+      },
+      {
+        "episode_id": 10,
+        "scenario_seed": 101200319,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.07902214,
+            -0.14949702,
+            0.59488718
+          ],
+          "yaw_rad": 0.06867533,
+          "linear_velocity_world_m_s": [
+            -0.00623701,
+            0.03676969,
+            -0.02188464
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.08993899,
+            0.13057109,
+            0.04698275
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -0.20908029,
+            1.45297404,
+            0.71943871
+          ]
+        ],
+        "switches": [],
+        "gusts": [
+          {
+            "event_index": 1,
+            "start_step": 150,
+            "start_time_s": 3.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              -0.54171645,
+              0.84056129
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 2,
+            "start_step": 300,
+            "start_time_s": 6.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.96324607,
+              -0.26862055
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 3,
+            "start_step": 450,
+            "start_time_s": 9.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              -0.99974684,
+              -0.02250027
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          }
+        ],
+        "plan_sha256": "a55024dac7f48d60289cb4f4ce89518ff6f6334848a695df9a8d2e5d7e1470bf"
+      },
+      {
+        "episode_id": 11,
+        "scenario_seed": 101200320,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.05327947,
+            -0.0114255,
+            0.47470393
+          ],
+          "yaw_rad": 0.16600089,
+          "linear_velocity_world_m_s": [
+            -0.01001883,
+            -0.05873839,
+            0.00556207
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.11158963,
+            0.06170078,
+            0.07528152
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -0.83041862,
+            -1.24720421,
+            1.16159998
+          ]
+        ],
+        "switches": [],
+        "gusts": [
+          {
+            "event_index": 1,
+            "start_step": 150,
+            "start_time_s": 3.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.38928593,
+              -0.92111697
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 2,
+            "start_step": 300,
+            "start_time_s": 6.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.67038208,
+              0.74201608
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 3,
+            "start_step": 450,
+            "start_time_s": 9.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              -0.58768252,
+              -0.80909163
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          }
+        ],
+        "plan_sha256": "b5c99d2b8011af71bd084af7af3ce2c3726285274391febfd383c17a79d7bb46"
+      },
+      {
+        "episode_id": 12,
+        "scenario_seed": 101200321,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.06144701,
+            -0.08575842,
+            0.49176808
+          ],
+          "yaw_rad": 0.23666997,
+          "linear_velocity_world_m_s": [
+            0.00517903,
+            -0.06221195,
+            0.02861202
+          ],
+          "angular_velocity_body_rad_s": [
+            0.09257683,
+            0.06012745,
+            -0.0355438
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -1.4770865,
+            -0.13166133,
+            0.95928411
+          ]
+        ],
+        "switches": [],
+        "gusts": [
+          {
+            "event_index": 1,
+            "start_step": 150,
+            "start_time_s": 3.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.86018068,
+              0.50998941
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 2,
+            "start_step": 300,
+            "start_time_s": 6.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              -0.88004026,
+              0.47489908
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 3,
+            "start_step": 450,
+            "start_time_s": 9.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.98900396,
+              0.14788906
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          }
+        ],
+        "plan_sha256": "83866f73f5ce64d604fa536a189c26589b9afdbefceb35db41a4de2c47520bb0"
+      },
+      {
+        "episode_id": 13,
+        "scenario_seed": 101200322,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.09735879,
+            -0.13670781,
+            0.48834836
+          ],
+          "yaw_rad": -0.23663832,
+          "linear_velocity_world_m_s": [
+            0.00197603,
+            -0.03052106,
+            0.01317254
+          ],
+          "angular_velocity_body_rad_s": [
+            0.00064392,
+            0.13303337,
+            0.06306921
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -1.59820473,
+            -1.68764313,
+            0.92938715
+          ]
+        ],
+        "switches": [],
+        "gusts": [
+          {
+            "event_index": 1,
+            "start_step": 150,
+            "start_time_s": 3.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.09188084,
+              -0.99577001
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 2,
+            "start_step": 300,
+            "start_time_s": 6.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              -0.73674935,
+              -0.67616595
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 3,
+            "start_step": 450,
+            "start_time_s": 9.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.48455375,
+              0.87476149
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          }
+        ],
+        "plan_sha256": "9f9fd9d82766dbc445bac85ac2ecb5b22446f4ad1858d8eb0bb0fecf8a9aa656"
+      },
+      {
+        "episode_id": 14,
+        "scenario_seed": 101200323,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            0.0477723,
+            0.01867831,
+            0.48554306
+          ],
+          "yaw_rad": 0.18854562,
+          "linear_velocity_world_m_s": [
+            -0.05329241,
+            0.04407967,
+            -0.02689279
+          ],
+          "angular_velocity_body_rad_s": [
+            -0.1226307,
+            0.04918105,
+            0.10876181
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -1.62803578,
+            0.04753275,
+            0.81282497
+          ]
+        ],
+        "switches": [],
+        "gusts": [
+          {
+            "event_index": 1,
+            "start_step": 150,
+            "start_time_s": 3.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              -0.99794844,
+              -0.06402268
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 2,
+            "start_step": 300,
+            "start_time_s": 6.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.38144871,
+              -0.92439001
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 3,
+            "start_step": 450,
+            "start_time_s": 9.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              -0.84158452,
+              0.54012545
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          }
+        ],
+        "plan_sha256": "e29b67e917c81f1b5edd61be191248853d23733a64cedb47c1bbd4b086cf92de"
+      },
+      {
+        "episode_id": 15,
+        "scenario_seed": 101200324,
+        "initial_state": {
+          "position_relative_to_env_origin_m": [
+            -0.09180725,
+            0.13068671,
+            0.55135515
+          ],
+          "yaw_rad": -0.16123525,
+          "linear_velocity_world_m_s": [
+            -0.01867647,
+            0.05886423,
+            0.00456042
+          ],
+          "angular_velocity_body_rad_s": [
+            0.0179102,
+            0.05692487,
+            0.10866943
+          ]
+        },
+        "targets_relative_to_env_origin_m": [
+          [
+            -0.86082691,
+            -0.34260013,
+            0.7204261
+          ]
+        ],
+        "switches": [],
+        "gusts": [
+          {
+            "event_index": 1,
+            "start_step": 150,
+            "start_time_s": 3.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              -0.99486761,
+              0.10118517
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 2,
+            "start_step": 300,
+            "start_time_s": 6.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              0.24179427,
+              0.97032754
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          },
+          {
+            "event_index": 3,
+            "start_step": 450,
+            "start_time_s": 9.0,
+            "duration_steps": 5,
+            "duration_s": 0.1,
+            "direction_world_xy": [
+              -0.95032006,
+              -0.31127445
+            ],
+            "desired_mass_normalized_delta_velocity_m_s": 0.75,
+            "application_frame": "world",
+            "application_point": "Crazyflie body center of mass"
+          }
+        ],
+        "plan_sha256": "0ffb66364f1f55d023c2d7ef90c4b38e7f72678a2a6b6d8492ac987017364fb4"
+      }
+    ]
+  },
+  "manifest_id": "5829c3b1e228403de6bef467684ce0cd9b93bd9dbff211f4a6e48a31acac9016"
+}

@@ -1,0 +1,1360 @@
+{
+  "schema_version": 1,
+  "operation": "delete_crazyflie_survival_run_artifacts",
+  "created_at_utc": "2026-09-16T13:29:35Z",
+  "selection_predicate": "Crazyflie run artifact with embedded non-null survival_first_contract, plus exact same-family sidecars",
+  "exclusions": [
+    "all Unitree G1 files, runs, checkpoints, and queues",
+    "all balanced-v3 artifacts",
+    "survival compatibility source/config retained for provenance and tests"
+  ],
+  "directory_targets": [
+    "runs/archive/crazyflie_main_dry_run_pre_final_20260916T1752",
+    "runs/crazyflie-lif-chained-v1",
+    "runs/crazyflie-lif-original-chained-100x4-v1",
+    "runs/crazyflie-lif-resume-smoke-v2",
+    "runs/crazyflie-mlp-smoke",
+    "runs/crazyflie-wing-pilot-leg_lif-matched-v1",
+    "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1",
+    "runs/crazyflie-wing-pilot-wing_lif-resume-v1",
+    "runs/crazyflie_integration_v1"
+  ],
+  "file_targets": [
+    "runs/FlyCrazyflie-GustRecovery-v0-1x1000-v2.json",
+    "runs/FlyCrazyflie-GustRecovery-v0-1x1000.json",
+    "runs/FlyCrazyflie-GustRecovery-v0-2x1000-v2.json",
+    "runs/FlyCrazyflie-GustRecovery-v0-2x1000.json",
+    "runs/FlyCrazyflie-GustRecovery-v0-4x1000-v2.json",
+    "runs/FlyCrazyflie-GustRecovery-v0-4x1000.json",
+    "runs/FlyCrazyflie-GustRecovery-v0-frozen_lif_original-4x1000-v3.json",
+    "runs/FlyCrazyflie-WaypointReach-v0-1x1000-v2.json",
+    "runs/FlyCrazyflie-WaypointReach-v0-1x1000.json",
+    "runs/FlyCrazyflie-WaypointReach-v0-2x1000-v2.json",
+    "runs/FlyCrazyflie-WaypointReach-v0-2x1000.json",
+    "runs/FlyCrazyflie-WaypointReach-v0-4x1000-v2.json",
+    "runs/FlyCrazyflie-WaypointReach-v0-4x1000.json",
+    "runs/FlyCrazyflie-WaypointReach-v0-frozen_lif_original-4x1000-v3.json",
+    "runs/FlyCrazyflie-WaypointSwitch-v0-1x1000-v2.json",
+    "runs/FlyCrazyflie-WaypointSwitch-v0-1x1000.json",
+    "runs/FlyCrazyflie-WaypointSwitch-v0-2x1000-v2.json",
+    "runs/FlyCrazyflie-WaypointSwitch-v0-2x1000.json",
+    "runs/FlyCrazyflie-WaypointSwitch-v0-4x1000-v2.json",
+    "runs/FlyCrazyflie-WaypointSwitch-v0-4x1000.json",
+    "runs/FlyCrazyflie-WaypointSwitch-v0-frozen_lif_original-4x1000-v3.json",
+    "runs/crazyflie-lif-original-smoke-1x1000-update.json",
+    "runs/crazyflie-lif-original-smoke-2x1000-update.json",
+    "runs/crazyflie-lif-original-smoke-4x1000-update.json",
+    "runs/crazyflie-memory-frozen_lif_degree_rewired-1x1000.json",
+    "runs/crazyflie-memory-frozen_lif_degree_rewired-2x1000.json",
+    "runs/crazyflie-memory-frozen_lif_degree_rewired-4x1000.json",
+    "runs/crazyflie-memory-frozen_lif_original-1x1000.json",
+    "runs/crazyflie-memory-frozen_lif_original-2x1000.json",
+    "runs/crazyflie-memory-frozen_lif_original-4x1000.json",
+    "runs/crazyflie-memory-gru_matched-1x1000.json",
+    "runs/crazyflie-memory-gru_matched-2x1000.json",
+    "runs/crazyflie-memory-gru_matched-4x1000.json",
+    "runs/crazyflie-memory-mlp_normal-1x1000.json",
+    "runs/crazyflie-memory-mlp_normal-2x1000.json",
+    "runs/crazyflie-memory-mlp_normal-4x1000.json",
+    "runs/crazyflie-wing-comparison-v1.json",
+    "runs/crazyflie-wing-comparison-v1.md",
+    "runs/crazyflie-wing-memory-leg_wing_lif-1x1000.json",
+    "runs/crazyflie-wing-memory-leg_wing_lif-1x1000.log",
+    "runs/crazyflie-wing-memory-leg_wing_lif-2x1000.json",
+    "runs/crazyflie-wing-memory-leg_wing_lif-2x1000.log",
+    "runs/crazyflie-wing-memory-leg_wing_lif-4x1000.json",
+    "runs/crazyflie-wing-memory-leg_wing_lif-4x1000.log",
+    "runs/crazyflie-wing-memory-wing_lif-1x1000.json",
+    "runs/crazyflie-wing-memory-wing_lif-1x1000.log",
+    "runs/crazyflie-wing-memory-wing_lif-2x1000.json",
+    "runs/crazyflie-wing-memory-wing_lif-2x1000.log",
+    "runs/crazyflie-wing-memory-wing_lif-4x1000.json",
+    "runs/crazyflie-wing-memory-wing_lif-4x1000.log",
+    "runs/crazyflie-wing-pilot-leg_lif-matched-v1-evaluation.log",
+    "runs/crazyflie-wing-pilot-leg_lif-matched-v1.log",
+    "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1-evaluation.log",
+    "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1-pause.log",
+    "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1-resume.log",
+    "runs/crazyflie-wing-pilot-wing_lif-resume-v1-evaluation.log",
+    "runs/crazyflie-wing-pilot-wing_lif-resume-v1-pause.log",
+    "runs/crazyflie-wing-pilot-wing_lif-resume-v1-resume.log",
+    "runs/crazyflie_integration_v1.json",
+    "runs/crazyflie_integration_v1_report.json",
+    "runs/crazyflie_integration_v1_report.md",
+    "runs/crazyflie_integration_v1_summary.json",
+    "runs/crazyflie_main_v1.json",
+    "runs/crazyflie_main_v1_summary.json",
+    "runs/crazyflie_main_v1_wing_extension_verified.json",
+    "runs/crazyflie_main_v1_wing_extension_verified_summary.json",
+    "runs/crazyflie_wing_main_v1.json",
+    "runs/crazyflie_wing_main_v2_verified.json"
+  ],
+  "inventory": [
+    {
+      "sha256": "192f9017f4a58dab54c161ca50893e07b1bdafe1e6266d282d0fb3ed6e59c87b",
+      "size_bytes": 33372,
+      "path": "runs/FlyCrazyflie-GustRecovery-v0-1x1000-v2.json"
+    },
+    {
+      "sha256": "41cd75d53e4936c0c53a75100cfe0ff642bab6d8e2fad6c3b37ee80fc6d4b323",
+      "size_bytes": 33509,
+      "path": "runs/FlyCrazyflie-GustRecovery-v0-1x1000.json"
+    },
+    {
+      "sha256": "87ea2b20990e036eec0fe54d43c80b909ace62528b77c0b42e7c692526b3d626",
+      "size_bytes": 34949,
+      "path": "runs/FlyCrazyflie-GustRecovery-v0-2x1000-v2.json"
+    },
+    {
+      "sha256": "9510cec133de91d371de9e71ca9206fa4125e5a9fa0afd2e9daf2d54823a1c16",
+      "size_bytes": 35089,
+      "path": "runs/FlyCrazyflie-GustRecovery-v0-2x1000.json"
+    },
+    {
+      "sha256": "4d724676a65d44a40f7d7cae6dd2fcfb64265bf480c1e186af874af70e2ff96f",
+      "size_bytes": 37037,
+      "path": "runs/FlyCrazyflie-GustRecovery-v0-4x1000-v2.json"
+    },
+    {
+      "sha256": "c3ddc1365ffeaac0eb22c18de236b28690d3cfb550c97828ff24ede886f69209",
+      "size_bytes": 37175,
+      "path": "runs/FlyCrazyflie-GustRecovery-v0-4x1000.json"
+    },
+    {
+      "sha256": "9856db20899aa5d0d0f37186b40a3b1664a102ae5aaf07db38aca63bb66e8e3b",
+      "size_bytes": 44198,
+      "path": "runs/FlyCrazyflie-GustRecovery-v0-frozen_lif_original-4x1000-v3.json"
+    },
+    {
+      "sha256": "b3ac15ab30a2d7b7133a744d71cee4a0b41d1d438902ae2bd8bd5c6df88ab23d",
+      "size_bytes": 31204,
+      "path": "runs/FlyCrazyflie-WaypointReach-v0-1x1000-v2.json"
+    },
+    {
+      "sha256": "9a3e4bb2507b3b9d6d7b8b0acbd1dcecd3703a5f461b180b8c99021e45400414",
+      "size_bytes": 31346,
+      "path": "runs/FlyCrazyflie-WaypointReach-v0-1x1000.json"
+    },
+    {
+      "sha256": "b63a9c7c9cb9866f1d7b1bede52cf1d09ffa12ee3715026ea8e4e41dfd8d80e7",
+      "size_bytes": 31975,
+      "path": "runs/FlyCrazyflie-WaypointReach-v0-2x1000-v2.json"
+    },
+    {
+      "sha256": "72a0d992cbd3da57752b4a6d989ea1f16db617f66f4dd21173cb6f3ff7328a85",
+      "size_bytes": 32113,
+      "path": "runs/FlyCrazyflie-WaypointReach-v0-2x1000.json"
+    },
+    {
+      "sha256": "d00d216bc6abfb639e06a236a1520f6df414508af4b64cd1d7ca3249762e6429",
+      "size_bytes": 32432,
+      "path": "runs/FlyCrazyflie-WaypointReach-v0-4x1000-v2.json"
+    },
+    {
+      "sha256": "4ea9e4217a2ddc3f4ade51bb7a3d8df6fbba5b69ed2545cf295dd106e99ce414",
+      "size_bytes": 32572,
+      "path": "runs/FlyCrazyflie-WaypointReach-v0-4x1000.json"
+    },
+    {
+      "sha256": "d95e1a21467170459abee2cac7aa5f380f171154868d96fbed628397808d3358",
+      "size_bytes": 39586,
+      "path": "runs/FlyCrazyflie-WaypointReach-v0-frozen_lif_original-4x1000-v3.json"
+    },
+    {
+      "sha256": "0bd2501231429f60d54993cd0b88f435fc6ec0b9957d8e4a77574b50d071439c",
+      "size_bytes": 31296,
+      "path": "runs/FlyCrazyflie-WaypointSwitch-v0-1x1000-v2.json"
+    },
+    {
+      "sha256": "53df13170c8e9f41bce2a3533cffac57f335e8c410f210f0522eabf9c4175aef",
+      "size_bytes": 31439,
+      "path": "runs/FlyCrazyflie-WaypointSwitch-v0-1x1000.json"
+    },
+    {
+      "sha256": "cf8a4de85373cb1e8316103931664a48f9a5d073314c37c89876f894a7794a6d",
+      "size_bytes": 32072,
+      "path": "runs/FlyCrazyflie-WaypointSwitch-v0-2x1000-v2.json"
+    },
+    {
+      "sha256": "cfc039feaeed33e952088234a0be72efeaa4aed4b102a2ecd4426bd23d879738",
+      "size_bytes": 32213,
+      "path": "runs/FlyCrazyflie-WaypointSwitch-v0-2x1000.json"
+    },
+    {
+      "sha256": "641e6e1aa8147941e060e3be409a4c1bb33de55b2e6593cb067682402df25375",
+      "size_bytes": 32525,
+      "path": "runs/FlyCrazyflie-WaypointSwitch-v0-4x1000-v2.json"
+    },
+    {
+      "sha256": "92a98746c94ed6873aac0709ccb01245b45b3cc2eb0e53be48bb778c74d36912",
+      "size_bytes": 32662,
+      "path": "runs/FlyCrazyflie-WaypointSwitch-v0-4x1000.json"
+    },
+    {
+      "sha256": "1ff4c6ab19009b76a724d91e56c85f1e537f3e6fb670354e71ebb6f92aad8cea",
+      "size_bytes": 39688,
+      "path": "runs/FlyCrazyflie-WaypointSwitch-v0-frozen_lif_original-4x1000-v3.json"
+    },
+    {
+      "sha256": "ada2b976f97d1e4309cfe16362d2af9bf68069faf999a625b1ec9cc1d81dce8e",
+      "size_bytes": 745273,
+      "path": "runs/archive/crazyflie_main_dry_run_pre_final_20260916T1752/crazyflie_main_v1.json"
+    },
+    {
+      "sha256": "4ec984d7fec3099c4646beb7aa64f8720f309aad6066fe1c1121e634d050f58f",
+      "size_bytes": 9228,
+      "path": "runs/archive/crazyflie_main_dry_run_pre_final_20260916T1752/crazyflie_main_v1_summary.json"
+    },
+    {
+      "sha256": "82ab9324bc45806804d69b6bbbc20d699708a412db39f115b16badcd51e979ae",
+      "size_bytes": 14530,
+      "path": "runs/crazyflie-lif-chained-v1/chained_phase_plan.json"
+    },
+    {
+      "sha256": "c8dcbddaa093166a2632559673d66246c64bb3e651cee2436cade74cc2305ca9",
+      "size_bytes": 455356,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/01-reach/checkpoints/latest.pt"
+    },
+    {
+      "sha256": "1c33d2514b02998fe0e62cf2cec02825d7348d040d303ce4d040f881fb29ab23",
+      "size_bytes": 234895,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/01-reach/checkpoints/update-00000000.pt"
+    },
+    {
+      "sha256": "d49ca2a5983b199f9ed0ff64318776606a70f32296e57aa1b8e377aaace1ec1c",
+      "size_bytes": 454908,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/01-reach/checkpoints/update-00000100.pt"
+    },
+    {
+      "sha256": "83bbf3912b03659fcecd9df84a087c6b2cc43ba91d979f54db17b452778b8444",
+      "size_bytes": 172561,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/01-reach/history/rows-00000001-00000100-resume-0000-1789553133518436248.jsonl"
+    },
+    {
+      "sha256": "b16ddec73562f34cdc3db1ce3d6ec918eae2628c50506b5275abd4929ee8973e",
+      "size_bytes": 43409,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/01-reach/training_manifest.json"
+    },
+    {
+      "sha256": "552fb77f71ca4db03e66a3293e5cca935e4006e53392587a3f36bcf14f3e3109",
+      "size_bytes": 455804,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/02-switch-retry1/checkpoints/latest.pt"
+    },
+    {
+      "sha256": "c11e632d44068102ff7f9781be75bbecdafc06b95901e8eca997506c9e1e7a1d",
+      "size_bytes": 235279,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/02-switch-retry1/checkpoints/update-00000000.pt"
+    },
+    {
+      "sha256": "2bd9886125625ac4fe91fb22cde8490de1620180cce9f6c06902f1cff044faa9",
+      "size_bytes": 455356,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/02-switch-retry1/checkpoints/update-00000100.pt"
+    },
+    {
+      "sha256": "ab3556a0999e613a048b6af096cfe183bb6ec00eda5b4c50e24767fbd4a0732a",
+      "size_bytes": 171979,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/02-switch-retry1/history/rows-00000001-00000100-resume-0000-1789553652793061131.jsonl"
+    },
+    {
+      "sha256": "133c513e81053c383c2e83172accafb92cf1f212b7f73a3484e7c82f801455c9",
+      "size_bytes": 44299,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/02-switch-retry1/training_manifest.json"
+    },
+    {
+      "sha256": "38f47ae9b339073bb1a2db4c7650ac6e336c09d442f9ed1a2448543484863b01",
+      "size_bytes": 234895,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/02-switch/checkpoints/latest.pt"
+    },
+    {
+      "sha256": "7522c6f3435b8e474f248d1f37f8c3190c67d753d1716c4239513b239536a688",
+      "size_bytes": 234895,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/02-switch/checkpoints/update-00000000.pt"
+    },
+    {
+      "sha256": "5716575affcfd990d825166c70906dad5562610cf53e135908939686ef269a78",
+      "size_bytes": 34734,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/02-switch/training_manifest.json"
+    },
+    {
+      "sha256": "4d5db310d49af4ee4ec1a42869cf54bcf1366110a5f2b7649e4eb06981140be0",
+      "size_bytes": 455356,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/03-gust-retry1/checkpoints/latest.pt"
+    },
+    {
+      "sha256": "173cdd71e8c3e96d168fb36bb0b852035ff0b3c9b5f0a9e85f7052e35bdf08bc",
+      "size_bytes": 234895,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/03-gust-retry1/checkpoints/update-00000000.pt"
+    },
+    {
+      "sha256": "958de92ee3b624938fa3979f6b3f44bb1a6790b98dca3aa9b209c73f904eaeba",
+      "size_bytes": 454972,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/03-gust-retry1/checkpoints/update-00000100.pt"
+    },
+    {
+      "sha256": "512ef8eabe236066837736e6f107ecd37356e032e6fba62238c32548905f9d15",
+      "size_bytes": 172489,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/03-gust-retry1/history/rows-00000001-00000100-resume-0000-1789553861995560092.jsonl"
+    },
+    {
+      "sha256": "855781b0b9a390a7eb0c638bfe86f7748bf24314f81bbee58faf87e705775163",
+      "size_bytes": 43426,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/03-gust-retry1/training_manifest.json"
+    },
+    {
+      "sha256": "5d4498cc06dbad67a6d08bc10ca253e49db5ad0527105915cea9f4a8120dd9f7",
+      "size_bytes": 456764,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/checkpoints/latest.pt"
+    },
+    {
+      "sha256": "a40b2363c9e87f50220f98475f59799929b68d7581a1aab2d8ac8a1b87df81a1",
+      "size_bytes": 236239,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/checkpoints/update-00000000.pt"
+    },
+    {
+      "sha256": "00f6426766f43188d1ffccc4e478cf3737d1d7546b716be2e479212d8c104f4a",
+      "size_bytes": 456316,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/checkpoints/update-00000100.pt"
+    },
+    {
+      "sha256": "7bfd26514ca398d005a293fa4d3765dc02b00390b1f17ea03f4f053f5bbb7a39",
+      "size_bytes": 266096,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/history/rows-00000001-00000100-resume-0000-1789554229147764790.jsonl"
+    },
+    {
+      "sha256": "74617209d4cc0fc6ced5f8eae82f87b1740bd9ed83c2bcead1e5b8a53d89e4fe",
+      "size_bytes": 134404,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/integration-evaluation.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/integration-evaluation.json.lock"
+    },
+    {
+      "sha256": "38883b7a57d4134f669e8f218162faebbcc7576c001016efe5b76c2a52b59f7f",
+      "size_bytes": 39304,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/integration-evaluation.json.parts/20260916T102528.561539Z-82cb42d6cf1146289b10fa8d6d5dee4e/01_waypoint_reach.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/integration-evaluation.json.parts/20260916T102528.561539Z-82cb42d6cf1146289b10fa8d6d5dee4e/01_waypoint_reach.json.lock"
+    },
+    {
+      "sha256": "787179192fe99d7c6fcc27e8188dd30b4d75890893bf8c93d89a3ac6356624ce",
+      "size_bytes": 47453,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/integration-evaluation.json.parts/20260916T102528.561539Z-82cb42d6cf1146289b10fa8d6d5dee4e/02_waypoint_switch.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/integration-evaluation.json.parts/20260916T102528.561539Z-82cb42d6cf1146289b10fa8d6d5dee4e/02_waypoint_switch.json.lock"
+    },
+    {
+      "sha256": "6fd5af87ea35337d6515f0c8815c1bacb63c98f242fcd5eed40d3c8bbce58567",
+      "size_bytes": 57864,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/integration-evaluation.json.parts/20260916T102528.561539Z-82cb42d6cf1146289b10fa8d6d5dee4e/03_gust_recovery.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/integration-evaluation.json.parts/20260916T102528.561539Z-82cb42d6cf1146289b10fa8d6d5dee4e/03_gust_recovery.json.lock"
+    },
+    {
+      "sha256": "8c81af92207754dac4b635fec0bc9859be8a5df5ba9ce3e4e3cd9e0158aa6b0c",
+      "size_bytes": 127731,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/lif-visualization.json"
+    },
+    {
+      "sha256": "7389824c6af43902fbb65a66de54719f81e15a40d848e3f203037ca744bf6bdd",
+      "size_bytes": 46416,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/training_manifest.json"
+    },
+    {
+      "sha256": "70565547babd64cd03e28e9dfa9915e7d87d445e15aede2b75bad6d36f552b64",
+      "size_bytes": 11164,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/visualizations/reach-close-brain-20260916T103526Z.json"
+    },
+    {
+      "sha256": "b7e148b9ecfe32d282f2ca8af0f6453f25f7d70405d7dc4a8e97ab4cfc6225eb",
+      "size_bytes": 11165,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/visualizations/reach-close-brain-20260916T103605Z.json"
+    },
+    {
+      "sha256": "3a74a4dedf79f9596e2739e5671ec942b847cdef9d43c3ae1e5955aa59edc673",
+      "size_bytes": 240499,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/visualizations/reach-close-brain-20260916T103900Z.json"
+    },
+    {
+      "sha256": "5d5d870a088fc6ec4e06e62d6e7c7359a277c24955eab492c58e4a8f3c041a2e",
+      "size_bytes": 240500,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/visualizations/reach-close-brain-20260916T104050Z.json"
+    },
+    {
+      "sha256": "a49a535a54b0bba437992af693f7780a2a4cc09a5f7ab42b9042c61240d84673",
+      "size_bytes": 240509,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/visualizations/reach-close-brain-20260916T104209Z.json"
+    },
+    {
+      "sha256": "06af7d27a185f95ad5e535ffa5c53a3be645175cde57decb89607b7b023dd01f",
+      "size_bytes": 240778,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/visualizations/switch-close-brain-20260916T103900Z.json"
+    },
+    {
+      "sha256": "a48dbced87132779b7dc8ab3f293e144c3a72839890bce969e76e513fd06b6f7",
+      "size_bytes": 240775,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/visualizations/switch-close-brain-20260916T104050Z.json"
+    },
+    {
+      "sha256": "be5c6668a3c8ff160369a7cb35a681dbd4ba69eb519dfaca5e90cda8934b35f9",
+      "size_bytes": 240771,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/visualizations/switch-close-brain-20260916T104209Z.json"
+    },
+    {
+      "sha256": "a07242999b49b9311e59dc074415444efe1bcab14d15711cfcf82530306c2d2a",
+      "size_bytes": 10918,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/04-mixed-retry2/visualizations/switch-close-brain-20260916T104548Z.json"
+    },
+    {
+      "sha256": "8e8dac42b124b6416d7e1192028deec03c4f09a5d3eaf876b947bdea7604a61e",
+      "size_bytes": 15478,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/chained_phase_plan.json"
+    },
+    {
+      "sha256": "1a315e777a23b06fb570c0ae98b171c50284d5ff69aa8135b6ac3d3c2485ff63",
+      "size_bytes": 205433,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/logs/01-reach.log"
+    },
+    {
+      "sha256": "436e61a54bb98381b9028bba30d50c2419c119d4c7a9cb8726acb5d3e02d366b",
+      "size_bytes": 19728,
+      "path": "runs/crazyflie-lif-original-chained-100x4-v1/logs/02-switch.log"
+    },
+    {
+      "sha256": "ac40a4cb46ec6b6d45f8bd70cac84bbc6016ea61ef437e3b9cd10caa97268100",
+      "size_bytes": 35232,
+      "path": "runs/crazyflie-lif-original-smoke-1x1000-update.json"
+    },
+    {
+      "sha256": "238d283210d47306b676c390c1905753fc64613abb9f2116f64c97452479fb22",
+      "size_bytes": 36007,
+      "path": "runs/crazyflie-lif-original-smoke-2x1000-update.json"
+    },
+    {
+      "sha256": "2aad32b26edbebe52eacb499253c598a266927fe25e84debfe98c29f17daa2bd",
+      "size_bytes": 36462,
+      "path": "runs/crazyflie-lif-original-smoke-4x1000-update.json"
+    },
+    {
+      "sha256": "11bdc8b8166f4e59541492325c42d0b00c55bb5d547350e325602d10368333ab",
+      "size_bytes": 436604,
+      "path": "runs/crazyflie-lif-resume-smoke-v2/checkpoints/latest.pt"
+    },
+    {
+      "sha256": "6a50c8911126b218cdc92cf083a03c52dd01ba4d4405a8b438f2ed944041ba09",
+      "size_bytes": 229711,
+      "path": "runs/crazyflie-lif-resume-smoke-v2/checkpoints/update-00000000.pt"
+    },
+    {
+      "sha256": "4292fbdcaba6e06b48206e4514158db25a5c1b1a50e225c3fb4a42977b3b9e17",
+      "size_bytes": 433596,
+      "path": "runs/crazyflie-lif-resume-smoke-v2/checkpoints/update-00000001.pt"
+    },
+    {
+      "sha256": "213eb6dada96854ee5611aa16d4a9d4acae5d6a8370af40b7ee80319d766aea6",
+      "size_bytes": 436156,
+      "path": "runs/crazyflie-lif-resume-smoke-v2/checkpoints/update-00000002.pt"
+    },
+    {
+      "sha256": "17ce2f186e8349acd89cb4aa511f4f7193ef098bc7094c41c138d964557f000a",
+      "size_bytes": 2949,
+      "path": "runs/crazyflie-lif-resume-smoke-v2/history/rows-00000001-00000001-resume-0000-1789556811468233693.jsonl"
+    },
+    {
+      "sha256": "f4000186b4181e185b77342bf5160f2d8017e5ab8f1443e02cac6b3e54030dcd",
+      "size_bytes": 2977,
+      "path": "runs/crazyflie-lif-resume-smoke-v2/history/rows-00000002-00000002-resume-0001-1789556826526348765.jsonl"
+    },
+    {
+      "sha256": "b63a00ad354eea9ba4d7482595bc6932c3c34672f8b87af24cf15da557f02526",
+      "size_bytes": 38580,
+      "path": "runs/crazyflie-lif-resume-smoke-v2/training_manifest.json"
+    },
+    {
+      "sha256": "201b6e630198fd0538d1c26599e4b3022e6fda7d42b8229e2b70d99d47f4aa47",
+      "size_bytes": 339165,
+      "path": "runs/crazyflie-memory-frozen_lif_degree_rewired-1x1000.json"
+    },
+    {
+      "sha256": "899b55a23db3894ec0edafdb6658a23f0af9c73197136a718f4f1b3737055426",
+      "size_bytes": 339940,
+      "path": "runs/crazyflie-memory-frozen_lif_degree_rewired-2x1000.json"
+    },
+    {
+      "sha256": "c36acc056bd2ae6556b52c25b5127c042050e531c60dfc2350aee1fa99e7489e",
+      "size_bytes": 340387,
+      "path": "runs/crazyflie-memory-frozen_lif_degree_rewired-4x1000.json"
+    },
+    {
+      "sha256": "9d427e0b0c4a3e703adbce725a419e92c0d282f4d52e5ca3031e0cb9365982da",
+      "size_bytes": 37823,
+      "path": "runs/crazyflie-memory-frozen_lif_original-1x1000.json"
+    },
+    {
+      "sha256": "f811081143e87bc858b7f3c4de6e55c0cf749b428e28849782b6f2f9178cc581",
+      "size_bytes": 38576,
+      "path": "runs/crazyflie-memory-frozen_lif_original-2x1000.json"
+    },
+    {
+      "sha256": "c480c881da1ffef16ebb17f62cef6cc0ca6a94996fee417ab881ca804983ebca",
+      "size_bytes": 39042,
+      "path": "runs/crazyflie-memory-frozen_lif_original-4x1000.json"
+    },
+    {
+      "sha256": "44d26e46a48fca516d0c2fbbfda227e4bc0d233fb8ad0bf16a51c80a8dfcb88f",
+      "size_bytes": 36948,
+      "path": "runs/crazyflie-memory-gru_matched-1x1000.json"
+    },
+    {
+      "sha256": "4c628b4c0195e5fdf312edc7a437774e3bc6396353d4f7af608aa613a8397cdf",
+      "size_bytes": 37720,
+      "path": "runs/crazyflie-memory-gru_matched-2x1000.json"
+    },
+    {
+      "sha256": "5bdd028ca6f37656fe48690af3217c3914affd3e7a33d8a8d51d7ce71714bcd2",
+      "size_bytes": 38168,
+      "path": "runs/crazyflie-memory-gru_matched-4x1000.json"
+    },
+    {
+      "sha256": "dc0ef3adec314ab14ea683e8d3a974c2b56fa9b71dfd5324cdfeb481c4920f3f",
+      "size_bytes": 36963,
+      "path": "runs/crazyflie-memory-mlp_normal-1x1000.json"
+    },
+    {
+      "sha256": "1fc1c919b4e0140b256fa539306efdb2857bea538ee54619208756245c6a5a5e",
+      "size_bytes": 37739,
+      "path": "runs/crazyflie-memory-mlp_normal-2x1000.json"
+    },
+    {
+      "sha256": "1e82c49ea156fa1941276028f647c3a5449974ede37bcb1fbe5dd963e339f4bc",
+      "size_bytes": 38188,
+      "path": "runs/crazyflie-memory-mlp_normal-4x1000.json"
+    },
+    {
+      "sha256": "c93caaf9c695b373cc41c8147ef908823feb6a4875aef66520290d90998c448d",
+      "size_bytes": 322802,
+      "path": "runs/crazyflie-mlp-smoke/checkpoints/latest.pt"
+    },
+    {
+      "sha256": "51364709529628c907124e0d26bd5399e46c63c8a1456a244161b0a00c2718f8",
+      "size_bytes": 124455,
+      "path": "runs/crazyflie-mlp-smoke/checkpoints/update-00000000.pt"
+    },
+    {
+      "sha256": "9c383b4c5e156b6640dca4bccd67e50db3d5ac97b43f31bec276a076dc88f0d2",
+      "size_bytes": 321330,
+      "path": "runs/crazyflie-mlp-smoke/checkpoints/update-00000100.pt"
+    },
+    {
+      "sha256": "6cd920d77064be61a92682d237b54138bf26a64f899e2fcff4e16a2185d48798",
+      "size_bytes": 322354,
+      "path": "runs/crazyflie-mlp-smoke/checkpoints/update-00000200.pt"
+    },
+    {
+      "sha256": "4e075d0e937eb56bd6754ee9f44935ba9ead613278f81f93efe300a04535728d",
+      "size_bytes": 132361,
+      "path": "runs/crazyflie-mlp-smoke/evaluation.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie-mlp-smoke/evaluation.json.lock"
+    },
+    {
+      "sha256": "59f3a0a8882b20328d1a9d2a6cb7b2885044e5b32761d8dcb4433c637775df86",
+      "size_bytes": 37424,
+      "path": "runs/crazyflie-mlp-smoke/evaluation.json.parts/20260916T110548.232707Z-6ce190a5701a4dda9c429851f2be27e1/01_waypoint_reach.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie-mlp-smoke/evaluation.json.parts/20260916T110548.232707Z-6ce190a5701a4dda9c429851f2be27e1/01_waypoint_reach.json.lock"
+    },
+    {
+      "sha256": "e82459072275be87cc323faa19be302bf2711506cc3277d786c603007e7e9036",
+      "size_bytes": 45595,
+      "path": "runs/crazyflie-mlp-smoke/evaluation.json.parts/20260916T110548.232707Z-6ce190a5701a4dda9c429851f2be27e1/02_waypoint_switch.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie-mlp-smoke/evaluation.json.parts/20260916T110548.232707Z-6ce190a5701a4dda9c429851f2be27e1/02_waypoint_switch.json.lock"
+    },
+    {
+      "sha256": "f08a492b283856e4e899e2769afd8b3ba2407c3eb9e43e159b11a2e73feb794b",
+      "size_bytes": 55989,
+      "path": "runs/crazyflie-mlp-smoke/evaluation.json.parts/20260916T110548.232707Z-6ce190a5701a4dda9c429851f2be27e1/03_gust_recovery.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie-mlp-smoke/evaluation.json.parts/20260916T110548.232707Z-6ce190a5701a4dda9c429851f2be27e1/03_gust_recovery.json.lock"
+    },
+    {
+      "sha256": "f0aa8698fd1dd208feee744adb350abca7772d8bdace5ef91c3ee9246f9170bf",
+      "size_bytes": 156278,
+      "path": "runs/crazyflie-mlp-smoke/history/rows-00000001-00000100-resume-0000-1789556642278578243.jsonl"
+    },
+    {
+      "sha256": "b1cec928d24be8ba6f2eb163de4679b7db9c819c67687c6b70c603437347b787",
+      "size_bytes": 156993,
+      "path": "runs/crazyflie-mlp-smoke/history/rows-00000101-00000200-resume-0000-1789556719293858844.jsonl"
+    },
+    {
+      "sha256": "608de15cd6511002a2b33524de19155ec70e76e8efa83a449b33fce3bde4fbdd",
+      "size_bytes": 38308,
+      "path": "runs/crazyflie-mlp-smoke/training_manifest.json"
+    },
+    {
+      "sha256": "0cc559358a5b211175afc7254bad90005f8059d729a97c0940cc6ea444ca3eb3",
+      "size_bytes": 14141,
+      "path": "runs/crazyflie-wing-comparison-v1.json"
+    },
+    {
+      "sha256": "ff7a5accbdd56b725078b1ada34b607d3981230447582a8d34cfb9a60dbe104c",
+      "size_bytes": 727,
+      "path": "runs/crazyflie-wing-comparison-v1.md"
+    },
+    {
+      "sha256": "dac6c9144c8cfb6a9852afa96c27acb4a3411cc096ec6eb21087b30f875aa5dd",
+      "size_bytes": 38582,
+      "path": "runs/crazyflie-wing-memory-leg_wing_lif-1x1000.json"
+    },
+    {
+      "sha256": "b35fe0c16dbfa60ef78e730f79ea615f5d961afbf8da5b3cf49e6e10fba3018d",
+      "size_bytes": 13879,
+      "path": "runs/crazyflie-wing-memory-leg_wing_lif-1x1000.log"
+    },
+    {
+      "sha256": "11ef9268eeb0f5afbc23f8ae3ef6d36758c47547caeae37a3425171ceec779c9",
+      "size_bytes": 39356,
+      "path": "runs/crazyflie-wing-memory-leg_wing_lif-2x1000.json"
+    },
+    {
+      "sha256": "86127cf6a40f490ec25dc551f89b54f84d4c220c0d51f9875fa35580757a1a06",
+      "size_bytes": 13920,
+      "path": "runs/crazyflie-wing-memory-leg_wing_lif-2x1000.log"
+    },
+    {
+      "sha256": "ec223cae781b7c4ec034fe4eb861bb3f7f3a90dd7d11ea82193ad5605a9e1727",
+      "size_bytes": 39809,
+      "path": "runs/crazyflie-wing-memory-leg_wing_lif-4x1000.json"
+    },
+    {
+      "sha256": "e61dcdf8dcd6d948bd8afc05f66c0b850a74bc0a7f0f2d9ec43df5fc0c9bd79b",
+      "size_bytes": 13919,
+      "path": "runs/crazyflie-wing-memory-leg_wing_lif-4x1000.log"
+    },
+    {
+      "sha256": "4e07ae263372c8052c6de33fcc2e3514bfaa50643404cd3ee6f780edbbeb66a5",
+      "size_bytes": 38352,
+      "path": "runs/crazyflie-wing-memory-wing_lif-1x1000.json"
+    },
+    {
+      "sha256": "e95376029d47f6df48bc02c54214dd88dab28ec26ac0f25ae91c7ce136dc0bd4",
+      "size_bytes": 13868,
+      "path": "runs/crazyflie-wing-memory-wing_lif-1x1000.log"
+    },
+    {
+      "sha256": "cfcbd0cce4a2d5ea0282a1329139c36ed6d63f5cef142391fdc6c65e5224d62f",
+      "size_bytes": 39130,
+      "path": "runs/crazyflie-wing-memory-wing_lif-2x1000.json"
+    },
+    {
+      "sha256": "de2e69227df6e5149fd4415a8a10c895726385df5b005753132bfdffe4d7d505",
+      "size_bytes": 13910,
+      "path": "runs/crazyflie-wing-memory-wing_lif-2x1000.log"
+    },
+    {
+      "sha256": "fc256a03140ad1724a460bf7c49d3e065d22fb445d401218edc23675aa512f5f",
+      "size_bytes": 39574,
+      "path": "runs/crazyflie-wing-memory-wing_lif-4x1000.json"
+    },
+    {
+      "sha256": "b7ee5841c6e6e6e78aa054206a9fbeb586abe026cb0bc8a42bc2f5d1911d7b8c",
+      "size_bytes": 13909,
+      "path": "runs/crazyflie-wing-memory-wing_lif-4x1000.log"
+    },
+    {
+      "sha256": "61e3b663de950e605a39b1c1f754020ccbd3582b13ccf835cbfbfa7a48a46e2d",
+      "size_bytes": 58227,
+      "path": "runs/crazyflie-wing-pilot-leg_lif-matched-v1-evaluation.log"
+    },
+    {
+      "sha256": "efaec0271d53166cc5674e3337fca6ab47974e483076611e30dfe859198c55e1",
+      "size_bytes": 27592,
+      "path": "runs/crazyflie-wing-pilot-leg_lif-matched-v1.log"
+    },
+    {
+      "sha256": "ef8aa0ce1d0bad5a3ca1a46d51cbb5566d5c9dc34ad8367889add15f40a3f02a",
+      "size_bytes": 435452,
+      "path": "runs/crazyflie-wing-pilot-leg_lif-matched-v1/checkpoints/latest.pt"
+    },
+    {
+      "sha256": "b74f6e69454e1c1755e1cc09b3d433a4166d0da688702e82b86eff8e482b680c",
+      "size_bytes": 230095,
+      "path": "runs/crazyflie-wing-pilot-leg_lif-matched-v1/checkpoints/update-00000000.pt"
+    },
+    {
+      "sha256": "afa3964c51bebeca7597820124843f5c485d094f598f0143f620d3da5e56437b",
+      "size_bytes": 433980,
+      "path": "runs/crazyflie-wing-pilot-leg_lif-matched-v1/checkpoints/update-00000001.pt"
+    },
+    {
+      "sha256": "e171855acf2b22648028d3cbadab057a35cff7f68910e94b1f186ba4108afd2d",
+      "size_bytes": 435004,
+      "path": "runs/crazyflie-wing-pilot-leg_lif-matched-v1/checkpoints/update-00000002.pt"
+    },
+    {
+      "sha256": "db35ae17c4113d327bc2efc5ee4b9d6964af52f72a01d2991926749527a731c1",
+      "size_bytes": 132992,
+      "path": "runs/crazyflie-wing-pilot-leg_lif-matched-v1/evaluation.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie-wing-pilot-leg_lif-matched-v1/evaluation.json.lock"
+    },
+    {
+      "sha256": "452bb66bc3ce24de8bf2c3179497547a29e83ffcf34a2ab308356086d732c925",
+      "size_bytes": 37974,
+      "path": "runs/crazyflie-wing-pilot-leg_lif-matched-v1/evaluation.json.parts/20260916T113845.994951Z-b511807aa95240c49c768171c4740bd4/01_waypoint_reach.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie-wing-pilot-leg_lif-matched-v1/evaluation.json.parts/20260916T113845.994951Z-b511807aa95240c49c768171c4740bd4/01_waypoint_reach.json.lock"
+    },
+    {
+      "sha256": "1e1af4c2b242abcd24e17f746da729261e21b79eb1c5eb7156c27ce7aeb6081e",
+      "size_bytes": 46141,
+      "path": "runs/crazyflie-wing-pilot-leg_lif-matched-v1/evaluation.json.parts/20260916T113845.994951Z-b511807aa95240c49c768171c4740bd4/02_waypoint_switch.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie-wing-pilot-leg_lif-matched-v1/evaluation.json.parts/20260916T113845.994951Z-b511807aa95240c49c768171c4740bd4/02_waypoint_switch.json.lock"
+    },
+    {
+      "sha256": "1e368574c2a189b4507f57f82fd5a246f916b44d18eaca35fb88726d4cb33d0b",
+      "size_bytes": 56543,
+      "path": "runs/crazyflie-wing-pilot-leg_lif-matched-v1/evaluation.json.parts/20260916T113845.994951Z-b511807aa95240c49c768171c4740bd4/03_gust_recovery.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie-wing-pilot-leg_lif-matched-v1/evaluation.json.parts/20260916T113845.994951Z-b511807aa95240c49c768171c4740bd4/03_gust_recovery.json.lock"
+    },
+    {
+      "sha256": "6f3417093b5789fdfc3abdb9a6c8c2948647bd56ea2de7cb99cfca17fbbdede8",
+      "size_bytes": 2948,
+      "path": "runs/crazyflie-wing-pilot-leg_lif-matched-v1/history/rows-00000001-00000001-resume-0000-1789558717626403586.jsonl"
+    },
+    {
+      "sha256": "1533c6be22212c187f0c9a9b30b88e087806c9082d22a43c5157335dd556bbb7",
+      "size_bytes": 2983,
+      "path": "runs/crazyflie-wing-pilot-leg_lif-matched-v1/history/rows-00000002-00000002-resume-0000-1789558719552584655.jsonl"
+    },
+    {
+      "sha256": "b19daf951d4e5f45edb019384bffdd6498cfdec94e0eafe29205bbb11bd25fe2",
+      "size_bytes": 37246,
+      "path": "runs/crazyflie-wing-pilot-leg_lif-matched-v1/training_manifest.json"
+    },
+    {
+      "sha256": "e23b210be7314f09f0f75eb6ed3ed3410ef140e7cddac946f4d5e28d92877e93",
+      "size_bytes": 68923,
+      "path": "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1-evaluation.log"
+    },
+    {
+      "sha256": "68bf76637b92b87e180db040d90ad89c5aa2b37dbb8873c8d22e8e812ebf78f8",
+      "size_bytes": 47671,
+      "path": "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1-pause.log"
+    },
+    {
+      "sha256": "ecbc0a53335ffbf291530a41b6fe90618115648271b25b7fa5e7bd97263068d0",
+      "size_bytes": 28925,
+      "path": "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1-resume.log"
+    },
+    {
+      "sha256": "5f8e6f0a552f0cef7256477020131d12df42b1dfe034ad2a8c24951a04a6d3a0",
+      "size_bytes": 681018,
+      "path": "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1/checkpoints/latest.pt"
+    },
+    {
+      "sha256": "2adc3cc3afaf7f329f5cef29ff8655a02eb484c68c29b097778866d220a3dfc9",
+      "size_bytes": 430129,
+      "path": "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1/checkpoints/update-00000000.pt"
+    },
+    {
+      "sha256": "73ca14a386b897484f52b2bcc594f71e0b20d569dd957d4b2b980e2786df4ec5",
+      "size_bytes": 678010,
+      "path": "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1/checkpoints/update-00000001.pt"
+    },
+    {
+      "sha256": "ddf0ada939ed1ccbe52df162927793a733848dc868e2cfc09d3b5082fd430990",
+      "size_bytes": 680570,
+      "path": "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1/checkpoints/update-00000002.pt"
+    },
+    {
+      "sha256": "37af34282f39b546c21ed07e823f10bafcb3d37ffa2b971ba9ec19fc8274c647",
+      "size_bytes": 134781,
+      "path": "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1/evaluation.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1/evaluation.json.lock"
+    },
+    {
+      "sha256": "174d8758937e4a2de623b4d9dce93b7afdff173c6346a9522b9d7e6cfc953b0e",
+      "size_bytes": 39738,
+      "path": "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1/evaluation.json.parts/20260916T113711.207814Z-915795fad999422b964dd51a5ccf833e/01_waypoint_reach.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1/evaluation.json.parts/20260916T113711.207814Z-915795fad999422b964dd51a5ccf833e/01_waypoint_reach.json.lock"
+    },
+    {
+      "sha256": "5be55fb7b9f55e483f0ba16c090ffc37fdafa835b18c3c92ddda2d62aa631fb6",
+      "size_bytes": 47895,
+      "path": "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1/evaluation.json.parts/20260916T113711.207814Z-915795fad999422b964dd51a5ccf833e/02_waypoint_switch.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1/evaluation.json.parts/20260916T113711.207814Z-915795fad999422b964dd51a5ccf833e/02_waypoint_switch.json.lock"
+    },
+    {
+      "sha256": "339770a0c0327fd34e3a0369043de535d13abdb97e4519b5f7c5f22d32009219",
+      "size_bytes": 58307,
+      "path": "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1/evaluation.json.parts/20260916T113711.207814Z-915795fad999422b964dd51a5ccf833e/03_gust_recovery.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1/evaluation.json.parts/20260916T113711.207814Z-915795fad999422b964dd51a5ccf833e/03_gust_recovery.json.lock"
+    },
+    {
+      "sha256": "82881b6fd879094fec8c5ce945fc1490c11cfb59429502a2b311e0cd1e7e423c",
+      "size_bytes": 4402,
+      "path": "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1/history/rows-00000001-00000001-resume-0000-1789558569149693157.jsonl"
+    },
+    {
+      "sha256": "fcacbcc46eb3e3b21011f7d5c752eb5c0a92e6b54539d6258ea93f92e2cacb56",
+      "size_bytes": 4434,
+      "path": "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1/history/rows-00000002-00000002-resume-0001-1789558583269477751.jsonl"
+    },
+    {
+      "sha256": "bd5801e86911fd3391f7be46dae40e4d9a41e4f9ca15abecc280205c7fdb16f2",
+      "size_bytes": 42262,
+      "path": "runs/crazyflie-wing-pilot-leg_wing_lif-resume-v1/training_manifest.json"
+    },
+    {
+      "sha256": "11d9151e6c315da2a66cd05e2c8356db34276d7c7b9a34cfdbc4f234d710f1b0",
+      "size_bytes": 68318,
+      "path": "runs/crazyflie-wing-pilot-wing_lif-resume-v1-evaluation.log"
+    },
+    {
+      "sha256": "5a8a9276e154bd59af5344d80051b8f561b375b3a67c650597517b6d087115f3",
+      "size_bytes": 45746,
+      "path": "runs/crazyflie-wing-pilot-wing_lif-resume-v1-pause.log"
+    },
+    {
+      "sha256": "b5d713eeab99ac1301b6e5ec4e6c1b00b817eed4b554011ac8023da83c373ba9",
+      "size_bytes": 27001,
+      "path": "runs/crazyflie-wing-pilot-wing_lif-resume-v1-resume.log"
+    },
+    {
+      "sha256": "72e80679fed2f8f1444456e9d3743aea6648ddeef862757046ee47aae2b107fc",
+      "size_bytes": 513404,
+      "path": "runs/crazyflie-wing-pilot-wing_lif-resume-v1/checkpoints/latest.pt"
+    },
+    {
+      "sha256": "d389f712e9601ab7a859351f213916a5c3df40ae1cf64201cd43ca93d5baaccd",
+      "size_bytes": 306511,
+      "path": "runs/crazyflie-wing-pilot-wing_lif-resume-v1/checkpoints/update-00000000.pt"
+    },
+    {
+      "sha256": "10babfddcbd26b55b8b6f7f4e0964fc49d4995d6d9f042cdabd6ced2fa53cf2a",
+      "size_bytes": 510396,
+      "path": "runs/crazyflie-wing-pilot-wing_lif-resume-v1/checkpoints/update-00000001.pt"
+    },
+    {
+      "sha256": "910a84617fe7ec67f19e80124038ab94582ba0a397b054188a668dc7cc0779c3",
+      "size_bytes": 512956,
+      "path": "runs/crazyflie-wing-pilot-wing_lif-resume-v1/checkpoints/update-00000002.pt"
+    },
+    {
+      "sha256": "f112315c55a946486d88b0a354297e8922ffcef14d4d08de3bb204ee06d6d4c8",
+      "size_bytes": 134449,
+      "path": "runs/crazyflie-wing-pilot-wing_lif-resume-v1/evaluation.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie-wing-pilot-wing_lif-resume-v1/evaluation.json.lock"
+    },
+    {
+      "sha256": "e3c59a09bfdb3a659109fe7c6d4eba3d17dcd9aaeebb4e83c58ffa6b050c0df7",
+      "size_bytes": 39444,
+      "path": "runs/crazyflie-wing-pilot-wing_lif-resume-v1/evaluation.json.parts/20260916T113631.089954Z-74182d2ab725410f99c06ed158491e1e/01_waypoint_reach.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie-wing-pilot-wing_lif-resume-v1/evaluation.json.parts/20260916T113631.089954Z-74182d2ab725410f99c06ed158491e1e/01_waypoint_reach.json.lock"
+    },
+    {
+      "sha256": "c313a54afd74be0dbf6a89da9df606211d530115c949760539a72eef804747c5",
+      "size_bytes": 47599,
+      "path": "runs/crazyflie-wing-pilot-wing_lif-resume-v1/evaluation.json.parts/20260916T113631.089954Z-74182d2ab725410f99c06ed158491e1e/02_waypoint_switch.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie-wing-pilot-wing_lif-resume-v1/evaluation.json.parts/20260916T113631.089954Z-74182d2ab725410f99c06ed158491e1e/02_waypoint_switch.json.lock"
+    },
+    {
+      "sha256": "354310cc0798a00664fad5cfe7f7bdd8f7c5604f02bf8e97cf915d4757c11b03",
+      "size_bytes": 58002,
+      "path": "runs/crazyflie-wing-pilot-wing_lif-resume-v1/evaluation.json.parts/20260916T113631.089954Z-74182d2ab725410f99c06ed158491e1e/03_gust_recovery.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie-wing-pilot-wing_lif-resume-v1/evaluation.json.parts/20260916T113631.089954Z-74182d2ab725410f99c06ed158491e1e/03_gust_recovery.json.lock"
+    },
+    {
+      "sha256": "255d5eb1758fca989ce61d7af2ccb3e0c2b2ca4ac5ac2644dbbb8c69cfe2fdb1",
+      "size_bytes": 2977,
+      "path": "runs/crazyflie-wing-pilot-wing_lif-resume-v1/history/rows-00000001-00000001-resume-0000-1789558539062119687.jsonl"
+    },
+    {
+      "sha256": "0183a2010f5d9abfec9c046240db57aeb51936940ae49c0977885c6d1a0b0575",
+      "size_bytes": 2966,
+      "path": "runs/crazyflie-wing-pilot-wing_lif-resume-v1/history/rows-00000002-00000002-resume-0001-1789558553344145980.jsonl"
+    },
+    {
+      "sha256": "368761c82c371d4e8bfa4659ddda3e9ae342bbb9d21e729077534efc9a8de3f7",
+      "size_bytes": 41896,
+      "path": "runs/crazyflie-wing-pilot-wing_lif-resume-v1/training_manifest.json"
+    },
+    {
+      "sha256": "844be289bf04cfb5d7e1d13b7e436d416a90ee13a2d2d3ea6f2af2e29bb3ae4a",
+      "size_bytes": 131779,
+      "path": "runs/crazyflie_integration_v1.json"
+    },
+    {
+      "sha256": "2331d267de549212e4563560af48b929d245291855bfa6516fd1c41bd62dd084",
+      "size_bytes": 361151,
+      "path": "runs/crazyflie_integration_v1/evaluations/frozen_lif_degree_rewired__seed-0/FlyCrazyflie-GustRecovery-v0.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie_integration_v1/evaluations/frozen_lif_degree_rewired__seed-0/FlyCrazyflie-GustRecovery-v0.json.lock"
+    },
+    {
+      "sha256": "28513ea426621a3d5b5e12b844bcb737513264c5cedb84c7c4410f5741c53882",
+      "size_bytes": 342597,
+      "path": "runs/crazyflie_integration_v1/evaluations/frozen_lif_degree_rewired__seed-0/FlyCrazyflie-WaypointReach-v0.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie_integration_v1/evaluations/frozen_lif_degree_rewired__seed-0/FlyCrazyflie-WaypointReach-v0.json.lock"
+    },
+    {
+      "sha256": "72c40c1c17a96ddae953e40b8fe4c5234cfc066a130a3cc7ea7b9ab6320ddaf5",
+      "size_bytes": 350772,
+      "path": "runs/crazyflie_integration_v1/evaluations/frozen_lif_degree_rewired__seed-0/FlyCrazyflie-WaypointSwitch-v0.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie_integration_v1/evaluations/frozen_lif_degree_rewired__seed-0/FlyCrazyflie-WaypointSwitch-v0.json.lock"
+    },
+    {
+      "sha256": "dc6cfd4d64a70a770995df7b83d492574b1b2b9182f47526afa80726f6013014",
+      "size_bytes": 59792,
+      "path": "runs/crazyflie_integration_v1/evaluations/frozen_lif_original__seed-0/FlyCrazyflie-GustRecovery-v0.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie_integration_v1/evaluations/frozen_lif_original__seed-0/FlyCrazyflie-GustRecovery-v0.json.lock"
+    },
+    {
+      "sha256": "c708b8644eb8740bc5e3e854d16f6b77a1514bf025539d3ddc4e8f4aa3f49501",
+      "size_bytes": 41244,
+      "path": "runs/crazyflie_integration_v1/evaluations/frozen_lif_original__seed-0/FlyCrazyflie-WaypointReach-v0.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie_integration_v1/evaluations/frozen_lif_original__seed-0/FlyCrazyflie-WaypointReach-v0.json.lock"
+    },
+    {
+      "sha256": "5c4928bbc6a4357d22fc6757b774e9847e65fea173e848487fa542a5fd3c4151",
+      "size_bytes": 49424,
+      "path": "runs/crazyflie_integration_v1/evaluations/frozen_lif_original__seed-0/FlyCrazyflie-WaypointSwitch-v0.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie_integration_v1/evaluations/frozen_lif_original__seed-0/FlyCrazyflie-WaypointSwitch-v0.json.lock"
+    },
+    {
+      "sha256": "826c261a9d623a9042002e6baa683e5f1a93a1d01419dbea9bc45446e75a0cc4",
+      "size_bytes": 59661,
+      "path": "runs/crazyflie_integration_v1/evaluations/gru_matched__seed-0/FlyCrazyflie-GustRecovery-v0.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie_integration_v1/evaluations/gru_matched__seed-0/FlyCrazyflie-GustRecovery-v0.json.lock"
+    },
+    {
+      "sha256": "721e00197edee569e68559b31dedff2843d89d429f528a431d6a5bb71df36169",
+      "size_bytes": 41093,
+      "path": "runs/crazyflie_integration_v1/evaluations/gru_matched__seed-0/FlyCrazyflie-WaypointReach-v0.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie_integration_v1/evaluations/gru_matched__seed-0/FlyCrazyflie-WaypointReach-v0.json.lock"
+    },
+    {
+      "sha256": "75f1d29325ee9505bf9d1b18d8bf31f17624ced85aaa36562ec82a3db95c7ac1",
+      "size_bytes": 49248,
+      "path": "runs/crazyflie_integration_v1/evaluations/gru_matched__seed-0/FlyCrazyflie-WaypointSwitch-v0.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie_integration_v1/evaluations/gru_matched__seed-0/FlyCrazyflie-WaypointSwitch-v0.json.lock"
+    },
+    {
+      "sha256": "9e9b405e76cf7aa0d86608faffd4e82ad74d95ee1f7138cebbc3898678a28d3c",
+      "size_bytes": 59684,
+      "path": "runs/crazyflie_integration_v1/evaluations/mlp_normal__seed-0/FlyCrazyflie-GustRecovery-v0.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie_integration_v1/evaluations/mlp_normal__seed-0/FlyCrazyflie-GustRecovery-v0.json.lock"
+    },
+    {
+      "sha256": "a742aa81c55ec9e63a50f44f5e9c002d99e1548c14b17af9235eba565be2e1c2",
+      "size_bytes": 41117,
+      "path": "runs/crazyflie_integration_v1/evaluations/mlp_normal__seed-0/FlyCrazyflie-WaypointReach-v0.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie_integration_v1/evaluations/mlp_normal__seed-0/FlyCrazyflie-WaypointReach-v0.json.lock"
+    },
+    {
+      "sha256": "a627d4ae190d88988271fd266eb41e2dc67c2c9228032643477e6392d3feeb8d",
+      "size_bytes": 49293,
+      "path": "runs/crazyflie_integration_v1/evaluations/mlp_normal__seed-0/FlyCrazyflie-WaypointSwitch-v0.json"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "path": "runs/crazyflie_integration_v1/evaluations/mlp_normal__seed-0/FlyCrazyflie-WaypointSwitch-v0.json.lock"
+    },
+    {
+      "sha256": "f2b0e5bbd6e7f2add6c74e4cdd5729975d11dfb68ba8e0cde2db36a46709b781",
+      "size_bytes": 507644,
+      "path": "runs/crazyflie_integration_v1/jobs/frozen_lif_degree_rewired__seed-0/checkpoints/latest.pt"
+    },
+    {
+      "sha256": "959347b19a955d6b96405de6689cfe015444f03ad183f6cef37ab44bf1782864",
+      "size_bytes": 302287,
+      "path": "runs/crazyflie_integration_v1/jobs/frozen_lif_degree_rewired__seed-0/checkpoints/update-00000000.pt"
+    },
+    {
+      "sha256": "d2a560cd11488c483e70356455d8d05c5b32b26a2e6e52195f9f8742c0419c10",
+      "size_bytes": 506172,
+      "path": "runs/crazyflie_integration_v1/jobs/frozen_lif_degree_rewired__seed-0/checkpoints/update-00000001.pt"
+    },
+    {
+      "sha256": "c349dfdec26ad474122e01c663e6fcd529193a0bb92f752a06b12c50b79c4453",
+      "size_bytes": 507196,
+      "path": "runs/crazyflie_integration_v1/jobs/frozen_lif_degree_rewired__seed-0/checkpoints/update-00000002.pt"
+    },
+    {
+      "sha256": "19ef6a2ee0fe74d2204da1e6c94f25356663a43d2e9e8405715565313d2b4ce8",
+      "size_bytes": 2963,
+      "path": "runs/crazyflie_integration_v1/jobs/frozen_lif_degree_rewired__seed-0/history/rows-00000001-00000001-resume-0000-1789556896829683941.jsonl"
+    },
+    {
+      "sha256": "08a500637cde4e375fd69d88dcfaf80bb043eaf0ecdd9cbb67167b4196e033d7",
+      "size_bytes": 2953,
+      "path": "runs/crazyflie_integration_v1/jobs/frozen_lif_degree_rewired__seed-0/history/rows-00000002-00000002-resume-0000-1789556897291388538.jsonl"
+    },
+    {
+      "sha256": "1038116fc24f3cc82aada58a65d92ad07faf1a8dd58f32f328f8db0195ea0ab4",
+      "size_bytes": 346274,
+      "path": "runs/crazyflie_integration_v1/jobs/frozen_lif_degree_rewired__seed-0/training_manifest.json"
+    },
+    {
+      "sha256": "0093b674a73d7af0ddd949c449a83e6a73b0cbf3dba1b78df0cdef47b063539a",
+      "size_bytes": 439996,
+      "path": "runs/crazyflie_integration_v1/jobs/frozen_lif_original__seed-0/checkpoints/latest.pt"
+    },
+    {
+      "sha256": "ef8e6369ad677ba91bdcaf519c43ef85df64c8a37cb79149f6dc1c5fa293850e",
+      "size_bytes": 234639,
+      "path": "runs/crazyflie_integration_v1/jobs/frozen_lif_original__seed-0/checkpoints/update-00000000.pt"
+    },
+    {
+      "sha256": "ce7182557923e2e4ddb232f9dddbc1b224c53f3ddee27fd4fb53c8cb7583b20e",
+      "size_bytes": 438524,
+      "path": "runs/crazyflie_integration_v1/jobs/frozen_lif_original__seed-0/checkpoints/update-00000001.pt"
+    },
+    {
+      "sha256": "bd64ec560a42933df902d42a3ad37306e948c8ad1ddaaa155b46a2afcba46500",
+      "size_bytes": 439548,
+      "path": "runs/crazyflie_integration_v1/jobs/frozen_lif_original__seed-0/checkpoints/update-00000002.pt"
+    },
+    {
+      "sha256": "ef6690bfd1c1c22091052690df0ea16a239315c519d68589e5746a6fd1c280a9",
+      "size_bytes": 2975,
+      "path": "runs/crazyflie_integration_v1/jobs/frozen_lif_original__seed-0/history/rows-00000001-00000001-resume-0000-1789556853438507245.jsonl"
+    },
+    {
+      "sha256": "73d2770ae014dc820e8b19a776085dfd2946f38ebb594e1c9f21df58a883e348",
+      "size_bytes": 2962,
+      "path": "runs/crazyflie_integration_v1/jobs/frozen_lif_original__seed-0/history/rows-00000002-00000002-resume-0000-1789556853921817482.jsonl"
+    },
+    {
+      "sha256": "9fa290cd635b2d95cc6b1d2b9e515c5a840e9934120daf9d879c78641985bc89",
+      "size_bytes": 44905,
+      "path": "runs/crazyflie_integration_v1/jobs/frozen_lif_original__seed-0/training_manifest.json"
+    },
+    {
+      "sha256": "212b44e8a2452ebc066932a54b6adc046c8117efae6689ffea9fd672e53b7523",
+      "size_bytes": 327215,
+      "path": "runs/crazyflie_integration_v1/jobs/gru_matched__seed-0/checkpoints/latest.pt"
+    },
+    {
+      "sha256": "b6ceffdad36d37743d9e6fdb1fe3adbfb5c0f58ae329c1f364fb98ef702d038c",
+      "size_bytes": 129319,
+      "path": "runs/crazyflie_integration_v1/jobs/gru_matched__seed-0/checkpoints/update-00000000.pt"
+    },
+    {
+      "sha256": "6c996facbf3b3f4fbceefa845f62395de6a2b70c12764476f4c0bbc21c8b7750",
+      "size_bytes": 325743,
+      "path": "runs/crazyflie_integration_v1/jobs/gru_matched__seed-0/checkpoints/update-00000001.pt"
+    },
+    {
+      "sha256": "69cc078c27cf5f43f40380ab49f648378efd7d9d5bd8a5b87e465f42e29d5622",
+      "size_bytes": 326767,
+      "path": "runs/crazyflie_integration_v1/jobs/gru_matched__seed-0/checkpoints/update-00000002.pt"
+    },
+    {
+      "sha256": "71300422b80c2787e7fbad51f692027f1daa74e1041e26ba7739e73987fb0363",
+      "size_bytes": 1501,
+      "path": "runs/crazyflie_integration_v1/jobs/gru_matched__seed-0/history/rows-00000001-00000001-resume-0000-1789556940946835811.jsonl"
+    },
+    {
+      "sha256": "012169c48bf033c8f28e5c03f88aeb2b18c5ad0481d86e844962329d69fa27e9",
+      "size_bytes": 1516,
+      "path": "runs/crazyflie_integration_v1/jobs/gru_matched__seed-0/history/rows-00000002-00000002-resume-0000-1789556941284580317.jsonl"
+    },
+    {
+      "sha256": "a1d6269130be1ad403746316902183aa62fe9aa8729597f170228b7b74b6e176",
+      "size_bytes": 44606,
+      "path": "runs/crazyflie_integration_v1/jobs/gru_matched__seed-0/training_manifest.json"
+    },
+    {
+      "sha256": "93e1c59054495cb5ad689805d5dc51d74a71ce203c733a32d80f7d54f6cf2dfc",
+      "size_bytes": 326962,
+      "path": "runs/crazyflie_integration_v1/jobs/mlp_normal__seed-0/checkpoints/latest.pt"
+    },
+    {
+      "sha256": "bbc98cbd1607dcd231fa58db1a32509f3d014902c738ec1c6255d093f4195373",
+      "size_bytes": 129447,
+      "path": "runs/crazyflie_integration_v1/jobs/mlp_normal__seed-0/checkpoints/update-00000000.pt"
+    },
+    {
+      "sha256": "8b72022d4693a40ab634844e0c0273d48f2f7ac7b6759336359d0f9adeda70c6",
+      "size_bytes": 325490,
+      "path": "runs/crazyflie_integration_v1/jobs/mlp_normal__seed-0/checkpoints/update-00000001.pt"
+    },
+    {
+      "sha256": "3108ff70f98f16b11e3148db1acb890a00005325a2a1461f5b6674d34fa6f162",
+      "size_bytes": 326514,
+      "path": "runs/crazyflie_integration_v1/jobs/mlp_normal__seed-0/checkpoints/update-00000002.pt"
+    },
+    {
+      "sha256": "040c559f60450b20ba843f2e9566334a50900a978b7046f081060b37dc78c35a",
+      "size_bytes": 1521,
+      "path": "runs/crazyflie_integration_v1/jobs/mlp_normal__seed-0/history/rows-00000001-00000001-resume-0000-1789556981756669146.jsonl"
+    },
+    {
+      "sha256": "9ee609e881c70391dd7d27495e8dedb1bb687be94ada8c9b240d66ecf905b437",
+      "size_bytes": 1518,
+      "path": "runs/crazyflie_integration_v1/jobs/mlp_normal__seed-0/history/rows-00000002-00000002-resume-0000-1789556982017192095.jsonl"
+    },
+    {
+      "sha256": "c49843f1478923ee64617039870d0eba30ef0bda9142c2fc28934251c309de94",
+      "size_bytes": 44624,
+      "path": "runs/crazyflie_integration_v1/jobs/mlp_normal__seed-0/training_manifest.json"
+    },
+    {
+      "sha256": "0be2972870bb7371bf4b8ac5d27c48aa947b5c39d4f4f5ab825f8067739ded30",
+      "size_bytes": 21119,
+      "path": "runs/crazyflie_integration_v1/logs/frozen_lif_degree_rewired__seed-0__FlyCrazyflie-GustRecovery-v0__evaluate.log"
+    },
+    {
+      "sha256": "8d3e2a4909d7f8028351061c37c5439bd24f06dee509a9875fbe3890dd2d4388",
+      "size_bytes": 21124,
+      "path": "runs/crazyflie_integration_v1/logs/frozen_lif_degree_rewired__seed-0__FlyCrazyflie-WaypointReach-v0__evaluate.log"
+    },
+    {
+      "sha256": "25437f79dd5195ea9532e280ad5335b799695bbbe883a62e1872c5968fe1e01e",
+      "size_bytes": 21128,
+      "path": "runs/crazyflie_integration_v1/logs/frozen_lif_degree_rewired__seed-0__FlyCrazyflie-WaypointSwitch-v0__evaluate.log"
+    },
+    {
+      "sha256": "e79bae8d39c18d369de70d9e26dca0bad9c33ac4541f2a9e15579b49789a6b38",
+      "size_bytes": 335241,
+      "path": "runs/crazyflie_integration_v1/logs/frozen_lif_degree_rewired__seed-0__train.log"
+    },
+    {
+      "sha256": "33341561bca019da25a42adb0fc31e7b20f950a24319958714dfb9c9ec4cf56a",
+      "size_bytes": 21065,
+      "path": "runs/crazyflie_integration_v1/logs/frozen_lif_original__seed-0__FlyCrazyflie-GustRecovery-v0__evaluate.log"
+    },
+    {
+      "sha256": "b639b909046c2eb4c08277074bde26f76f20384254027686d5481daa78f2b865",
+      "size_bytes": 21069,
+      "path": "runs/crazyflie_integration_v1/logs/frozen_lif_original__seed-0__FlyCrazyflie-WaypointReach-v0__evaluate.log"
+    },
+    {
+      "sha256": "be331c80c6640c2feafe7636159ef405b468562deef5746ac550c9c937a57b03",
+      "size_bytes": 21074,
+      "path": "runs/crazyflie_integration_v1/logs/frozen_lif_original__seed-0__FlyCrazyflie-WaypointSwitch-v0__evaluate.log"
+    },
+    {
+      "sha256": "2a6f528b1b8a72fee8662c736d9403434a1aeed62f50ea053d71f242ac4fb9ac",
+      "size_bytes": 33868,
+      "path": "runs/crazyflie_integration_v1/logs/frozen_lif_original__seed-0__train.log"
+    },
+    {
+      "sha256": "3607248220f89694c9bbce158e323e0f65d117ea01e96ef0bd8e0179513b5a61",
+      "size_bytes": 20992,
+      "path": "runs/crazyflie_integration_v1/logs/gru_matched__seed-0__FlyCrazyflie-GustRecovery-v0__evaluate.log"
+    },
+    {
+      "sha256": "d63787f473fb1c7ff3358e45b17ce90c1674e1dabe72de0c7f25d431d6c70899",
+      "size_bytes": 20997,
+      "path": "runs/crazyflie_integration_v1/logs/gru_matched__seed-0__FlyCrazyflie-WaypointReach-v0__evaluate.log"
+    },
+    {
+      "sha256": "cea51d05ec9b3b83e69197e338b34b1c12a373e90557c0a1f6fc1bd4e9454ae3",
+      "size_bytes": 21002,
+      "path": "runs/crazyflie_integration_v1/logs/gru_matched__seed-0__FlyCrazyflie-WaypointSwitch-v0__evaluate.log"
+    },
+    {
+      "sha256": "db8c1823a95fc5abd136a46bda40c592948cc655dc55e45785c84fbfcb0d1f96",
+      "size_bytes": 30600,
+      "path": "runs/crazyflie_integration_v1/logs/gru_matched__seed-0__train.log"
+    },
+    {
+      "sha256": "38a7b5fb538d1d4d5a84b5597c415e4ce5fe8b44fd62e9fc218bbd31d9c36f6f",
+      "size_bytes": 20983,
+      "path": "runs/crazyflie_integration_v1/logs/mlp_normal__seed-0__FlyCrazyflie-GustRecovery-v0__evaluate.log"
+    },
+    {
+      "sha256": "b337ec7014ec31f26be9cc4e892ffaa5fca1985c45c881d24042f16d23add886",
+      "size_bytes": 20989,
+      "path": "runs/crazyflie_integration_v1/logs/mlp_normal__seed-0__FlyCrazyflie-WaypointReach-v0__evaluate.log"
+    },
+    {
+      "sha256": "e956de98052341da3ac66494abfba4ba9dee38e3652146b5bda9b1c13f90e765",
+      "size_bytes": 20993,
+      "path": "runs/crazyflie_integration_v1/logs/mlp_normal__seed-0__FlyCrazyflie-WaypointSwitch-v0__evaluate.log"
+    },
+    {
+      "sha256": "270f1e77d635e8f46f6e4eb2c165f65d0ffb66092f1fbe377bc05fad4210f79a",
+      "size_bytes": 30637,
+      "path": "runs/crazyflie_integration_v1/logs/mlp_normal__seed-0__train.log"
+    },
+    {
+      "sha256": "7f4626b50a56c70d71b744201609422bd0d9a39325f228367b704ae53e233bcc",
+      "size_bytes": 785951,
+      "path": "runs/crazyflie_integration_v1_report.json"
+    },
+    {
+      "sha256": "50774cddd41abb73820211580a7218701e35dccd960f9715d0da55c4bbc0b52f",
+      "size_bytes": 51399,
+      "path": "runs/crazyflie_integration_v1_report.md"
+    },
+    {
+      "sha256": "a5111aeee6cdad7754d75caef6431150310f06f7ce90d1f4a828818963810955",
+      "size_bytes": 2084,
+      "path": "runs/crazyflie_integration_v1_summary.json"
+    },
+    {
+      "sha256": "db07d861e6cbccd6fa07e7f43f76306fab98f943af04853569f5961f97c47d52",
+      "size_bytes": 745273,
+      "path": "runs/crazyflie_main_v1.json"
+    },
+    {
+      "sha256": "4ec984d7fec3099c4646beb7aa64f8720f309aad6066fe1c1121e634d050f58f",
+      "size_bytes": 9228,
+      "path": "runs/crazyflie_main_v1_summary.json"
+    },
+    {
+      "sha256": "c9e69cc25a5100e05a9c6ce1a355669729ca7a6d94be728fda89ff397f42a3df",
+      "size_bytes": 753865,
+      "path": "runs/crazyflie_main_v1_wing_extension_verified.json"
+    },
+    {
+      "sha256": "c6986a7b5adc30920c426c73c17b9b6817d6af6bb9f2425d646fa4ea311b51c7",
+      "size_bytes": 9708,
+      "path": "runs/crazyflie_main_v1_wing_extension_verified_summary.json"
+    },
+    {
+      "sha256": "c320d67a753142f13474ffc737f2fbd9cf9969786ef96051bfbcdbf68953ad3f",
+      "size_bytes": 373570,
+      "path": "runs/crazyflie_wing_main_v1.json"
+    },
+    {
+      "sha256": "44f6d97752380cbbd77b5b1af755afa2735b5d718e3036977078dd23a6b0505c",
+      "size_bytes": 375208,
+      "path": "runs/crazyflie_wing_main_v2_verified.json"
+    }
+  ],
+  "aggregate": {
+    "directory_target_count": 9,
+    "file_target_count": 68,
+    "regular_file_count": 250,
+    "total_bytes": 33472904,
+    "canonical_inventory_format": "sha256 two-spaces size_bytes two-spaces path newline",
+    "canonical_inventory_sha256": "0ae378a4008d4c53b6a16e57f779504a1156494d9cf6a17dfc6f84a5100459ec"
+  },
+  "pre_delete_verification": {
+    "all_targets_present": true,
+    "symlink_count": 0,
+    "g1_marker_hits": 0,
+    "balanced_v3_marker_hits": 0,
+    "g1_frozen_manifest_files_checked": 37,
+    "g1_frozen_manifest_mismatches": 0
+  }
+}

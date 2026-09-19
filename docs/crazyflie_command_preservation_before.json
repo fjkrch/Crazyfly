@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "algorithm": "sha256",
+  "generated_at_utc": "2026-09-18T03:44:01Z",
+  "workspace": "/home/chayanin/Desktop/flyg1",
+  "scope": "Pre-implementation preservation evidence for every pre-existing run root, the paused neural-comparison queue, its archived plan, and the frozen 37-file Unitree G1 set",
+  "run_tree": {
+    "path": "runs",
+    "exclusion": "any path component starting crazyflie_command_; this namespace did not exist at capture and is reserved for additive new work",
+    "canonical_digest_input": "for each sorted regular file or symlink: relative_path + NUL + file_sha256_or_symlink_target + newline",
+    "file_count": 1429,
+    "byte_count": 336929906,
+    "tree_sha256": "c609886c330fdb9462a4bf92b5c2fcffc8a49cbc212d03110ab5914e13df00f3"
+  },
+  "critical_files": [
+    {
+      "path": "docs/crazyflie_neural_comparison_plan_paused_20260918.md",
+      "sha256": "530c93d3d0cc7fa094310f21fbcd0226b36575650ee1a8a90c322d04e839f475"
+    },
+    {
+      "path": "runs/crazyflie_neural_comparison_seed0_500k/queue.json",
+      "byte_count": 923648,
+      "sha256": "8464b5fd44570e838f26b341d3539a0d84635734b6043be6907acfd72b8c7930"
+    },
+    {
+      "path": "runs/crazyflie_neural_comparison_seed0_500k/queue_summary.json",
+      "byte_count": 8717,
+      "sha256": "7f5544ed5a18457f951f9d928d6842607b21b353abb44faaf488a83d0fb33d1d"
+    },
+    {
+      "path": "docs/g1_frozen_sha256_before.json",
+      "sha256": "eaf84a34e9bcbd062275886bfd006683d7a9d21e4605563b8a1c569205a771be"
+    },
+    {
+      "path": "docs/g1_frozen_sha256_before_supplement.json",
+      "sha256": "438594ea4a5106574d52e8d438cfb11a772b4a40a21d8a353ba8bf38feeb4fe0"
+    }
+  ],
+  "g1_frozen_union_file_count": 37,
+  "g1_frozen_union_exact_match_at_capture": true
+}

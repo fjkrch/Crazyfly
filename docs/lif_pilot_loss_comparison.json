@@ -1,0 +1,111 @@
+{
+  "figure": "docs/lif_pilot_loss_comparison.png",
+  "rolling_window_updates": 50,
+  "runs": [
+    {
+      "completed_episode_count_sum": 2349,
+      "first_update": 1,
+      "label": "LR 1e-4",
+      "last_update": 1000,
+      "row_count": 1000,
+      "run_dir": "runs/crazyflie-lif-original-pilot-500k-v1",
+      "sources": [
+        {
+          "path": "runs/crazyflie-lif-original-pilot-500k-v1/history/rows-00000001-00000100-resume-0000-1789542575162091087.jsonl",
+          "sha256": "5c636a4e2f01b3e8d14c665050f0a24d962464e8bdb15e0faecb8ec57bcd2c0f"
+        },
+        {
+          "path": "runs/crazyflie-lif-original-pilot-500k-v1/history/rows-00000101-00000200-resume-0000-1789542616518752890.jsonl",
+          "sha256": "902ec4a79046b02043e8592f8c8b4de79df1c2c76866cd06afc3e253d421334b"
+        },
+        {
+          "path": "runs/crazyflie-lif-original-pilot-500k-v1/history/rows-00000201-00000300-resume-0000-1789542656279336246.jsonl",
+          "sha256": "8807a5a250de1a9b8f707c068e8633ca175afb82e157fe8f8fedf095ce688492"
+        },
+        {
+          "path": "runs/crazyflie-lif-original-pilot-500k-v1/history/rows-00000301-00000400-resume-0000-1789542694953266044.jsonl",
+          "sha256": "84d0d3c072fb42ec7347cf4a7e374a5575dba439e6255d0faa8d1e3a4430cdec"
+        },
+        {
+          "path": "runs/crazyflie-lif-original-pilot-500k-v1/history/rows-00000401-00000500-resume-0000-1789542736030861061.jsonl",
+          "sha256": "42c0cec696c6682fd34367f6813ab35f9e87d3b9373bc4cc5174d0f95e58bc29"
+        },
+        {
+          "path": "runs/crazyflie-lif-original-pilot-500k-v1/history/rows-00000501-00000600-resume-0000-1789542777048196140.jsonl",
+          "sha256": "0a98ca1f9e5d16a4590c353ea5058f88bb4edb3343fb8f9dd39ff894d15fc7b1"
+        },
+        {
+          "path": "runs/crazyflie-lif-original-pilot-500k-v1/history/rows-00000601-00000700-resume-0000-1789542815940661835.jsonl",
+          "sha256": "6d66c4dca77ba917d7f4d4e1de77b30e456591c5d712166d7005e71beac71079"
+        },
+        {
+          "path": "runs/crazyflie-lif-original-pilot-500k-v1/history/rows-00000701-00000800-resume-0000-1789542856642522092.jsonl",
+          "sha256": "49bdd1256725f80d8d47f45b8c8cc4a11aa37868099987481525c5bbf621d853"
+        },
+        {
+          "path": "runs/crazyflie-lif-original-pilot-500k-v1/history/rows-00000801-00000900-resume-0000-1789542898919361006.jsonl",
+          "sha256": "431f35719f39fb1c5c5281c48cc70c89e99820f93563753743c480690393f35c"
+        },
+        {
+          "path": "runs/crazyflie-lif-original-pilot-500k-v1/history/rows-00000901-00001000-resume-0000-1789542938566601616.jsonl",
+          "sha256": "c47351ec738cda62d042e0ee17e96d1077600c6587b9d88f787841a7f641c6d4"
+        }
+      ],
+      "successful_episode_count_sum": 0,
+      "total_interactions": 100000
+    },
+    {
+      "completed_episode_count_sum": 2080,
+      "first_update": 1,
+      "label": "LR 3e-5",
+      "last_update": 1000,
+      "row_count": 1000,
+      "run_dir": "runs/crazyflie-lif-original-lr3e-5-100k-v1",
+      "sources": [
+        {
+          "path": "runs/crazyflie-lif-original-lr3e-5-100k-v1/history/rows-00000001-00000100-resume-0000-1789543224312244326.jsonl",
+          "sha256": "83f7982ab6783f5250aa3b9eec270fe01d48ea318959d8da94b6d2b32cebe804"
+        },
+        {
+          "path": "runs/crazyflie-lif-original-lr3e-5-100k-v1/history/rows-00000101-00000200-resume-0000-1789543267072336723.jsonl",
+          "sha256": "c837469db9d6327b2181def7a784b83614e10cf7f7306e575a7d5caee6c02aff"
+        },
+        {
+          "path": "runs/crazyflie-lif-original-lr3e-5-100k-v1/history/rows-00000201-00000300-resume-0000-1789543309988437630.jsonl",
+          "sha256": "499e4ab1886498e72324713e2e7284522c3e88b8c1572e6c321253af17430e61"
+        },
+        {
+          "path": "runs/crazyflie-lif-original-lr3e-5-100k-v1/history/rows-00000301-00000400-resume-0000-1789543353607021691.jsonl",
+          "sha256": "5a0a7bc75ea6368b960b2cc285886bc3aa78246c66b25d2c4ed54a63386d1840"
+        },
+        {
+          "path": "runs/crazyflie-lif-original-lr3e-5-100k-v1/history/rows-00000401-00000500-resume-0000-1789543396930173320.jsonl",
+          "sha256": "b2e3df2bbe41d6ee511f49bdabac4639d12120ba3dc00a01d7f8f23164243341"
+        },
+        {
+          "path": "runs/crazyflie-lif-original-lr3e-5-100k-v1/history/rows-00000501-00000600-resume-0000-1789543439920896164.jsonl",
+          "sha256": "c8521df30666a1f5aec2faf447913e9aa68e2df07daa74b28dc205551d4233ba"
+        },
+        {
+          "path": "runs/crazyflie-lif-original-lr3e-5-100k-v1/history/rows-00000601-00000700-resume-0000-1789543483027765352.jsonl",
+          "sha256": "b5d4bf5ec2a6fb55282ee2505a408ec6226cd3c06c49795d750013835834abdd"
+        },
+        {
+          "path": "runs/crazyflie-lif-original-lr3e-5-100k-v1/history/rows-00000701-00000800-resume-0000-1789543526275957388.jsonl",
+          "sha256": "9892706265c5f78c51c81610541faf1c33a16ab5e3e161d016ac44c1c78adb08"
+        },
+        {
+          "path": "runs/crazyflie-lif-original-lr3e-5-100k-v1/history/rows-00000801-00000900-resume-0000-1789543569793151477.jsonl",
+          "sha256": "b9542529c5c814eebe85fe329143ad1197dd5a2eeab2a5c8775c52ba8c1c8904"
+        },
+        {
+          "path": "runs/crazyflie-lif-original-lr3e-5-100k-v1/history/rows-00000901-00001000-resume-0000-1789543613071593423.jsonl",
+          "sha256": "5b0b71a1263a5f43e9472cd5a4119d43b25c75e7853cab640b81c02033c307b1"
+        }
+      ],
+      "successful_episode_count_sum": 0,
+      "total_interactions": 100000
+    }
+  ],
+  "schema_version": 1
+}

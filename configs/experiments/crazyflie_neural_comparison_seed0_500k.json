@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "label": "crazyflie_neural_comparison_seed0_500k",
+  "output_root": "runs/crazyflie_neural_comparison_seed0_500k",
+  "isaac_python": "/home/chayanin/Downloads/miniforge3/envs/env_isaaclab/bin/python",
+  "contract_profile": "balanced_v4",
+  "tasks": [
+    "FlyCrazyflie-WaypointReach-v0",
+    "FlyCrazyflie-WaypointSwitch-v0",
+    "FlyCrazyflie-GustRecovery-v0"
+  ],
+  "controllers": [
+    "frozen_lif_original",
+    "frozen_lif_degree_rewired",
+    "wing_lif",
+    "leg_wing_lif",
+    "gru_matched",
+    "mlp_normal"
+  ],
+  "seeds": [
+    0
+  ],
+  "total_interactions_per_job": 500000,
+  "connectomes": {
+    "leg_manifest": "data/connectome/manifest.json",
+    "leg_manifest_sha256": "c59c1641847ce7e81f01778df1ee4a136124d62bc713abde750b0d1e9836832c",
+    "wing_manifest": "data/connectome_wing/manifest.json",
+    "wing_manifest_sha256": "8e0149a10094109326618d5b1b042175c7c4e45307c1b7210ccf0c71cc0bf5a6"
+  },
+  "rewire": {
+    "seed": 20260916,
+    "manifest": "configs/experiments/crazyflie_rewire_seed_20260916.json",
+    "manifest_sha256": "6c2a10b879d22741b0d17110d052953adc4f081e9ecac636fabdf0ba68d57b14"
+  },
+  "training": {
+    "num_envs": 40,
+    "horizon": 100,
+    "microbatch_size": 40,
+    "ppo_epochs": 2,
+    "learning_rate": 0.0003,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip_ratio": 0.2,
+    "value_coefficient": 0.5,
+    "entropy_coefficient": 0.002,
+    "max_grad_norm": 1.0,
+    "target_kl": 0.05,
+    "checkpoint_every_updates": 100,
+    "precision": "float32",
+    "device": "cuda:0"
+  },
+  "evaluation": {
+    "protocol": "main",
+    "manifest": "configs/experiments/crazyflie_eval_manifest_v1.json",
+    "manifest_sha256": "88ec44f48c289be29bad37aff19590f703b8fd92ca38a98e8b23edfadbf2f1f0",
+    "episodes_per_matching_task": 16,
+    "matching_task_only": true,
+    "deterministic_actions": true,
+    "device": "cuda:0"
+  },
+  "analysis": {
+    "neural_activity_replay": true,
+    "script": "scripts/crazyflie_neural_activity.py",
+    "protocol": "main",
+    "episodes_per_matching_task": 16
+  },
+  "queue": {
+    "default_max_parallel": 1,
+    "allowed_max_parallel": [
+      1,
+      2
+    ],
+    "controller_barriers": true,
+    "lif_first": true,
+    "gpu_used_mib_exclusive": 6963.2,
+    "system_ram_percent_exclusive": 90.0,
+    "resource_poll_interval_seconds": 5.0
+  },
+  "comparison_contract": {
+    "same_task_budget_seed_and_ppo_hyperparameters": true,
+    "numerically_matched_single_core_and_baselines": [
+      "frozen_lif_original",
+      "frozen_lif_degree_rewired",
+      "wing_lif",
+      "gru_matched",
+      "mlp_normal"
+    ],
+    "wing_extension_parameter_matching_required": false,
+    "leg_wing_fusion": "independent_leg_and_wing_cores_concat_motor_readouts_v1",
+    "leg_wing_is_not_parameter_matched": true
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "label": "integration",
+  "matrix_layout": "task_separated_v1_cell",
+  "execution_readiness": "schema_dry_run_only_balanced_v3_not_launch_authorized",
+  "base_config": "configs/experiments/crazyflie_balanced_v3_integration.json",
+  "parent_config": "configs/experiments/crazyflie_task_separated_v1_balanced_v3_schema_dryrun_integration.json",
+  "task": "FlyCrazyflie-WaypointSwitch-v0"
+}

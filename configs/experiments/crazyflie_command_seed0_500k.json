@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "label": "crazyflie_command_seed0_500k",
+  "output_root": "runs/crazyflie_command_seed0_500k",
+  "isaac_python": "/home/chayanin/Downloads/miniforge3/envs/env_isaaclab/bin/python",
+  "task": "FlyCrazyflie-CommandFollow-v0",
+  "contract_profile": "command_v1",
+  "controllers": [
+    "frozen_lif_original",
+    "frozen_lif_degree_rewired",
+    "wing_lif",
+    "leg_wing_lif",
+    "gru_matched",
+    "mlp_normal"
+  ],
+  "seed": 0,
+  "total_interactions_per_job": 500000,
+  "training": {
+    "num_envs": 40,
+    "horizon": 100,
+    "microbatch_size": 40,
+    "ppo_epochs": 2,
+    "learning_rate": 0.0003,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip_ratio": 0.2,
+    "value_coefficient": 0.5,
+    "entropy_coefficient": 0.002,
+    "max_grad_norm": 1.0,
+    "target_kl": 0.05,
+    "checkpoint_every_updates": 25,
+    "precision": "float32",
+    "device": "cuda:0"
+  },
+  "command_envelope": {
+    "maximum_horizontal_speed_mps": 0.8,
+    "maximum_vertical_speed_mps": 0.4,
+    "maximum_yaw_rate_radps": 1.2,
+    "minimum_hold_steps": 25,
+    "maximum_hold_steps": 100,
+    "control_dt_s": 0.02,
+    "simultaneous_axes": true
+  },
+  "evaluation": {
+    "protocol": "command_v1",
+    "episodes_per_controller": 16,
+    "steps_per_episode": 600,
+    "deterministic_actions": true,
+    "activity_from_actual_controller": true,
+    "device": "cuda:0",
+    "script": "scripts/crazyflie_command_evaluate.py"
+  },
+  "connectomes": {
+    "leg_manifest": "data/connectome/manifest.json",
+    "leg_manifest_sha256": "c59c1641847ce7e81f01778df1ee4a136124d62bc713abde750b0d1e9836832c",
+    "wing_manifest": "data/connectome_wing/manifest.json",
+    "wing_manifest_sha256": "8e0149a10094109326618d5b1b042175c7c4e45307c1b7210ccf0c71cc0bf5a6"
+  },
+  "rewire": {
+    "seed": 20260916,
+    "manifest": "configs/experiments/crazyflie_rewire_seed_20260916.json",
+    "manifest_sha256": "6c2a10b879d22741b0d17110d052953adc4f081e9ecac636fabdf0ba68d57b14"
+  },
+  "queue": {
+    "default_max_parallel": 1,
+    "maximum_parallel_after_gate": 2,
+    "lif_first": true,
+    "gpu_used_mib_exclusive": 6963.2,
+    "system_ram_percent_exclusive": 90.0,
+    "resource_poll_interval_seconds": 5.0,
+    "network_independent": true
+  },
+  "comparison_contract": {
+    "same_task_command_stream_budget_seed_and_ppo_hyperparameters": true,
+    "parameter_matched_controllers": [
+      "frozen_lif_original",
+      "frozen_lif_degree_rewired",
+      "wing_lif",
+      "gru_matched",
+      "mlp_normal"
+    ],
+    "wing_extension_parameter_matching_required": false,
+    "leg_wing_fusion": "independent_leg_and_wing_cores_concat_motor_readouts_v1",
+    "leg_wing_is_not_parameter_matched": true
+  }
+}

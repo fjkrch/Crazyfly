@@ -1,0 +1,255 @@
+# Codex implementation plan: Unitree G1 free-posture locomotion
+
+Status: specification only. No repository implementation, Isaac simulation, training run, or experimental result is claimed by this document.
+Prepared: 2026-09-13.
+
+## 1. Objective and source boundaries
+
+Implement the Unitree G1 portion of the supplied proposal in an isolated NVIDIA Isaac Lab project using Isaac Sim. Do not implement Go2, a drone, ROS integration, or real-hardware deployment in this project.
+
+The supplied proposal specifies G1 simulation; a MaleCNS-derived circuit with leaky integrate-and-fire (LIF) neurons; frozen circuit wiring and weights; small, trainable embodiment-specific input/output adapters; joint-position targets followed by PD control; reinforcement learning; locomotion without mandatory upright posture or prescribed gait; no termination merely because the torso contacts the floor; synchronized circuit/robot recording; and comparisons with degree-preserving rewiring, a conventional recurrent network, and matched neuronal ablations. [P]
+
+This plan makes those requirements executable. Package names, task IDs, observation definitions, PPO integration, data schemas, numerical starting points, and acceptance tests below are proposed engineering choices, not details supplied by the proposal. The local repository, installed simulator version, GPU, G1 asset variant, and actual MaleCNS data have not been inspected. Resolve these through inspection in Task 0, not guesses.
+
+The research question is whether the specified fixed circuit supports useful G1 locomotion and how its simulated activity changes across behaviors. Do not replace this with a requirement to learn humanlike walking. Walking, crawling, shuffling, rolling, and mixed strategies are admissible if physically valid. Do not guarantee that multiple strategies will emerge or that the biological circuit will outperform a baseline.
+
+## 2. Working instructions for Codex
+
+Read the repository's existing AGENTS.md and other applicable instructions first. Inspect before editing. Preserve unrelated changes. Keep this file current under Progress, Decisions, Discoveries, and Outcomes. Work through independently testable milestones; do not launch all experiments before the implementation gates pass. Maintain ordinary repository permission and approval requirements.
+
+Use a separate project and an isolated dependency environment or container for G1. Do not upgrade or modify an existing Go2/drone environment. Prefer an external Isaac Lab project rather than modifications to Isaac Lab itself; the official documentation supports this organization. [S1]
+
+Do not overwrite an existing AGENTS.md. If appropriate, add a short scoped instruction pointing to this plan, preserving existing instructions. OpenAI documents AGENTS.md as project guidance and describes maintained execution plans as one workflow for complex tasks. [S4, S5]
+
+If a required GPU/runtime is unavailable, complete CPU-testable modules and document exact blocked simulator checks. If real circuit data are unavailable, complete the schema, loader, fixture tests, and ordinary-policy baseline; block biological training explicitly. Neither missing dependency permits invented assets, neuron identities, results, or claims of successful execution.
+
+## 3. Intended architecture
+
+    G1 observations + goal
+        -> small trainable G1 encoder
+        -> fixed MaleCNS-derived LIF recurrent core
+        -> small trainable G1 decoder
+        -> bounded joint-position targets
+        -> PD actuator model with validated limits
+        -> Isaac Sim physics
+
+The actor's trainable components are the G1 encoder, decoder, and any explicitly declared action-distribution parameters. A separate value-function network may also be trained. The circuit topology, synaptic weights, and chosen neuron-model parameters stay fixed in the main condition. Membrane potentials, spikes, synaptic traces, and other dynamical state evolve during an episode.
+
+Do not add an observation-to-action bypass around the circuit in the main actor. Put any bypass experiment in a separately named ablation. Do not put the neural core inside a nondifferentiable environment observation wrapper while claiming that policy gradients train the upstream encoder.
+
+For training, implement the hard forward spike rule and an explicitly documented surrogate derivative for backpropagation. This derivative is an optimization device, not a biological measurement. Freeze circuit parameters without enclosing the policy's core forward pass in no_grad or detaching the encoder output: the encoder still needs a gradient path through the fixed transformation. Test that path rather than assuming it exists. No differentiable physics is required by this PPO design.
+
+Maintain one independent neural state per vectorized environment. Environment reset must reset that environment's membrane state, spike history, refractory state, synaptic filters, previous action, and observation histories without changing other environments.
+
+## 4. Project structure
+
+Follow the external template supplied by the pinned Isaac Lab installation. The following is a proposed logical layout; adapt packaging details to that template and record the final paths.
+
+    g1_fly_control/
+      G1_CODEX_PLAN.md
+      README.md
+      source/g1_fly_control/
+        pyproject.toml
+        g1_fly_control/
+          tasks/g1/{scene,observations,actions,rewards,terminations,events}.py
+          policies/{encoder,decoder,lif_core,actor_critic}.py
+          connectome/{schema,loader,rewire,manifest}.py
+          training/{runner,recurrent_storage,checkpoint}.py
+          evaluation/{metrics,perturbations,ablations,recording}.py
+      configs/{robot,tasks,policies,experiments}/
+      scripts/{doctor,inspect_asset,smoke_env,train,play,evaluate,record,run_matrix}.py
+      tests/{unit,integration}/
+      tests/fixtures/synthetic_circuit/
+      data/connectome/README.md
+      docs/{environment,asset_audit,task_spec,model_spec,training,results}.md
+      runs/                         # ignored by Git
+
+Keep pure tensor/circuit modules importable without Isaac Sim. Keep large data, assets, videos, and checkpoints out of Git. Do not commit credentials or download restricted data without authorization.
+
+## 5. Task 0 — Inspect and pin the execution environment
+
+Inspect the working tree and locate any existing reusable circuit implementation. Record Python, Isaac Lab, Isaac Sim, PyTorch, CUDA/runtime, GPU/VRAM, operating system, learning-library version, and relevant commit hashes. Resolve a compatible, pinned combination from the actual installation and its documentation. Do not select an unverified latest version or switch physics backends during the main comparison.
+
+Build scripts/doctor.py to report dependencies and unavailable capabilities without pretending to run simulation. Record whether a source checkout, pip installation, or container is used, and the exact interpreter/launcher command. Keep the dependency export and reproduction instructions in docs/environment.md.
+
+The official environment catalog lists Isaac-Velocity-Flat-G1-v0 and Isaac-Velocity-Rough-G1-v0. Use the installed task registry to verify local availability; a task listed online is not proof that it exists in the user's checkout. [S2]
+
+Acceptance: a fresh invocation produces an environment report, a selected compatible configuration, and explicit PASS/BLOCKED/FAIL statuses. No Go2/drone dependencies or files have been changed.
+
+## 6. Task 1 — Create the isolated project and validate the G1 body
+
+Generate an external, manager-based Isaac Lab project using the pinned installation's supported mechanism. Use the supported G1 asset as a starting point. Inspect the loaded articulation rather than assuming a particular number of degrees of freedom.
+
+Export exact joint names/order, actuator groups, masses, root freedom, position limits, velocity limits, effort limits, PD gains, contact bodies, self-collision settings, asset identifier, and asset checksum/version where available. Use an explicit actuated-joint allowlist. The research configuration must make the verified arm, leg, and trunk joints available rather than silently fixing the upper body to enforce walking. Document exclusions such as fingers. Never invent missing joints or stronger actuators.
+
+Implement action normalization and mapping into validated position targets. Keep position, effort, and velocity constraints effective in the actual simulator, not just in a configuration file. Log target and applied quantities. Verify joint order with named, low-amplitude probes. Random-action tests must also obey bounds.
+
+Run a headless scene, then a visible/recorded scene, with zero actions and bounded diagnostic actions. A zero-action robot is allowed to fall; this checks execution and physics, not locomotion skill. A tethered or fixed-base diagnostic is allowed only if separately labeled and excluded from research training.
+
+Acceptance: the asset audit exists; 1-environment and 16-environment smoke tests complete 1,000 control steps without unhandled errors or nonfinite state; resets work; the joint mapping is verified; different environment instances do not collide. Record actual timestep, control decimation, throughput, and memory usage.
+
+## 7. Task 2 — Implement posture-neutral G1 tasks
+
+Create three project-specific task registrations. These names are new project IDs, not existing NVIDIA tasks:
+
+    FlyG1-GoalReach-FreePosture-v0
+    FlyG1-GoalSwitch-FreePosture-v0
+    FlyG1-PushRecovery-FreePosture-v0
+
+GoalReach is the first training task: approach an XY target on flat terrain with no mandatory gait. GoalSwitch changes target according to a logged schedule and measures redirection. PushRecovery retains the goal objective while applying a logged disturbance schedule. Use shared scene/action/reward code so variants do not silently change the experiment.
+
+Do not copy the stock walking configuration unchanged. The checked G1 implementation contains biped foot-air-time rewards, orientation/posture penalties, and a torso-contact termination inherited by its flat configuration. These differ from the supplied proposal's free-posture objective. Audit all inherited terms, not only the most obvious termination. [S3a, S3b]
+
+### Observations and actions
+
+Start with normalized joint positions and velocities, base angular velocity, projected gravity, base linear velocity, the target relative to the body, and previous action. Mark base velocity and target localization explicitly as simulator-state assumptions, not demonstrated onboard estimators. Define frames, units, normalization, ordering, clipping, and reset handling in docs/task_spec.md. Use the same actor-visible observations across comparison conditions. Do not add vision, gait phase, a motion reference, or posture labels in the first version.
+
+Treat contact signals as diagnostics initially. Adding contact observations later is a versioned design change applied to all matched conditions. Use one declared reference point for world-XY goal distance, such as the verified pelvis/root position.
+
+### Reward and completion
+
+Use target progress, a one-time success bonus, and penalties for mechanical-work proxy, action changes, joint-limit violations, and excessive impacts. Define mechanical work per control interval as the physics-substep sum of abs(applied_torque * joint_velocity) * physics_dt. Call it a mechanical-work proxy, not measured electrical consumption.
+
+Do not reward uprightness, pelvis height, biped foot alternation, human pose imitation, or foot air time. Do not penalize ordinary sustained hand, knee, or torso support contacts merely because they occur. Excessive-impact thresholds must be explicit and identical across compared methods.
+
+A concrete starting goal criterion is XY distance <= 0.30 m for 0.50 s, with a 20 s episode horizon. These are proposed defaults to validate, not proposal requirements or known optimal settings. Freeze the final criterion before comparative runs. Count success once per target and reset distance history on goal changes and environment resets so teleportation cannot create a reward spike.
+
+Define reward units carefully: Isaac Lab reward aggregation may apply timestep scaling in the selected version. Test whether each term is a rate or an interval quantity and prevent double integration. Use a synthetic trajectory to verify reward behavior when control frequency changes.
+
+### Termination, resets, and physics validity
+
+Do not terminate for torso contact, low base height, a non-upright orientation, or ordinary falling. Use a finite time horizon, declared goal completion behavior, workspace escape, and invalid-simulation conditions. Distinguish truncation from termination. Record numerical failures separately rather than treating them as successful recovery or ordinary task completion.
+
+Start debugging with a single valid pose. For research, evaluate collision-valid standing, crouched, and prone/supine reset regimes when the asset supports them. Record the training reset distribution and report performance by evaluation regime; a standing-only start is an experimental bias, not evidence of posture neutrality. No inactivity termination in the initial main task.
+
+Test self-collision, contact response, penetration, actuator saturation, and stability at a smaller physics timestep on representative trajectories. Valid rolling or crawling is not a physics exploit merely because it is not walking. Inspect suspicious progress from excessive penetration, spurious impulses, or unenforced limits.
+
+Acceptance: automated tests prove that ordinary torso contact and non-upright states do not end an episode; all disallowed walking rewards are absent; reward bookkeeping survives goal switches/resets; task IDs are unique; the fully resolved configuration is saved.
+
+## 8. Task 3 — Establish an ordinary-policy engineering baseline
+
+Implement train/play/checkpoint support using a small MLP actor and separate critic with the same custom GoalReach environment. Prefer a PPO integration supported by the installed Isaac Lab stack, after inspecting its actual interface. Do not assume a stock runner accepts a custom recurrent spiking actor without changes.
+
+Use an explicit small smoke budget, for example 16 environments and 10 updates. Increase training scale only after measuring memory and throughput. Save optimizer state, policy state, normalization state, configuration, seeds, and version metadata. Verify inference from a checkpoint in a fresh process.
+
+Keep this engineering baseline distinct from the stock G1 walking task. The stock walking task may separately validate simulator installation, but its rewards and checkpoints are not evidence for the free-posture experiment.
+
+Acceptance: training updates are finite; model parameters change; checkpoints load; evaluation executes and produces real measurements. A smoke run does not have to learn competent locomotion. Before expensive circuit comparisons, establish useful learning in a larger predeclared pilot or document that task learning remains unresolved. Never invent a success rate to satisfy a gate.
+
+## 9. Task 4 — Implement validated circuit ingestion and the frozen LIF actor
+
+### Data boundary
+
+Define an explicit schema with stable neuron IDs, edge pre/post IDs, raw connectivity evidence, model weights, annotation provenance, and a circuit manifest. Store source release, extraction query/rule, neuron subset, edge filtering, sign assumptions, normalization, neuron-model constants, units, and checksums. Keep raw evidence distinct from derived simulation weights. Do not treat synapse counts as physical conductance without a declared model mapping.
+
+The attachment names MaleCNS but does not provide its actual circuit files, chosen subset, or executable neuron parameterization. [P] Do not fabricate a biological circuit or label random connectivity as MaleCNS. Put tiny synthetic networks in tests/fixtures only, with synthetic status embedded in their manifests and outputs. A missing-data error must identify what is required; it must not silently fall back to a synthetic research run.
+
+Validate unique IDs, edge endpoints, finite weights, chosen duplicate-edge semantics, orientation of the adjacency matrix, dimensions, metadata coverage, and checksums. Treat missing transmitter signs or anatomical labels as explicit unresolved/model assumptions. Record every transform before freezing. Do not perform continual weight normalization during training.
+
+### Core and adapters
+
+Implement batched LIF dynamics with explicit membrane, spike, synaptic-filter, refractory, reset, and optional delay conventions. Choose and document a numerically tested update rule; do not claim a particular biological parameter set unless supplied and verified. Define the number and duration of neural substeps per policy step and the mapping between neural and simulator time.
+
+Train the encoder to inject currents into a declared input subset. Decode from a declared state summary, such as filtered spikes from the chosen output subset. Keep adapter sizes small and report their parameter counts. Do not silently grow a large encoder/decoder until the fixed core becomes incidental.
+
+Use sparse storage/operations for a nontrivial circuit where the verified autograd path supports them. A tiny dense reference implementation is appropriate for equivalence tests. Profile actual memory cost before increasing neuron count, parallel environments, or sequence length.
+
+Acceptance: known-input LIF tests pass; sparse/reference outputs and gradients agree within declared tolerances; fixed core tensors have unchanged checksums after optimizer steps; encoder and decoder receive nonzero gradients on controlled test inputs; reset isolation passes; checkpoint/reload reproduces an identical action sequence from identical observations and initial neural state. Record dead/saturated neuron fractions on real rollouts without requiring every neuron to fire.
+
+## 10. Task 5 — Integrate recurrent PPO correctly
+
+The circuit state persists across control steps. Implement a recurrent actor/runner interface with initial_state(batch_size), act(observation, state), evaluate_sequence(...), and reset(state, env_ids), adapting names to the chosen library rather than guessing APIs.
+
+Store ordered rollout sequences, sequence-start neural states, episode masks, old log probabilities, values, actions, observations, and any burn-in observations. During updates, replay the differentiable encoder/core/decoder sequence with truncated backpropagation through time. Detach only at declared sequence boundaries, not automatically after every LIF substep. Keep padded samples and reset transitions out of invalid losses.
+
+Declare how state reconstruction and burn-in handle encoder updates across PPO epochs. Do not cache old reservoir features as fixed observations while claiming to train the encoder through them. Document the approximation from truncation and any stale sequence-start states.
+
+Store the policy-space sampled action and its corresponding log probability consistently with the action transformation. Prefer an explicitly modeled bounded distribution or a documented normalized-action/clipping convention. Do not calculate a clipped action's log probability as though no transform occurred.
+
+Handle true terminal transitions versus time limits correctly. When bootstrapping a timeout, use the terminal observation and its aligned recurrent state, not the next episode's reset observation. Check the installed auto-reset/wrapper behavior explicitly.
+
+Acceptance: before any parameter update, re-evaluated rollout log probabilities match the stored values; asynchronous resets affect only the selected environments; masks and padding pass controlled tests; gradients remain finite; core hashes remain unchanged; memory use is bounded across successive iterations; inference uses the same forward dynamics and normalization as training.
+
+## 11. Task 6 — Implement comparisons and a fixed evaluation protocol
+
+Use the original frozen circuit, a frozen degree-preserving rewired circuit, and a conventional trainable recurrent network such as a GRU as the main planned comparisons from the proposal. Retain the MLP engineering baseline. A frozen random recurrent control is an optional additional condition, not a replacement for the specified comparisons. [P]
+
+For the rewired circuit, preserve each neuron's directed in/out degree under declared self-loop and duplicate-edge rules. Define how weights and signs are reassigned and which distributions are preserved. Verify invariants numerically, save the randomized graph/seed/checksum, and freeze it throughout training. Keep the same input/output interface, neuron count, neuron dynamics, adapters, and optimization settings as the original-circuit condition. Do not describe a simple neuron relabeling as meaningful rewiring.
+
+A fully trained GRU has a different trainable-parameter budget from a frozen circuit with adapters. Report total and trainable parameters separately. Use declared size-matching targets, equal environment-interaction budgets, comparable tuning budgets, and consistent observations, actions, rewards, resets, curricula, and evaluation scenarios. Record wall-clock and memory costs rather than claiming identical compute from equal environment steps.
+
+Prepare a configurable initial matrix of five training seeds per main condition. This is a starting experimental design, not a claim of statistical sufficiency. Pair evaluation scenarios where possible. Keep held-out targets, reset conditions, and disturbance schedules separate from training/tuning. Treat independent training seeds, not individual vectorized episodes, as the main independent units for uncertainty summaries.
+
+Report success, XY progress, time to target, work proxy, excessive impacts, limit/saturation frequency, recovery success/time, and observable posture/contact regimes. Define recovery as a preregistered sustained resumption of goal-directed progress or subsequent goal completion within a fixed window; do not require standing up. Measure applied disturbance impulse from force and duration in a declared frame/body, and save the exact schedule.
+
+Acceptance: a dry-run emits a complete experiment manifest without starting a sweep; a small actual evaluation produces auditable per-episode records and per-seed summaries; task and model configuration differences are visible; no performance claim is made from unexecuted runs.
+
+## 12. Task 7 — Record robot/circuit activity and test ablations
+
+Record synchronized video, simulation/control timestamps, environment and episode IDs, root pose/velocity, joints, actions, applied torques, contact summaries, goal state, each reward component, neural voltages, spikes/filtered rates, and disturbances. Tie every record to a configuration hash, circuit manifest, model checkpoint, and seed. Preserve the mapping from array index to source neuron ID.
+
+Keep high-volume neural recording out of default all-environment training. Record selected episodes or neuron subsets, with full-resolution short windows on demand. Retain spike timestamps at neural-substep resolution when needed; a video frame is not a neuron update. Define downsampling and synchronization explicitly.
+
+Use published or supplied metadata for annotated neuronal groups. Unknown groups stay unknown. Do not infer that a group controls G1 behavior solely because it activates during that behavior. Do not label simulated activity from dopamine-associated neurons as dopamine concentration. These interpretation limits are explicit in the proposal. [P]
+
+Implement an acute ablation with a fixed checkpoint: clamp the specified group's outgoing spikes to zero, state exactly which quantities are affected, and compare against multiple random groups matched on declared properties such as size and degree. Keep the environment scenarios paired and weights unchanged. Retraining after ablation is a separate experiment, not the acute test. Include a sham intervention.
+
+Acceptance: a recorded perturbation aligns across video, robot traces, and neural traces; ablation targets resolve to valid source IDs; output suppression affects only intended neurons; sham and matched random controls execute; resulting claims stay confined to the simulated model.
+
+## 13. Task 8 — Package reproducibility and report actual status
+
+Expose doctor, inspect_asset, smoke_env, train, play, evaluate, record, and run_matrix entry points with documented --help output. The names below are interfaces for Codex to implement, not commands claimed to exist already. Run them from the project root with the validated Isaac-compatible interpreter; substitute the pinned installation's launcher where required.
+
+    python scripts/doctor.py
+    python scripts/inspect_asset.py --headless
+    python scripts/smoke_env.py --task FlyG1-GoalReach-FreePosture-v0 --num_envs 16 --steps 1000 --headless
+    python -m pytest tests/unit -q
+    python scripts/train.py --task FlyG1-GoalReach-FreePosture-v0 --policy mlp --num_envs 16 --max_iterations 10 --seed 0 --headless
+    python scripts/train.py --task FlyG1-GoalReach-FreePosture-v0 --policy frozen_lif --connectome_manifest data/connectome/manifest.json --num_envs 16 --max_iterations 10 --seed 0 --headless
+    python scripts/run_matrix.py --config configs/experiments/main.yaml --dry_run
+
+Document the exact checkpoint path emitted by training and the exact play/evaluate/record commands that use it; do not invent an output file that the runner did not create. The frozen_lif command must fail clearly until a valid real-data manifest is supplied. Unit tests may use the explicitly synthetic fixture without confusing the two modes.
+
+Distinguish functional checkpoint loading from exact mid-episode simulator continuation. Do not claim exact continuation unless simulator, policy, optimizer, RNG, normalization, and recurrent state are all captured and restored under a tested mechanism. Document nondeterminism and tolerances.
+
+Acceptance: README gives a fresh-user setup and run path; source/model/task data provenance is complete; tests distinguish CPU and simulator requirements; results are labeled executed versus pending; there is no hardware-control code or hidden coupling to Go2/drone packages.
+
+## 14. Progress
+
+All implementation items begin unchecked. Check an item only with corresponding evidence.
+
+- [ ] Task 0: environment audit and version pinning.
+- [ ] Task 1: isolated project and G1 asset/control validation.
+- [ ] Task 2: free-posture task family and reward/reset tests.
+- [ ] Task 3: ordinary-policy training/checkpoint baseline.
+- [ ] Task 4: circuit data validation and frozen LIF actor.
+- [ ] Task 5: recurrent PPO integration and state/gradient tests.
+- [ ] Task 6: matched experiments and held-out evaluation.
+- [ ] Task 7: synchronized recording and controlled ablations.
+- [ ] Task 8: documentation, reproduction commands, and status report.
+
+## 15. Decisions, discoveries, and outcomes
+
+Initial decisions: G1 only; simulation only; external isolated project; manager-based task implementation; flat terrain first; no imposed gait; frozen main circuit; separate critic permitted; synthetic circuits confined to explicit software tests. These are a mixture of proposal requirements and engineering choices distinguished above.
+
+Discoveries to record during implementation: actual asset variant and joint availability; installed API differences; reward timestep behavior; sparse-gradient compatibility; compute constraints; missing source data; reset-wrapper semantics; physical or numerical artifacts.
+
+Outcome report at each stopping point: what changed, exact commands executed, pass/fail/blocked results, artifacts created, unresolved dependencies, and the next uncompleted milestone. A working pipeline is not proof of the research hypothesis. A negative result is not an implementation failure when the code and experiment are valid.
+
+## 16. Sources
+
+[P] User-supplied fly_robot_proposal_th_go2_drone(4).docx, one-page proposal. Relevant sections: selected robots; encoder -> MaleCNS + LIF -> decoder -> motor control; training without imposed posture; synchronized neural/robot observations; rewiring and RNN comparisons; matched group ablation; simulation-only G1 scope. The document contains no delivered circuit data or runnable repository.
+
+[S1] NVIDIA Isaac Lab, Create new project or task. Checked 2026-09-13. `https://isaac-sim.github.io/IsaacLab/main/source/overview/own-project/template.html`
+
+[S2] NVIDIA Isaac Lab, Available Environments. Checked 2026-09-13. `https://isaac-sim.github.io/IsaacLab/main/source/overview/environments.html`
+
+[S3a] Isaac Lab upstream G1 flat configuration, main branch, inspected 2026-09-13. `https://raw.githubusercontent.com/isaac-sim/IsaacLab/main/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/g1/flat_env_cfg.py`
+
+[S3b] Isaac Lab upstream G1 rough configuration, main branch, inspected 2026-09-13. `https://raw.githubusercontent.com/isaac-sim/IsaacLab/main/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/g1/rough_env_cfg.py`
+
+[S4] OpenAI, Custom instructions with AGENTS.md. Checked 2026-09-13. `https://developers.openai.com/codex/guides/agents-md`
+
+[S5] OpenAI, Using PLANS.md for multi-hour problem solving. Archived cookbook article, dated 2025-10-07; used only for the maintained-plan workflow, not current model or API recommendations. `https://developers.openai.com/cookbook/articles/codex_exec_plans`
+
+The online main branch is a reference, not a reproducible version pin. Task 0 must record the actual versions and commits used locally.

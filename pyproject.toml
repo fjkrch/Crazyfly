@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "g1-fly-control"
+version = "0.1.0"
+description = "Free-posture Unitree G1 research task for NVIDIA Isaac Lab"
+requires-python = ">=3.10,<3.13"
+dependencies = ["torch>=2.5", "numpy>=1.26"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.8"]
+data = ["pyarrow==24.0.0", "pandas>=2.2,<4"]
+monitor = ["psutil>=5.9"]
+isaac = ["isaaclab==0.54.4", "isaaclab-assets==0.2.4", "isaaclab-tasks==0.11.16", "isaacsim==5.1.0.0"]
+
+[tool.setuptools]
+package-dir = {"" = "source/g1_fly_control"}
+
+[tool.setuptools.packages.find]
+where = ["source/g1_fly_control"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+pythonpath = ["source/g1_fly_control"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"

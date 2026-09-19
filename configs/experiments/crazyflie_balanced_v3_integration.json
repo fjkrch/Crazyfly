@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "label": "integration",
+  "task": "FlyCrazyflie-Mixed-v0",
+  "controllers": [
+    "frozen_lif_original",
+    "frozen_lif_degree_rewired",
+    "gru_matched",
+    "mlp_normal"
+  ],
+  "seeds": [
+    0
+  ],
+  "total_interactions": 50,
+  "connectome_manifest": "data/connectome/manifest.json",
+  "rewire_seed": 20260916,
+  "rewire_manifest": "configs/experiments/crazyflie_rewire_seed_20260916.json",
+  "rewire_manifest_sha256": "6c2a10b879d22741b0d17110d052953adc4f081e9ecac636fabdf0ba68d57b14",
+  "rollout_rng_contract": {
+    "scheme": "post_construction_reseed_v1",
+    "seed_source": "job_seed",
+    "controller_construction_timing": "after_app_and_environment_construction_before_policy_optimizer_scheduler_and_normalizer_construction",
+    "controller_construction_streams": [
+      "python",
+      "numpy",
+      "torch_cpu",
+      "torch_cuda_all_if_available"
+    ],
+    "fresh_start_timing": "after_environment_policy_optimizer_scheduler_and_normalizer_construction_before_initial_checkpoint_and_first_rollout",
+    "fresh_start_streams": [
+      "python",
+      "numpy",
+      "torch_cpu",
+      "torch_cuda_all_if_available"
+    ],
+    "resume_behavior": "preseed_controller_construction_then_preserve_checkpoint_restored_rng_without_post_reseed"
+  },
+  "stabilization_and_residual_contract": {
+    "version": "crazyflie_shared_stabilization_bounded_residual_v2",
+    "observation_normalization": {
+      "kind": "fixed_physics_scale",
+      "scale": [
+        2,
+        2,
+        2,
+        5,
+        5,
+        5,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2
+      ],
+      "clip": 5,
+      "updates": false
+    },
+    "prior": {
+      "goal_independent": true,
+      "used_observation_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "ignored_goal_indices": [
+        9,
+        10,
+        11
+      ],
+      "collective": "hover - 0.18*v_z + 0.20*(1 + gravity_z)",
+      "roll_moment": "0.08*gravity_y - 0.02*omega_x + 0.015*v_y",
+      "pitch_moment": "-0.08*gravity_x - 0.02*omega_y - 0.015*v_x",
+      "yaw_moment": "-0.01*omega_z",
+      "action_clamp": [
+        -0.9999,
+        0.9999
+      ],
+      "hover_action": 0.05263157894736836
+    },
+    "residual": {
+      "latent_scale": [
+        0.35,
+        0.08,
+        0.08,
+        0.05
+      ],
+      "composition": "atanh(prior_action) + scale*tanh(residual_logits)",
+      "final_action": "tanh(Normal(composed_latent_mean, exp(log_std)))"
+    }
+  },
+  "training": {
+    "num_envs": 1,
+    "horizon": 25,
+    "ppo_epochs": 1,
+    "microbatch_size": 1,
+    "num_workers": 0,
+    "precision": "float32",
+    "learning_rate": 0.0001,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip_ratio": 0.2,
+    "value_coefficient": 0.5,
+    "entropy_coefficient": 0.002,
+    "max_grad_norm": 1.0,
+    "target_kl": 0.05,
+    "checkpoint_every_updates": 1
+  },
+  "evaluation": {
+    "protocol": "integration",
+    "seed": 101,
+    "episodes_per_scenario": 2,
+    "scenarios": [
+      "FlyCrazyflie-WaypointReach-v0",
+      "FlyCrazyflie-WaypointSwitch-v0",
+      "FlyCrazyflie-GustRecovery-v0"
+    ],
+    "deterministic_actions": true,
+    "policy_inference_device": "cuda:0",
+    "policy_inference_backend": "cuda_graph_action_only_v1",
+    "policy_inference_precision": "float32",
+    "policy_inference_graph": {
+      "graph_api": "torch.cuda.CUDAGraph",
+      "capture_after_checkpoint_load": true,
+      "fixed_batch": true,
+      "fixed_batch_size": 2,
+      "actor_path": "deterministic_mean_tanh",
+      "parity_gate": "bitwise_action_and_recurrent_state",
+      "parity_probe_steps": 3,
+      "failure_mode": "fail_closed"
+    },
+    "policy_bridge": {
+      "gpu_to_cpu_policy_tensor_transfers_per_decision": 0,
+      "cpu_to_gpu_policy_tensor_transfers_per_decision": 0,
+      "observation_device": "cuda:0",
+      "recurrent_state_device": "cuda:0",
+      "reset_mask_device": "cuda:0",
+      "action_device": "cuda:0",
+      "reset_timing": "before_next_policy_action"
+    }
+  },
+  "contract_profile": "balanced_v3",
+  "balanced_task_contract": {
+    "reward": {
+      "action_change_normalized_squared_cap": 4,
+      "action_change_scale": 0.0005,
+      "boundary_high_onset_m": 1.7,
+      "boundary_high_width_m": 0.2,
+      "boundary_low_onset_m": 0.3,
+      "boundary_low_width_m": 0.2,
+      "boundary_normalized_squared_cap": 4,
+      "boundary_scale": 0.05,
+      "boundary_xy_frame": "environment_local",
+      "boundary_xy_onset_m": 2.25,
+      "boundary_xy_width_m": 0.25,
+      "boundary_z_frame": "world",
+      "braking_normalized_squared_cap": 4,
+      "braking_scale": 0.01,
+      "braking_speed_reference_m_s": 0.5,
+      "collective_action_change_reference": 0.1,
+      "collective_effort_reference": 0.15,
+      "collective_hover_action": 0.05263157894736836,
+      "control_effort_normalized_squared_cap": 4,
+      "control_effort_scale": 0.0025,
+      "dwell_reward_per_interval": 0.02,
+      "failure_penalty": 25,
+      "maximum_height_m": 2,
+      "minimum_height_m": 0.1,
+      "moment_action_change_reference": 0.01,
+      "moment_effort_reference": 0.02,
+      "negative_progress_retained_on_failure": true,
+      "positive_terms_zero_on_failure": true,
+      "progress_potential": "scale_m*tanh(distance_m/scale_m)",
+      "progress_potential_scale_m": 2,
+      "progress_scale": 1,
+      "proximity_distance_scale_m": 0.5,
+      "proximity_scale": 0.015,
+      "retention_ramp_m": 0.5,
+      "retention_scale": 0.04,
+      "success_bonus": 3,
+      "success_distance_m": 0.2,
+      "success_dwell_steps": 25,
+      "success_speed_m_s": 0.25,
+      "success_terminates_episode": false,
+      "survival_reward_per_interval": 0.01,
+      "version": "crazyflie_balanced_task_reward_v3",
+      "workspace_xy_limit_m": 2.75
+    },
+    "reward_sha256": "bfbba45d2f19ddf8368da6a1318f1dba446d27e49fec9f8b4ec09abf2da611e9",
+    "switch_targets": {
+      "applies_to_scenario": "waypoint_switch",
+      "non_switch_mixed_rows_repeat_target_0": true,
+      "reason": "every balanced-v3 stage supports four consecutive target separations without exposing the full distribution early",
+      "target_0_distribution": "active_episode_reset_curriculum_stage",
+      "targets_1_through_3_distribution": "active_episode_reset_curriculum_stage",
+      "version": "crazyflie_balanced_switch_active_stage_v1"
+    },
+    "training_curriculum": {
+      "stages": [
+        {
+          "goal_xy_max_m": 0.35,
+          "goal_xy_min_m": -0.35,
+          "goal_z_max_m": 1.2,
+          "goal_z_min_m": 0.8,
+          "minimum_goal_separation_m": 0.4,
+          "name": "near_3d",
+          "spawn_angular_velocity_half_range_radps": 0,
+          "spawn_height_m": 1,
+          "spawn_linear_velocity_half_range_mps": 0,
+          "spawn_position_xy_half_range_m": 0.01,
+          "spawn_position_z_half_range_m": 0.005,
+          "spawn_yaw_half_range_rad": 0.02,
+          "start_interactions": 0
+        },
+        {
+          "goal_xy_max_m": 0.75,
+          "goal_xy_min_m": -0.75,
+          "goal_z_max_m": 1.35,
+          "goal_z_min_m": 0.65,
+          "minimum_goal_separation_m": 0.5,
+          "name": "local_3d",
+          "spawn_angular_velocity_half_range_radps": 0.03,
+          "spawn_height_m": 0.85,
+          "spawn_linear_velocity_half_range_mps": 0.02,
+          "spawn_position_xy_half_range_m": 0.025,
+          "spawn_position_z_half_range_m": 0.01,
+          "spawn_yaw_half_range_rad": 0.05,
+          "start_interactions": 200000
+        },
+        {
+          "goal_xy_max_m": 1.25,
+          "goal_xy_min_m": -1.25,
+          "goal_z_max_m": 1.5,
+          "goal_z_min_m": 0.6,
+          "minimum_goal_separation_m": 0.65,
+          "name": "mid_3d",
+          "spawn_angular_velocity_half_range_radps": 0.07,
+          "spawn_height_m": 0.7,
+          "spawn_linear_velocity_half_range_mps": 0.04,
+          "spawn_position_xy_half_range_m": 0.05,
+          "spawn_position_z_half_range_m": 0.02,
+          "spawn_yaw_half_range_rad": 0.1,
+          "start_interactions": 500000
+        },
+        {
+          "goal_xy_max_m": 2,
+          "goal_xy_min_m": -2,
+          "goal_z_max_m": 1.5,
+          "goal_z_min_m": 0.5,
+          "minimum_goal_separation_m": 0.75,
+          "name": "full",
+          "spawn_angular_velocity_half_range_radps": 0.2,
+          "spawn_height_m": 0.5,
+          "spawn_linear_velocity_half_range_mps": 0.1,
+          "spawn_position_xy_half_range_m": 0.1,
+          "spawn_position_z_half_range_m": 0.05,
+          "spawn_yaw_half_range_rad": 0.25,
+          "start_interactions": 1000000
+        }
+      ],
+      "version": "crazyflie_balanced_task_curriculum_v3"
+    },
+    "training_curriculum_sha256": "5aefd508cb3a489db630506c33392f4ad7cf40f39851b0194231a661731f3f0c"
+  }
+}

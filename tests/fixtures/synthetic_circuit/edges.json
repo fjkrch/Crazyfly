@@ -1,0 +1,7 @@
+[
+  {"pre": "n0", "post": "n1", "weight": 1.0},
+  {"pre": "n1", "post": "n2", "weight": -0.5},
+  {"pre": "n2", "post": "n3", "weight": 0.25},
+  {"pre": "n3", "post": "n0", "weight": 0.75}
+]
+

@@ -1,0 +1,204 @@
+{
+  "schema_version": 4,
+  "kind": "crazyflie_command_all_fair_matrix_v4",
+  "label": "crazyflie_command_all_fair_seed0_1m",
+  "output_root": "runs/crazyflie_command_all_fair_seed0_1m",
+  "isaac_python": "/home/chayanin/Downloads/miniforge3/envs/env_isaaclab/bin/python",
+  "tasks": [
+    "FlyCrazyflie-CommandFollowWide-v0",
+    "FlyCrazyflie-CommandFollowWideWind-v0"
+  ],
+  "task_protocols": {
+    "FlyCrazyflie-CommandFollowWide-v0": "command_v2",
+    "FlyCrazyflie-CommandFollowWideWind-v0": "command_v2"
+  },
+  "contract_profile": "command_v2",
+  "controllers": [
+    "original_lif",
+    "rewired_lif",
+    "wing_lif",
+    "leg_wing_lif",
+    "optic_lif",
+    "leg_optic_lif",
+    "wing_optic_lif",
+    "leg_wing_optic_lif",
+    "gru_matched",
+    "mlp_normal"
+  ],
+  "trainer_policies": {
+    "original_lif": "frozen_lif_original",
+    "rewired_lif": "frozen_lif_degree_rewired",
+    "wing_lif": "wing_lif",
+    "leg_wing_lif": "leg_wing_lif",
+    "optic_lif": "optic_lif",
+    "leg_optic_lif": "leg_optic_lif",
+    "wing_optic_lif": "wing_optic_lif",
+    "leg_wing_optic_lif": "leg_wing_optic_lif",
+    "gru_matched": "gru_matched",
+    "mlp_normal": "mlp_normal"
+  },
+  "seeds": [0, 1, 2],
+  "total_interactions_per_job": 1000000,
+  "training": {
+    "num_envs": 40,
+    "horizon": 100,
+    "microbatch_size": 40,
+    "ppo_epochs": 2,
+    "learning_rate": 0.0003,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip_ratio": 0.2,
+    "value_coefficient": 0.5,
+    "entropy_coefficient": 0.002,
+    "max_grad_norm": 1.0,
+    "target_kl": 0.05,
+    "checkpoint_every_updates": 25,
+    "precision": "float32",
+    "device": "cuda:0"
+  },
+  "command_envelope": {
+    "maximum_horizontal_speed_mps": 1.0,
+    "maximum_vertical_speed_mps": 0.5,
+    "maximum_yaw_rate_radps": 1.5,
+    "minimum_hold_steps": 25,
+    "maximum_hold_steps": 100,
+    "control_dt_s": 0.02,
+    "simultaneous_axes": true
+  },
+  "evaluation": {
+    "episodes_per_job": 16,
+    "steps_per_episode": 600,
+    "deterministic_actions": true,
+    "activity_from_actual_controller": true,
+    "authenticated_inference_latency_required": true,
+    "latency_warmup_calls": 10,
+    "device": "cuda:0",
+    "script": "scripts/crazyflie_command_evaluate.py",
+    "explicit_task_argument": true,
+    "analysis_kind": "crazyflie_command_follow_heldout_v2"
+  },
+  "connectomes": {
+    "leg_manifest": "data/connectome/manifest.json",
+    "leg_manifest_sha256": "c59c1641847ce7e81f01778df1ee4a136124d62bc713abde750b0d1e9836832c",
+    "wing_manifest": "data/connectome_wing/manifest.json",
+    "wing_manifest_sha256": "8e0149a10094109326618d5b1b042175c7c4e45307c1b7210ccf0c71cc0bf5a6",
+    "optic_manifest": "data/connectome_optic/manifest.json",
+    "optic_manifest_sha256": "cfd74b31641a4d880280e0db061feb50c61f713c70cbd9d9ef1ed02e73ba79b8"
+  },
+  "rewire": {
+    "seed": 20260916,
+    "manifest": "configs/experiments/crazyflie_rewire_seed_20260916.json",
+    "manifest_sha256": "6c2a10b879d22741b0d17110d052953adc4f081e9ecac636fabdf0ba68d57b14"
+  },
+  "queue": {
+    "default_max_parallel": 1,
+    "maximum_parallel": 1,
+    "lif_first": true,
+    "failure_isolation": true,
+    "retry_failed_or_paused_only_with_resume": true,
+    "gpu_used_mib_exclusive": 6963.2,
+    "system_ram_percent_exclusive": 90.0,
+    "resource_poll_interval_seconds": 5.0,
+    "sustained_paging_sample_count": 3,
+    "network_independent": true,
+    "immutable_attempt_logs": true
+  },
+  "comparison_contract": {
+    "same_task_stream_budget_seed_and_ppo_hyperparameters": true,
+    "still_and_wind_paired_within_each_controller_and_seed": true,
+    "all_lif_jobs_before_all_gru_and_mlp_jobs": true,
+    "reset_invariant_global_training_schedule_required": true,
+    "seeds": [0, 1, 2],
+    "lif_controllers": [
+      "original_lif",
+      "rewired_lif",
+      "wing_lif",
+      "leg_wing_lif",
+      "optic_lif",
+      "leg_optic_lif",
+      "wing_optic_lif",
+      "leg_wing_optic_lif"
+    ],
+    "baseline_controllers": ["gru_matched", "mlp_normal"],
+    "components": {
+      "original_lif": ["leg"],
+      "rewired_lif": ["leg"],
+      "wing_lif": ["wing"],
+      "leg_wing_lif": ["leg", "wing"],
+      "optic_lif": ["optic"],
+      "leg_optic_lif": ["leg", "optic"],
+      "wing_optic_lif": ["wing", "optic"],
+      "leg_wing_optic_lif": ["leg", "wing", "optic"],
+      "gru_matched": [],
+      "mlp_normal": []
+    },
+    "capacity_contract": {
+      "actor_trainable_parameters": {
+        "original_lif": 4776,
+        "rewired_lif": 4776,
+        "wing_lif": 4776,
+        "leg_wing_lif": 9224,
+        "optic_lif": 4776,
+        "leg_optic_lif": 9224,
+        "wing_optic_lif": 9224,
+        "leg_wing_optic_lif": 13672,
+        "gru_matched": 4793,
+        "mlp_normal": 4827
+      },
+      "critic_trainable_parameters": {
+        "original_lif": 18305,
+        "rewired_lif": 18305,
+        "wing_lif": 18305,
+        "leg_wing_lif": 18305,
+        "optic_lif": 18305,
+        "leg_optic_lif": 18305,
+        "wing_optic_lif": 18305,
+        "leg_wing_optic_lif": 18305,
+        "gru_matched": 18305,
+        "mlp_normal": 18305
+      },
+      "total_dynamic_state_per_environment": {
+        "original_lif": 1024,
+        "rewired_lif": 1024,
+        "wing_lif": 1024,
+        "leg_wing_lif": 2048,
+        "optic_lif": 1024,
+        "leg_optic_lif": 2048,
+        "wing_optic_lif": 2048,
+        "leg_wing_optic_lif": 3072,
+        "gru_matched": 33,
+        "mlp_normal": 0
+      }
+    },
+    "parameter_count_reporting_required": true,
+    "cross_capacity_claims_are_descriptive_only": true
+  },
+  "historical_v2_identity": {
+    "config": "configs/experiments/crazyflie_command_optic_wind_seed0_1m.json",
+    "config_sha256": "bf7369d74d119784eb6a932cbeb57734fa93b7fdda5457e3e46decfb6f140c44",
+    "runner": "scripts/crazyflie_command_queue_v2.py",
+    "runner_sha256": "16d7035665045ebd2128a3b369e98f49828d9f3b5c3da0685a377c9cb8447dd4",
+    "completed_queue": "runs/crazyflie_command_optic_wind_seed0_1m/queue.json",
+    "completed_queue_sha256": "68f4fee83d659edb439691aa79c5f4b6decc610c1e35e869b1caddd04cf5bddc",
+    "completed_report": "docs/crazyflie_command_optic_wind_report.md",
+    "completed_report_sha256": "7988eabbb82c710dda724f36bfb19852439cafd984562b997ef238d41b7a6fed",
+    "required_queue_status": "completed",
+    "required_job_count": 14,
+    "fair_evidence_eligible": false,
+    "disposition": "preserved_historical_only_pre_reset_invariant_schedule"
+  },
+  "preserved_v3_identity": {
+    "config": "configs/experiments/crazyflie_command_combinations_seed0_1m.json",
+    "config_sha256": "34df6d0480634f48bc9c86acb43e169406ee54e8b1017459ac9668d3f19d1223",
+    "runner": "scripts/crazyflie_command_combinations_queue_v3.py",
+    "runner_sha256": "3a4b5c320a244c2961e29e1ad57b8529ff309e8b3aab38eccb1c250c634b9d93",
+    "relation": "preserved_not_adopted_or_mutated"
+  },
+  "prior_parallel_paging_evidence": {
+    "queue": "runs/crazyflie_command_seed0_500k/queue.json",
+    "queue_sha256": "648ad8b8476a1b4873e23eedacefeb803e3d7887d73d171e3e1512245ef5b99c",
+    "required_event": "hard_resource_gate",
+    "required_sustained_paging": true,
+    "disposition": "v4_max_parallel_fixed_to_one"
+  }
+}

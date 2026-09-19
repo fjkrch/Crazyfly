@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "label": "wing_main",
+  "base_config": "configs/experiments/crazyflie_main.json",
+  "task": "FlyCrazyflie-WaypointReach-v0",
+  "controllers": [
+    "frozen_lif_original",
+    "wing_lif",
+    "leg_wing_lif"
+  ],
+  "seeds": [0, 1, 2, 3, 4],
+  "total_interactions": 5000000,
+  "leg_connectome_manifest": "data/connectome/manifest.json",
+  "wing_connectome_manifest": "data/connectome_wing/manifest.json",
+  "wing_connectome_manifest_sha256": "8e0149a10094109326618d5b1b042175c7c4e45307c1b7210ccf0c71cc0bf5a6",
+  "evaluation_protocol": "main",
+  "episodes_per_scenario": 16,
+  "parameter_matching_required": false,
+  "fusion_contract": "independent_leg_and_wing_cores_concat_motor_readouts_v1",
+  "max_concurrent_isaac_processes": 1,
+  "execution_authorized": false
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "algorithm": "sha256",
+  "generated_at_utc": "2026-09-16T03:52:56Z",
+  "workspace": "/home/chayanin/Desktop/flyg1",
+  "scope": "Late before-manifest supplement for the one plan.md section 3 file omitted from the original 36-file capture",
+  "status": "LATE_SUPPLEMENT_WITH_PRE_IMPLEMENTATION_FILESYSTEM_EVIDENCE",
+  "reason": "docs/g1_frozen_sha256_before.json accidentally omitted the explicitly listed scripts/memory_watch.py. The original manifest is preserved rather than silently rewritten.",
+  "original_before_manifest": {
+    "path": "docs/g1_frozen_sha256_before.json",
+    "generated_at_utc": "2026-09-16T02:17:10Z",
+    "file_count": 36
+  },
+  "filesystem_evidence": {
+    "birth_time": "2026-09-13 20:46:30.241785747 +0700",
+    "modify_time": "2026-09-13 20:49:44.356058059 +0700",
+    "change_time": "2026-09-13 20:49:44.356058059 +0700",
+    "note": "All three timestamps predate the Crazyflie implementation and the original before manifest. This evidence is disclosed because the content hash itself was captured late."
+  },
+  "file_count": 1,
+  "files": [
+    {
+      "path": "scripts/memory_watch.py",
+      "sha256": "fc9708fbce7e05185d073915b007ffaee5c9bd311a5f63d5b09f02b00b1eedbc"
+    }
+  ]
+}

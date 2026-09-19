@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "status": "synthetic",
+  "source_release": "test-fixture-only",
+  "extraction_rule": "hand-authored 4-neuron unit-test graph",
+  "neuron_subset": "synthetic_fixture",
+  "input_neuron_ids": ["n0"],
+  "output_neuron_ids": ["n3"],
+  "duplicate_edge_policy": "reject",
+  "weight_mapping": "unit-test values; not biological",
+  "neuron_model": {
+    "dt": 0.002,
+    "tau_membrane": 0.02,
+    "tau_synapse": 0.01,
+    "threshold": 0.5,
+    "reset_value": 0.0,
+    "refractory_steps": 1,
+    "surrogate_beta": 10.0,
+    "neural_substeps": 2
+  },
+  "neurons_path": "neurons.json",
+  "edges_path": "edges.json"
+}

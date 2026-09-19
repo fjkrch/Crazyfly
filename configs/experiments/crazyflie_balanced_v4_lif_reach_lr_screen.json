@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "kind": "crazyflie_balanced_v4_original_lif_reach_lr_screen",
+  "status": "predeclared_before_results",
+  "task": "FlyCrazyflie-WaypointReach-v0",
+  "contract_profile": "balanced_v4",
+  "controller": "frozen_lif_original",
+  "training_seed": 20260917,
+  "screen_is_warm_start_source": false,
+  "held_out_evaluation_allowed_for_selection": false,
+  "common_training": {
+    "num_envs": 4,
+    "total_interactions": 40000,
+    "horizon": 100,
+    "expected_updates": 100,
+    "microbatch_size": 4,
+    "ppo_epochs": 2,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip_ratio": 0.2,
+    "value_coefficient": 0.5,
+    "entropy_coefficient": 0.002,
+    "max_grad_norm": 1.0,
+    "target_kl": 0.05,
+    "checkpoint_every_updates": 25,
+    "evaluation_protocol": "integration"
+  },
+  "candidates": [
+    {
+      "candidate_id": "lr-1e-4",
+      "learning_rate": 0.0001,
+      "run_dir": "runs/crazyflie-balanced-v4-lif-reach-lr-screen-seed20260917-lr-1e-4"
+    },
+    {
+      "candidate_id": "lr-3e-4",
+      "learning_rate": 0.0003,
+      "run_dir": "runs/crazyflie-balanced-v4-lif-reach-lr-screen-seed20260917-lr-3e-4"
+    }
+  ],
+  "hard_gates": {
+    "training_status": "completed",
+    "exact_interactions_and_updates": true,
+    "checkpoint_sha256_match": true,
+    "manifest_checkpoint_identity_match": true,
+    "history_reference_authenticates": true,
+    "history_all_numeric_values_finite": true,
+    "memory_gate_must_pass": true,
+    "memory_policy_version": "crazyflie_memory_acceptance_v2",
+    "nonfinite_failure_cause_code_4_must_equal": 0,
+    "physical_failure_cause_codes": [
+      "1",
+      "2",
+      "3"
+    ],
+    "physical_failure_count_must_equal": 0,
+    "frozen_core_checksum_must_be_unchanged": true
+  },
+  "selection_order": [
+    {
+      "rank": 1,
+      "criterion": "hard_gates",
+      "direction": "must_pass"
+    },
+    {
+      "rank": 2,
+      "criterion": "training_target_success_event_count",
+      "aggregation": "sum_history_target_success_count",
+      "direction": "higher"
+    },
+    {
+      "rank": 3,
+      "criterion": "final_goal_distance_over_completed_pilot_episodes_m",
+      "aggregation": "completed_episode_weighted_mean_history_final_goal_distance_mean_m",
+      "direction": "lower"
+    },
+    {
+      "rank": 4,
+      "criterion": "cumulative_progress_reward",
+      "aggregation": "sum_history_episodic_reward_component_means_progress_times_completed_episode_count",
+      "direction": "higher"
+    },
+    {
+      "rank": 5,
+      "criterion": "learning_rate",
+      "direction": "lower"
+    }
+  ],
+  "selection_output": "runs/crazyflie-balanced-v4-lif-reach-lr-screen-selection.json"
+}
