@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "algorithm": "sha256",
+  "generated_at_utc": "2026-09-19T07:21:17+00:00",
+  "workspace": "/home/chayanin/Desktop/flyg1",
+  "scope": "Pre-change identity for the additive stock Isaac Lab G1/Go1 flat/rough velocity-locomotion queue. Existing custom G1 and Crazyflie files, queues, checkpoints, and runs are frozen and excluded from edits.",
+  "isaaclab": {
+    "root": "/home/chayanin/Downloads/IsaacLab",
+    "commit": "b4c321024792976150ca55fddb26fa34480d974e",
+    "tracked_tree_note": "The only observed checkout status entry was the unrelated untracked synthetic_smolvla/ directory; this work must not modify it.",
+    "file_count": 10,
+    "file_set_sha256": "36fca3501177012b0e1abc498f1e56ee1d6b4e40b6425451c70227ab5dcf4d15",
+    "files": {
+      "/home/chayanin/Downloads/IsaacLab/scripts/reinforcement_learning/rsl_rl/train.py": "9d5242bfc27e25edffe2531a963006c50dbfebe8b77ed1679e38e181e6426e27",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/velocity_env_cfg.py": "8bc788ece76116f238e4469542a9320710090d8dc2801f4380134158aa64cc6a",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/g1/__init__.py": "6f9f656de8f4ad0f75f0a0773ff8be337424811ab8d5e3bc9e674d95b39fac54",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/g1/rough_env_cfg.py": "2c07373fe3dc8c92f6e3eddc4dc647cc55265a86ea9b29861f27f98e413a28da",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/g1/flat_env_cfg.py": "a67e40d28ea0687e321c73b42a641564e95c55d43f14a5123c24104edfa51135",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/g1/agents/rsl_rl_ppo_cfg.py": "aed1885627492c88f88b40aeae971a764de2fd10c5a92a23569094b5265c2b89",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/go1/__init__.py": "772e8d86ba4b243ea5e2f0571b3aa9f24e19f3639caa114f4d6d0b957288e1e0",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/go1/rough_env_cfg.py": "5b668126d7fece98821c4564eceab898a353885f43d0213fdc2917f3ed8e6c25",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/go1/flat_env_cfg.py": "ddf6ddaf128f5d7905d002ca56bec0f8d8bcea99bbd34e3f3275a3fb17b3d1cb",
+      "/home/chayanin/Downloads/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/go1/agents/rsl_rl_ppo_cfg.py": "851dd7a741b6f47b3a8407c8fe6b6dcdb9fc3ca2de1e37ec42f14900aca9e869"
+    }
+  },
+  "frozen_g1_receipt": {
+    "path": "docs/g1_frozen_sha256_after_command_all_fair_v4_20260918.json",
+    "sha256": "ad1cbe7bbf7e66a78d8a01257540b15fd2be0e646960fa57112385eff110021f",
+    "verified_files": 37,
+    "mismatched": 0
+  },
+  "frozen_runs_receipt": {
+    "path": "docs/crazyflie_command_preservation_before.json",
+    "sha256": "fd48161476eb7c3a2de5233ee7f0c53bf1f9debbc51422f65b4130ec88c22be8",
+    "recomputed_file_count": 1429,
+    "recomputed_total_bytes": 336929906,
+    "recomputed_tree_sha256": "c609886c330fdb9462a4bf92b5c2fcffc8a49cbc212d03110ab5914e13df00f3"
+  },
+  "plan_sha256_before": "4061d52ff1d1006656d20ef469829b13c167af35c0803da0b2b8bfe368a96e00",
+  "new_paths_required_absent_before": [
+    "configs/experiments/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1.json",
+    "scripts/default_locomotion_queue_v1.py",
+    "tests/unit/test_default_locomotion_queue_v1.py",
+    "docs/default_locomotion_g1_go1_sha256_after_20260919.json",
+    "stock_isaaclab_runs/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1/queue.json"
+  ],
+  "output_root_policy": "Use stock_isaaclab_runs/, never runs/, so the frozen runs tree remains byte-identical."
+}
