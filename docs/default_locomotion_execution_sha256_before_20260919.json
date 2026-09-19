@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "algorithm": "sha256",
+  "generated_at_utc": "2026-09-19T07:45:20Z",
+  "workspace": "/home/chayanin/Desktop/flyg1",
+  "scope": "Pre-execution-gate identity before adding or running the four-task memory smoke and sequential stock G1/Go1 executor.",
+  "git": {
+    "head": "6a05baca863e67d1d27a7048a1f427b126b21c40",
+    "branch": "main",
+    "working_tree_clean_before": true
+  },
+  "reviewed_dry_run_files": {
+    "configs/experiments/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1.json": "32763df4c426cbd7f6baf56f0f1737354f260b5554ae39032def20048b571861",
+    "scripts/default_locomotion_queue_v1.py": "dc0713b34bd64786e54bf31a43028020652999dba1666169cf0fa54d9c17d6a7",
+    "tests/unit/test_default_locomotion_queue_v1.py": "d51e4f567ce561645722ccd6adf3250792c2fb643eb3dcfe5767a03e246487f9",
+    "plan.md": "3efbf17ca3353e20ba2adbe94b1fbf101e72aa75dff15cad0bf6dbd7da701563",
+    "docs/default_locomotion_g1_go1_sha256_after_20260919.json": "016897f847e4032b3118d2cc4e5eedc82f7ecff8371162fb435350e76fb03fe6",
+    "stock_isaaclab_runs/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1/matrix_index.json": "e986d3e3b7826600a649e8c9b325f8e5883fcf5075f4b9399830e7b7a45ecaad",
+    "stock_isaaclab_runs/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1/g1/queue.json": "53190c615cb7ff9f7ece4821401882788a79f0627c08dcca255ef7429e295033",
+    "stock_isaaclab_runs/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1/go1/queue.json": "da3e176817aed78de8f6208726fed2af37ae16fa1070934807320c1828681298"
+  },
+  "installed_isaaclab": {
+    "root": "/home/chayanin/Downloads/IsaacLab",
+    "commit": "b4c321024792976150ca55fddb26fa34480d974e",
+    "verified_file_count": 10,
+    "file_set_sha256": "36fca3501177012b0e1abc498f1e56ee1d6b4e40b6425451c70227ab5dcf4d15"
+  },
+  "preservation": {
+    "frozen_custom_g1_file_count": 37,
+    "frozen_custom_g1_mismatched": 0,
+    "frozen_runs_file_count": 1429,
+    "frozen_runs_total_bytes": 336929906,
+    "frozen_runs_tree_sha256": "c609886c330fdb9462a4bf92b5c2fcffc8a49cbc212d03110ab5914e13df00f3"
+  },
+  "planned_additive_paths": [
+    "scripts/default_locomotion_memory_smoke_v1.py",
+    "scripts/default_locomotion_execute_v1.py",
+    "tests/unit/test_default_locomotion_memory_smoke_v1.py",
+    "tests/unit/test_default_locomotion_execute_v1.py",
+    "docs/default_locomotion_execution_sha256_after_20260919.json",
+    "stock_isaaclab_runs/default_locomotion_g1_go1_flat_rough_seeds0_1_2_v1/gates/memory_smoke_receipt.json"
+  ],
+  "execution_contract": {
+    "memory_smokes_before_main": 4,
+    "smoke_iterations_per_task": 1,
+    "num_envs": 1024,
+    "maximum_parallel": 1,
+    "gpu_used_mib_exclusive": 6963.2,
+    "system_ram_percent_exclusive": 90.0,
+    "sustained_paging_sample_count": 3,
+    "main_may_start_only_if_all_smokes_pass": true
+  }
+}
